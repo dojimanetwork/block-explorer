@@ -1,0 +1,48 @@
+  
+  export const menuData = [
+    {
+      name: "Research & Development",
+      active: true,
+      Icon: undefined,
+      link: '/dummy',
+      public: false,
+      private: true,
+      md: 3,
+      mobile: true,
+      desktop: true,
+    },
+    {
+      name: "Adoption & support",
+      active: false,
+      Icon: undefined,
+      link: '/dummy',
+      public: true,
+      private: true,
+      md: 2.5,
+      mobile: true,
+      desktop: true,
+    },
+    {
+      name: "Products",
+      active: false,
+      Icon: undefined,
+      link: '/dummy',
+      public: true,
+      private: true,
+      md: 1.5,
+      mobile: true,
+      desktop: true,
+    },
+    {
+      name: "Developers",
+      active: false,
+      Icon: undefined,
+      link: '/dummy',
+      public: false,
+      private: true,
+      md: 1.5,
+      mobile: true,
+      desktop: false,
+    },
+  ];
+  

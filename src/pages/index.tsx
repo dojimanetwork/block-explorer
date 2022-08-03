@@ -1,8 +1,8 @@
-import React from 'react'
+import TopNavBar from '../components/common/top.nav.bar'
 
 function HomePage() {
   return (
-    <div>HomePage</div>
+   <TopNavBar />
   )
 }
 

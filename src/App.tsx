@@ -6,7 +6,7 @@ import DojimaProvider from "./providers";
 import { createBrowserNavigation } from "navi";
 import routes from "./routes";
 import { Suspense } from "react";
-// import BackgroundImage from '../src/static/background/intro.svg'
+import { BackgroundClr } from "./constants/colors";
 
 function App() {
   const classes = useStyles();
@@ -30,8 +30,7 @@ function App() {
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    backgroundColor: "#080000",
-    padding: "2.5vh 8vw 4vh 8vw",
+    backgroundColor: `${BackgroundClr}`,
     height: '100vh'
   },
 }));

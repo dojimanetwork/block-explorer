@@ -50,3 +50,11 @@ export interface GridComponentProps {
 export interface ChildrenType {
   children?: React.ReactNode;
 }
+
+export const BlockNumbers = [
+  "234245",
+  "223456",
+  "62562564",
+  // "polkadot",
+  "265625",
+];

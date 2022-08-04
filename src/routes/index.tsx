@@ -1,11 +1,20 @@
-import { mount, route } from "navi";
+import { mount, redirect, route, withView } from "navi";
 import { lazy } from "react";
-const HomePage = lazy(() => import("../pages/index"))
-
+import { DashboardUrl } from "./route.constants";
+const DojimaBlockExplorer = lazy(() => import("../pages/index"));
+const Dashboard = lazy(() => import("../pages/dashboard/index"))
 
 export default mount({
-    '/': route({
-        view: <HomePage/>
-    }),
+  "/block-explorer": NavBarWithView(
+    mount({
+      "/dashboard": route({
+        view: <Dashboard />,
+      }),
+    })
+  ),
+  "/": redirect(`${DashboardUrl}`),
+});
 
-})
+function NavBarWithView(routes: any) {
+  return withView(<DojimaBlockExplorer />, routes);
+}

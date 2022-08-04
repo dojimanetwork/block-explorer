@@ -1,3 +1,4 @@
 export const LandingPageUrl = process.env.PUBLIC_URL
 
-export const HomePageUrl = `${LandingPageUrl}/`
+export const DashboardUrl = `${LandingPageUrl}/block-explorer/dashboard`
+

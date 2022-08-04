@@ -23,6 +23,7 @@ function SideNavBar() {
               className={classes.imageRoot}
               alt="side-img"
               key={`${data},${index}`}
+              onClick={() => alert("cli")}
             />
           ))}
           <img
@@ -50,11 +51,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: `0px 0px 4vh 0px`,
     height: `${vpx30}`,
     width: `${wpx30}`,
+    cursor: 'pointer'
   },
   settingsImage: {
     margin: `10vh 0px 0px 0px`,
     height: `${vpx30}`,
     width: `${wpx30}`,
+    cursor: 'pointer'
   },
 }));
 

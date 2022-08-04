@@ -35,7 +35,7 @@ function DashboardView() {
         </CustomGrid>
         <CustomGrid md={12} >
           <HorizontalFlex>
-            <CustomGrid md={3} >
+            <CustomGrid md={3.5}>
               <ChainsCards />
             </CustomGrid>
             <CustomGrid>

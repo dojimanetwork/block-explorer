@@ -6,6 +6,7 @@ export const vpx5 = "0.499vh";
 export const vpx8 = "0.979vh";
 export const vpx9 = "1.09vh"
 export const vpx10 = "1.21vh";
+export const vpx12 = "1.3vh"
 export const vpx14 = "1.398vh"
 export const vpx15 = "1.49vh";
 export const vpx16 = "1.59vh"

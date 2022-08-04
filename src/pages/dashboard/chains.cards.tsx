@@ -84,14 +84,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   paperRoot: {
     height: `12vh`,
-    width: `18vw`,
+    width: `17vw`,
     backgroundColor: "transparent",
     boxShadow: "10px 15px 10px 0 rgba(0, 0, 0, 0.2)",
-    // backgroundImage:
-    //   "radial-gradient(50% 100% at 91.25% 0%, #2E69FF -50%, rgba(0, 0, 0, 0) 100%) ,linear-gradient(359deg, rgba(255, 255, 255, 0.16) 2.57%, rgba(255, 255, 255, 0.04) 97.48%)",
-    padding: `1vh 1.2vw 2vh 1.2vw`,
+    padding: `1vh 1.2vw 1vh 1.2vw`,
     border: "0.5px solid rgba(255, 255, 255, 0.4)",
-    margin: `0px 0px 1.5vh 0px`
+    margin: `0px 0px 1.5vh 0px`,
+    // opacity: 0.7
   },
   chainImg: {
     height: `${vpx30}`,
@@ -122,7 +121,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: theme.palette.common.white,
     fontSize: `${vpx14}`,
     fontWeight: "bolder",
-    fontStyle: "normal",
   },
 }));
 

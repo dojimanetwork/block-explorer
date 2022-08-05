@@ -46,6 +46,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     boxShadow: "-2px 0 30px 0 rgba(0, 129, 255, 0.2)",
     borderTopRightRadius: `${px40}`,
     borderBottomRightRadius: `${px40}`,
+    position: 'fixed'
   },
   imageRoot: {
     margin: `0px 0px 4vh 0px`,

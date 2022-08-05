@@ -31,7 +31,7 @@ function App() {
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     backgroundColor: `${BackgroundClr}`,
-    height: '100vh'
+    // height: '100vh'
   },
 }));
 

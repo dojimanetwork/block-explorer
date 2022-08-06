@@ -1,10 +1,8 @@
-import { Typography } from "@mui/material";
+import { Theme, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React from "react";
 import CustomGrid from "../../components/common/custom.grid";
 import HorizontalFlex from "../../components/common/horizontal.flex";
 import VerticalFlex from "../../components/common/vertical.flex";
-import { PriceClr } from "../../constants/colors";
 import { vpx22, vpx25 } from "../../constants/px.vh";
 import DashboardImg from "../../static/side-navbar/dash.svg";
 import Blocks from "./blocks";
@@ -38,10 +36,10 @@ function DashboardView() {
             <CustomGrid md={3.5}>
               <ChainsCards />
             </CustomGrid>
-            <CustomGrid>
+            <CustomGrid md={1.6}>
               <DailyStatus />
             </CustomGrid>
-            <CustomGrid>
+            <CustomGrid md={6.9} >
               <ChainGraph />
             </CustomGrid>
           </HorizontalFlex>
@@ -61,7 +59,7 @@ function DashboardView() {
   );
 }
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme:Theme) => ({
   imageRoot: {
     height: `${vpx25}`,
     width: `${vpx25}`,
@@ -69,8 +67,8 @@ const useStyles = makeStyles(() => ({
   },
   title: {
     fontSize: `${vpx22}`,
-    color: PriceClr,
-    fontWeight: "bold",
+    color: theme.palette.common.white,
+    fontWeight: "normal",
     letterSpacing: `-0.44px`,
   },
 }));

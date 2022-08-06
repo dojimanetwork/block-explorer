@@ -1,3 +1,8 @@
 {
-  
+  "dashbord":{
+      "graph_title":{
+          "txTitle": "Transaction",
+          "blockTitle": "Blocks"
+      }
+  }
 }

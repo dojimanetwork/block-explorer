@@ -98,13 +98,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   chainTitle: {
     fontSize: `${vpx14}`,
-    fontWeight: "bold",
+    fontWeight: 500,
     margin: `0px 0px 0px 0.5vw`,
   },
   tokensNum: {
     color: `#b9b9b9`,
     fontSize: `${vpx14}`,
-    fontWeight: "bold",
+    fontWeight: 500,
     margin: `0.8vh 0px 0px 0vw`,
     fontStyle: "normal",
   },
@@ -114,13 +114,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   time: {
     color: theme.palette.common.white,
     fontSize: `${vpx8}`,
-    fontWeight: "bold",
+    fontWeight: "normal",
     fontStyle: "normal",
   },
   hash: {
     color: theme.palette.common.white,
     fontSize: `${vpx14}`,
-    fontWeight: "bolder",
+    fontWeight: 600,
   },
 }));
 

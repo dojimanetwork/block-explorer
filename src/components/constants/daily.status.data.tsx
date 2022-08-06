@@ -12,14 +12,14 @@ export const DailyStatusData = [
         title: 33093,
         titleOpacity: 1,
         value: 'Transactions',
-        valueClr: OrangeClr,
+        valueClr: PurpleClr,
         valueOpacity: 1,
     },
     {
         title: 14299,
         titleOpacity: 1,
         value: 'Blocks',
-        valueClr: PurpleClr,
+        valueClr: OrangeClr,
         valueOpacity: 1,
     },
     {

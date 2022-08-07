@@ -5,11 +5,10 @@ import HorizontalFlex from "../../components/common/horizontal.flex";
 import VerticalFlex from "../../components/common/vertical.flex";
 import { PriceClr } from "../../constants/colors";
 import { vpx22, vpx25 } from "../../constants/px.vh";
-import ValidatorsImg from "../../static/side-navbar/validators.svg";
-import StatusItemView from "./status.view.item";
+import BlocksImg from "../../static/side-navbar/block.svg";
 import CustomTable from "../../components/common/table";
 
-function ValidatorsView() {
+function BlocksView() {
   const classes = useStyles();
 
   return (
@@ -19,32 +18,21 @@ function ValidatorsView() {
           <HorizontalFlex alignItems="center">
             <CustomGrid>
               <img
-                src={ValidatorsImg}
+                src={BlocksImg}
                 alt="dashboard"
                 className={classes.imageRoot}
               />
             </CustomGrid>
             <CustomGrid>
-              <Typography className={classes.title}>Validators</Typography>
+              <Typography className={classes.title}>Blocks</Typography>
             </CustomGrid>
           </HorizontalFlex>
         </CustomGrid>
         <CustomGrid md={12} >
           <HorizontalFlex>
-            <StatusItemView/>
             <CustomTable headers={[]} rows={[]} />
           </HorizontalFlex>
         </CustomGrid>
-        {/* <CustomGrid>
-          <HorizontalFlex>
-            <CustomGrid md={6}>
-              <Transactions />
-            </CustomGrid>
-            <CustomGrid md={6} >
-              <Blocks />
-            </CustomGrid>
-          </HorizontalFlex>
-        </CustomGrid> */}
       </VerticalFlex>
     </CustomGrid>
   );
@@ -54,14 +42,16 @@ const useStyles = makeStyles(() => ({
   imageRoot: {
     height: `${vpx25}`,
     width: `${vpx25}`,
-    margin: `0px 0.5vw 0px 0px`,
+    margin: `0px 0.5vw 20px 0px`,
   },
   title: {
     fontSize: `${vpx22}`,
     color: PriceClr,
     fontWeight: "bold",
     letterSpacing: `-0.44px`,
+    margin: `0px 0px 20px 0px`,
+
   },
 }));
 
-export default ValidatorsView; 
+export default BlocksView; 

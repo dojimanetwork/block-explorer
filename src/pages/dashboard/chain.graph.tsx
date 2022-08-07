@@ -84,7 +84,7 @@ const data: any = [
 const MyResponsiveLine = ({ data }: { data: any }) => (
   <ResponsiveLine
     data={data}
-    margin={{ top: 20, right: 110, bottom: 20, left: 35 }}
+    margin={{ top: 30, right: 110, bottom: 20, left: 35 }}
     xScale={{ type: "point" }}
     yScale={{
       type: "linear",
@@ -105,7 +105,6 @@ const MyResponsiveLine = ({ data }: { data: any }) => (
       legendOffset: 36,
       legendPosition: "middle",
     }}
-    legends={[]}
     axisLeft={{
       //   orient: "left",
       tickSize: 5,
@@ -123,41 +122,48 @@ const MyResponsiveLine = ({ data }: { data: any }) => (
     enableGridX={false}
     areaBaselineValue={100}
     theme={{
-      grid: { line: { stroke: "hsl(70, 70%, 50%)", strokeDasharray: '6' } },
+      grid: { line: { stroke: "#2a2d2f", strokeDasharray: '6' } },
+      axis: {
+        domain: {
+          line: {
+            strokeWidth: 1,
+            stroke: "#5d5d5d",
+          },
+        },}
     }
     }
-    // legends={[
-    //   {
-    //     anchor: "bottom-right",
-    //     direction: "column",
-    //     justify: false,
-    //     translateX: 100,
-    //     translateY: 0,
-    //     itemsSpacing: 0,
-    //     itemDirection: "left-to-right",
-    //     itemWidth: 80,
-    //     itemHeight: 20,
-    //     itemOpacity: 0.75,
-    //     symbolSize: 12,
-    //     symbolShape: "circle",
-    //     symbolBorderColor: "rgba(0, 0, 0, .5)",
-    //     effects: [
-    //       {
-    //         on: "hover",
-    //         style: {
-    //           itemBackground: "rgba(0, 0, 0, .03)",
-    //           itemOpacity: 1,
-    //         },
-    //       },
-    //     ],
-    //   },
-    // ]}
+    legends={[
+      {
+        anchor: "top-right",
+        direction: "row",
+        justify: false,
+        translateX: 0,
+        translateY: -30,
+        itemsSpacing: 0,
+        itemDirection: "left-to-right",
+        itemWidth: 80,
+        itemHeight: 20,
+        itemOpacity: 0.75,
+        symbolSize: 12,
+        symbolShape: "circle",
+        symbolBorderColor: "rgba(0, 0, 0, .5)",
+        effects: [
+          {
+            on: "hover",
+            style: {
+              itemBackground: "rgba(0, 0, 0, .03)",
+              itemOpacity: 1,
+            },
+          },
+        ],
+      },
+    ]}
   />
 );
 
 export default function ChainGraph() {
   return (
-    <div style={{ width: "51.5vw", height: "40vh" }}>
+    <div style={{ width: "44.5vw", height: "40vh",border:"1px solid #2a2d2f", marginLeft:"2px",padding:"10px"}}>
       <MyResponsiveLine data={data} />
     </div>
   );

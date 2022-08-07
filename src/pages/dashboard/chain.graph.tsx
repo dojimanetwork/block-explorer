@@ -1,7 +1,6 @@
 
 import { linearGradientDef } from "@nivo/core";
 import { ResponsiveLine } from "@nivo/line";
-import { inherits } from "util";
 
 const data: any = [
   {
@@ -101,24 +100,16 @@ const MyResponsiveLine = ({ data }: { data: any }) => (
     ]}
     fill={[{ match: "*", id: ("gradient"),
   }]}
-
     enableArea={true}
-    yFormat=" >-.2f"
-    axisTop={null}
-    axisRight={null}
     axisBottom={{
-      //   orient: "bottom",
       tickSize: 0,
       tickPadding: 5,
-      tickRotation: 0,
       legendOffset: 36,
       legendPosition: "middle",
     }}
     axisLeft={{
-      //   orient: "left",
       tickSize: 5,
       tickPadding: 5,
-      tickRotation: 0,
       legendOffset: -40,
       legendPosition: "middle",
     }}
@@ -126,7 +117,6 @@ const MyResponsiveLine = ({ data }: { data: any }) => (
     pointColor={{ theme:"background" }}
     pointBorderWidth={2}
     pointBorderColor={{ from: "serieColor" }}
-    pointLabelYOffset={-12}
     useMesh={true}
     enableGridX={false}
     lineWidth={1}
@@ -134,12 +124,6 @@ const MyResponsiveLine = ({ data }: { data: any }) => (
     theme={{
       grid: { line: { stroke: "#2a2d2f", strokeDasharray: '6' } },
       axis: {
-        domain: {
-          line: {
-            strokeWidth: 1,
-            stroke: "#5d5d5d",
-          },
-        },
       ticks:{
        text:{
          fill:"#fafafa"

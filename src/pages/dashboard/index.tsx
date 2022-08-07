@@ -9,6 +9,7 @@ import Blocks from "./blocks";
 import ChainGraph from "./chain.graph";
 import ChainsCards from "./chains.cards";
 import DailyStatus from "./daily.status";
+import SupportedChains from "./supported.chains";
 import Transactions from "./transactions";
 
 function DashboardView() {
@@ -44,7 +45,7 @@ function DashboardView() {
             </CustomGrid>
           </HorizontalFlex>
         </CustomGrid>
-        <CustomGrid>
+        <CustomGrid md={12} >
           <HorizontalFlex>
             <CustomGrid md={6}>
               <Transactions />
@@ -53,6 +54,9 @@ function DashboardView() {
               <Blocks />
             </CustomGrid>
           </HorizontalFlex>
+        </CustomGrid>
+        <CustomGrid md={12} >
+          <SupportedChains />
         </CustomGrid>
       </VerticalFlex>
     </CustomGrid>

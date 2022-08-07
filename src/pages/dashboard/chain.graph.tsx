@@ -2,6 +2,7 @@ import { Paper, Theme, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import CustomGrid from "../../components/common/custom.grid";
 import HorizontalFlex from "../../components/common/horizontal.flex";
+import ChainGraph from "../../components/common/nivo.graph";
 import { vpx14, vpx20 } from "../../constants/px.vh";
 import { wpx20 } from "../../constants/px.vw";
 import useLanguage from "../../hooks/useLanguage";
@@ -34,6 +35,9 @@ function DashboardGraph() {
             <Typography className={classes.txtRoot}>{blockTitle}</Typography>
           </CustomGrid>
         </HorizontalFlex>
+        <CustomGrid>
+          <ChainGraph/>
+        </CustomGrid>
       </Paper>
     </CustomGrid>
   );

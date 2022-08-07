@@ -108,8 +108,8 @@ const MyResponsiveLine = ({ data }: { data: any }) => (
       legendPosition: "middle",
     }}
     axisLeft={{
-      tickSize: 5,
-      tickPadding: 5,
+      tickSize: 0,
+      tickPadding: 10,
       legendOffset: -40,
       legendPosition: "middle",
     }}

@@ -1,11 +1,11 @@
 
+import { linearGradientDef } from "@nivo/core";
 import { ResponsiveLine } from "@nivo/line";
 import { inherits } from "util";
 
 const data: any = [
   {
     id:"Transaction",
-    color: "hsl(70, 70%, 50%)",
     data: [
       {
         x: "plane",
@@ -43,7 +43,6 @@ const data: any = [
   },
   {
     id: "Blocks",
-    color: "hsl(89, 70%, 50%)",
     data: [
       {
         x: "plane",
@@ -84,7 +83,7 @@ const data: any = [
 const MyResponsiveLine = ({ data }: { data: any }) => (
   <ResponsiveLine
     data={data}
-    margin={{ top: 30, right: 110, bottom: 20, left: 35 }}
+    margin={{ top: 30, right: 30, bottom: 20, left: 35 }}
     xScale={{ type: "point" }}
     yScale={{
       type: "linear",
@@ -93,6 +92,16 @@ const MyResponsiveLine = ({ data }: { data: any }) => (
       stacked: true,
       reverse: false,
     }}
+    colors={['#FF751F', '#8C59DA']}
+    defs={[
+      linearGradientDef("gradient", [
+          { offset: 0, color: 'inherit' },
+          { offset: 100, color: 'inherit', opacity: 0 },
+      ]),
+    ]}
+    fill={[{ match: "*", id: ("gradient"),
+  }]}
+
     enableArea={true}
     yFormat=" >-.2f"
     axisTop={null}
@@ -113,13 +122,14 @@ const MyResponsiveLine = ({ data }: { data: any }) => (
       legendOffset: -40,
       legendPosition: "middle",
     }}
-    pointSize={10}
-    pointColor={{ from: 'color', modifiers: [] }}
+    pointSize={5}
+    pointColor={{ theme:"background" }}
     pointBorderWidth={2}
     pointBorderColor={{ from: "serieColor" }}
     pointLabelYOffset={-12}
     useMesh={true}
     enableGridX={false}
+    lineWidth={1}
     areaBaselineValue={100}
     theme={{
       grid: { line: { stroke: "#2a2d2f", strokeDasharray: '6' } },
@@ -129,35 +139,14 @@ const MyResponsiveLine = ({ data }: { data: any }) => (
             strokeWidth: 1,
             stroke: "#5d5d5d",
           },
-        },}
+        },
+      ticks:{
+       text:{
+         fill:"#fafafa"
+       }
+      }}
     }
     }
-    legends={[
-      {
-        anchor: "top-right",
-        direction: "row",
-        justify: false,
-        translateX: 0,
-        translateY: -30,
-        itemsSpacing: 0,
-        itemDirection: "left-to-right",
-        itemWidth: 80,
-        itemHeight: 20,
-        itemOpacity: 0.75,
-        symbolSize: 12,
-        symbolShape: "circle",
-        symbolBorderColor: "rgba(0, 0, 0, .5)",
-        effects: [
-          {
-            on: "hover",
-            style: {
-              itemBackground: "rgba(0, 0, 0, .03)",
-              itemOpacity: 1,
-            },
-          },
-        ],
-      },
-    ]}
   />
 );
 

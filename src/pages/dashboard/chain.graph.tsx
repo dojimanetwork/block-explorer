@@ -114,7 +114,7 @@ const MyResponsiveLine = ({ data }: { data: any }) => (
       legendPosition: "middle",
     }}
     pointSize={5}
-    pointColor={{ theme:"background" }}
+    pointColor="#FFFFFF"
     pointBorderWidth={2}
     pointBorderColor={{ from: "serieColor" }}
     useMesh={true}

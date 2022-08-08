@@ -106,10 +106,8 @@ function TxSetNodeKey() {
                       <Typography className={classes.dots}>:</Typography>
                     </CustomGrid>
                     <Paper className={classes.subPaperRoot}>
-                      <CustomGrid md={9.5}>
-                        <Typography className={classes.value}>
-                          { JSON.stringify(payload, null, 2) }
-                        </Typography>
+                      <CustomGrid md={9.5}> 
+                     <pre  className={classes.value}>{JSON.stringify(payload, null, 2)}</pre> 
                       </CustomGrid>
                     </Paper>
                   </HorizontalFlex>
@@ -145,7 +143,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: "4vh 0px 0px 0px",
   },
   paperRoot: {
-    height: `38.656527249683144vh`,
+    height: `42vh`,
     backgroundColor: "transparent",
     // boxShadow: "10px 15px 10px 0 rgba(0, 0, 0, 0.2)",
     // backgroundImage: `radial-gradient(140% 70% at 100% 0%,#264da3 -40%, rgba(0, 0, 0, 0) 70%) ,linear-gradient(359deg, rgba(255, 255, 255, 0.16) -80%, rgba(255, 255, 255, 0.04) 97.48%)`,
@@ -155,8 +153,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     borderRadius: "8px",
   },
   subPaperRoot: {
-    height: `7.656527249683144vh`,
-    width:`40vw`,
+    height: `10.656527249683144vh`,
+    width:`50vw`,
     backgroundColor: "transparent",
     // boxShadow: "10px 15px 10px 0 rgba(0, 0, 0, 0.2)",
     // backgroundImage: `radial-gradient(140% 70% at 100% 0%,#264da3 -40%, rgba(0, 0, 0, 0) 70%) ,linear-gradient(359deg, rgba(255, 255, 255, 0.16) -80%, rgba(255, 255, 255, 0.04) 97.48%)`,

@@ -159,7 +159,7 @@ function TxDetailsBond() {
                             <EastIcon className={classes.arrowIcon} />
                             <Typography
                               className={classes.valueTitle}
-                              style={{ color: OrangeClr }}
+                              style={{ color: OrangeClr, opacity: 1 }}
                             >
                               Bond Module
                             </Typography>

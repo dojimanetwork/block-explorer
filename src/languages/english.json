@@ -4,5 +4,13 @@
           "txTitle": "Transaction",
           "blockTitle": "Blocks"
       }
+  },
+  "transaction":{
+    "tx_bond": {
+      "title1": "Transaction Hash",
+      "title2": "Block",
+      "title3": "Type",
+      "title4": "Date and Time"
+    }
   }
 }

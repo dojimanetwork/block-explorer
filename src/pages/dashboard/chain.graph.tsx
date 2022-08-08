@@ -15,7 +15,7 @@ function DashboardGraph() {
   const {txTitle, blockTitle} = lang.languageText.dashbord.graph_title
 
   return (
-    <CustomGrid className={classes.root} md={11.5}>
+    <CustomGrid md={11.5}>
       <Paper className={classes.paperRoot}>
         <HorizontalFlex justifyContent="flex-end">
           <CustomGrid>
@@ -44,9 +44,6 @@ function DashboardGraph() {
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
-  root:{
-    borderRadius: '10px'
-  },
   paperRoot: {
     height: `40vh`,
     // width: `30vw`,
@@ -58,7 +55,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     opacity: 0.9,
     // borderImage: 'linear-gradient(75deg, rgba(255, 255, 255, 0.4) 20%, #2e69ff 150%)',
     // borderImageSlice: '1',
-    // borderRadius: 'inherit',
+    // borderRadius: '10px',
   },
   iconRoot: {
     height: `${vpx20}`,

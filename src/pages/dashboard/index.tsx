@@ -5,12 +5,13 @@ import HorizontalFlex from "../../components/common/horizontal.flex";
 import VerticalFlex from "../../components/common/vertical.flex";
 import { vpx22, vpx25 } from "../../constants/px.vh";
 import DashboardImg from "../../static/side-navbar/dash.svg";
-import Blocks from "./blocks";
-import ChainGraph from "./chain.graph";
-import ChainsCards from "./chains.cards";
-import DailyStatus from "./daily.status";
-import SupportedChains from "./supported.chains";
-import Transactions from "./transactions";
+import TxDetailsBond from "../transactions/tx.details.bond";
+// import Blocks from "./blocks";
+// import ChainGraph from "./chain.graph";
+// import ChainsCards from "./chains.cards";
+// import DailyStatus from "./daily.status";
+// import SupportedChains from "./supported.chains";
+// import Transactions from "./transactions";
 
 function DashboardView() {
   const classes = useStyles();
@@ -33,7 +34,9 @@ function DashboardView() {
           </HorizontalFlex>
         </CustomGrid>
         <CustomGrid md={12} >
-          <HorizontalFlex>
+          <TxDetailsBond />
+          </CustomGrid>
+          {/* <HorizontalFlex>
             <CustomGrid md={3.5}>
               <ChainsCards />
             </CustomGrid>
@@ -57,7 +60,7 @@ function DashboardView() {
         </CustomGrid>
         <CustomGrid md={12} >
           <SupportedChains />
-        </CustomGrid>
+        </CustomGrid> */}
       </VerticalFlex>
     </CustomGrid>
   );

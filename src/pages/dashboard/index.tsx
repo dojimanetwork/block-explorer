@@ -5,13 +5,12 @@ import HorizontalFlex from "../../components/common/horizontal.flex";
 import VerticalFlex from "../../components/common/vertical.flex";
 import { vpx22, vpx25 } from "../../constants/px.vh";
 import DashboardImg from "../../static/side-navbar/dash.svg";
-import TxDetailsBond from "../transactions/tx.details.bond";
-// import Blocks from "./blocks";
-// import ChainGraph from "./chain.graph";
-// import ChainsCards from "./chains.cards";
-// import DailyStatus from "./daily.status";
-// import SupportedChains from "./supported.chains";
-// import Transactions from "./transactions";
+import Blocks from "./blocks";
+import ChainGraph from "./chain.graph";
+import ChainsCards from "./chains.cards";
+import DailyStatus from "./daily.status";
+import SupportedChains from "./supported.chains";
+import Transactions from "./transactions";
 
 function DashboardView() {
   const classes = useStyles();
@@ -33,40 +32,38 @@ function DashboardView() {
             </CustomGrid>
           </HorizontalFlex>
         </CustomGrid>
-        <CustomGrid md={12} >
-          <TxDetailsBond />
-          </CustomGrid>
-          {/* <HorizontalFlex>
+        <CustomGrid md={12}>
+          <HorizontalFlex>
             <CustomGrid md={3.5}>
               <ChainsCards />
             </CustomGrid>
             <CustomGrid md={1.6}>
               <DailyStatus />
             </CustomGrid>
-            <CustomGrid md={6.9} >
+            <CustomGrid md={6.9}>
               <ChainGraph />
             </CustomGrid>
           </HorizontalFlex>
         </CustomGrid>
-        <CustomGrid md={12} >
+        <CustomGrid md={12}>
           <HorizontalFlex>
             <CustomGrid md={6}>
               <Transactions />
             </CustomGrid>
-            <CustomGrid md={6} >
+            <CustomGrid md={6}>
               <Blocks />
             </CustomGrid>
           </HorizontalFlex>
         </CustomGrid>
-        <CustomGrid md={12} >
+        <CustomGrid md={12}>
           <SupportedChains />
-        </CustomGrid> */}
+        </CustomGrid>
       </VerticalFlex>
     </CustomGrid>
   );
 }
 
-const useStyles = makeStyles((theme:Theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   imageRoot: {
     height: `${vpx25}`,
     width: `${vpx25}`,

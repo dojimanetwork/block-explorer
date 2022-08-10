@@ -1,10 +1,17 @@
-  
+import BlockImg from '../static/side-navbar/block.svg'
+import DashImg from '../static/side-navbar/dash.svg'
+import TransactionImg from '../static/side-navbar/transaction.svg'
+import IcBlockImg from '../static/side-navbar/ic_block_chain.svg'
+import IcObjectiveImg from '../static/side-navbar/ic_objective_block.svg'
+import ValidatorsImg from '../static/side-navbar/validators.svg'
+import { DashboardUrl, TransactionsUrl } from '../routes/route.constants'
+
   export const menuData = [
     {
-      name: "Research & Development",
+      name: DashImg,
       active: true,
       Icon: undefined,
-      link: '/dummy',
+      link: DashboardUrl,
       public: false,
       private: true,
       md: 3,
@@ -12,10 +19,10 @@
       desktop: true,
     },
     {
-      name: "Adoption & support",
+      name: BlockImg,
       active: false,
       Icon: undefined,
-      link: '/dummy',
+      link: TransactionsUrl,
       public: true,
       private: true,
       md: 2.5,
@@ -23,7 +30,7 @@
       desktop: true,
     },
     {
-      name: "Products",
+      name: TransactionImg,
       active: false,
       Icon: undefined,
       link: '/dummy',
@@ -34,7 +41,29 @@
       desktop: true,
     },
     {
-      name: "Developers",
+      name: IcBlockImg,
+      active: false,
+      Icon: undefined,
+      link: '/dummy',
+      public: false,
+      private: true,
+      md: 1.5,
+      mobile: true,
+      desktop: false,
+    },
+    {
+      name: ValidatorsImg,
+      active: false,
+      Icon: undefined,
+      link: '/dummy',
+      public: false,
+      private: true,
+      md: 1.5,
+      mobile: true,
+      desktop: false,
+    },
+    {
+      name: IcObjectiveImg,
       active: false,
       Icon: undefined,
       link: '/dummy',

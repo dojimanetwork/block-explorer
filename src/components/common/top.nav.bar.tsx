@@ -1,10 +1,9 @@
 import { AppBar, Theme, Toolbar, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import DojimaLogoImg from "../../../src/dojima-logo.svg";
 import { TopNavBarClr } from "../../constants/colors";
 import { vpx14, vpx80 } from "../../constants/px.vh";
 import { wpx6 } from "../../constants/px.vw";
-import DojimaTextLogo from "../../static/top-navbar/dojima-text.svg";
+import DojimaTextLogo from "../../static/top-navbar/dojima-logo.svg";
 import { TopNavBarHeadersData } from "../constants/top.navbar.data";
 import CustomGrid from "./custom.grid";
 import CustomSearch from "./custom.search";
@@ -21,11 +20,6 @@ function TopNavBar() {
       <Toolbar className={classes.root}>
         <HorizontalFlex alignItems="center">
           <CustomGrid md={5}>
-            <img
-              src={DojimaLogoImg}
-              alt="dojima"
-              className={classes.logoRoot}
-            />
             <img
               src={DojimaTextLogo}
               alt="dojima"

@@ -24,6 +24,7 @@ type IconLinkProps = {
 function IconTextLink(props: IconLinkProps) {
   const { link, Icon, target, text, isActive, onClick, index } = props;
   const classes = useStyles({ ...props });
+  
   return (
     <div className={classes.root}>
       <HorizontalFlex>

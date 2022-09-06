@@ -3,7 +3,9 @@ import { lazy } from "react";
 import { DashboardUrl } from "./route.constants";
 const DojimaBlockExplorer = lazy(() => import("../pages/index"));
 const Dashboard = lazy(() => import("../pages/dashboard/index"))
-const TxBond = lazy(() => import('../pages/transactions/tx.details.bond'))
+const Txs = lazy(() => import('../pages/transactions/tx.details.bond'))
+const Blocks = lazy(() => import('../pages/transactions/tx.details.unbond')) 
+const Validators = lazy(() => import("../pages/transactions/tx.set.ipaddress"))
 
 export default mount({
   "/block-explorer": NavBarWithView(
@@ -11,8 +13,14 @@ export default mount({
       "/dashboard": route({
         view: <Dashboard />,
       }),
+      "/blocks": route({
+        view: <Blocks />,
+      }),
       "/transactions": route({
-        view: <TxBond />,
+        view: <Txs />,
+      }),
+      "/validators": route({
+        view: <Validators />,
       }),
     })
   ),

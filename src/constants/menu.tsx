@@ -4,7 +4,7 @@ import TransactionImg from '../static/side-navbar/transaction.svg'
 import IcBlockImg from '../static/side-navbar/ic_block_chain.svg'
 import IcObjectiveImg from '../static/side-navbar/ic_objective_block.svg'
 import ValidatorsImg from '../static/side-navbar/validators.svg'
-import { DashboardUrl, TransactionsUrl } from '../routes/route.constants'
+import { BlocksUrl, DashboardUrl, TransactionsUrl, ValidatorsUrl } from '../routes/route.constants'
 
   export const menuData = [
     {
@@ -22,7 +22,7 @@ import { DashboardUrl, TransactionsUrl } from '../routes/route.constants'
       name: BlockImg,
       active: false,
       Icon: undefined,
-      link: TransactionsUrl,
+      link: BlocksUrl,
       public: true,
       private: true,
       md: 2.5,
@@ -33,7 +33,7 @@ import { DashboardUrl, TransactionsUrl } from '../routes/route.constants'
       name: TransactionImg,
       active: false,
       Icon: undefined,
-      link: '/dummy',
+      link: TransactionsUrl,
       public: true,
       private: true,
       md: 1.5,
@@ -55,7 +55,7 @@ import { DashboardUrl, TransactionsUrl } from '../routes/route.constants'
       name: ValidatorsImg,
       active: false,
       Icon: undefined,
-      link: '/dummy',
+      link: ValidatorsUrl,
       public: false,
       private: true,
       md: 1.5,
@@ -66,7 +66,7 @@ import { DashboardUrl, TransactionsUrl } from '../routes/route.constants'
       name: IcObjectiveImg,
       active: false,
       Icon: undefined,
-      link: '/dummy',
+      link: TransactionsUrl,
       public: false,
       private: true,
       md: 1.5,

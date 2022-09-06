@@ -28,6 +28,9 @@ function TopNavBar() {
           </CustomGrid>
           <CustomGrid md={7}>
             <HorizontalFlex>
+            <CustomGrid md={4}>
+                <CustomSearch />
+              </CustomGrid>
               {HeaderData.map((data, index: number) => (
                 <CustomGrid md={2} key={`${data},${index}`}>
                   <HorizontalFlex alignItems="flex-end">
@@ -63,9 +66,6 @@ function TopNavBar() {
                   </HorizontalFlex>
                 </CustomGrid>
               ))}
-              <CustomGrid md={4}>
-                <CustomSearch />
-              </CustomGrid>
               <CustomGrid md={2} className={classes.switchRoot} >
                 <TextSwitch />
               </CustomGrid>

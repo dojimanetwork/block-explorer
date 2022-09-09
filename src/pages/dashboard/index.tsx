@@ -4,6 +4,7 @@ import CustomGrid from "../../components/common/custom.grid";
 import HorizontalFlex from "../../components/common/horizontal.flex";
 import VerticalFlex from "../../components/common/vertical.flex";
 import { vpx22, vpx25 } from "../../constants/px.vh";
+import useLanguage from "../../hooks/useLanguage";
 import DashboardImg from "../../static/side-navbar/dash.svg";
 import Blocks from "./blocks";
 import ChainGraph from "./chain.graph";
@@ -14,6 +15,8 @@ import Transactions from "./transactions";
 
 function DashboardView() {
   const classes = useStyles();
+  const lang = useLanguage();
+  const { dashboard } = lang.languageText.titles
 
   return (
     <CustomGrid md={12}>
@@ -28,7 +31,7 @@ function DashboardView() {
               />
             </CustomGrid>
             <CustomGrid>
-              <Typography className={classes.title}>Dashboard</Typography>
+              <Typography className={classes.title}>{dashboard}</Typography>
             </CustomGrid>
           </HorizontalFlex>
         </CustomGrid>

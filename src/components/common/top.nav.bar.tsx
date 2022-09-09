@@ -29,7 +29,7 @@ function TopNavBar() {
           <CustomGrid md={7}>
             <HorizontalFlex>
             <CustomGrid md={4}>
-                <CustomSearch />
+                <CustomSearch plcTxt="🔍   Search by TxHash/Bloclk" />
               </CustomGrid>
               {HeaderData.map((data, index: number) => (
                 <CustomGrid md={2} key={`${data},${index}`}>

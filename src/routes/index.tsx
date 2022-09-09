@@ -3,7 +3,7 @@ import { lazy } from "react";
 import { DashboardUrl } from "./route.constants";
 const DojimaBlockExplorer = lazy(() => import("../pages/index"));
 const Dashboard = lazy(() => import("../pages/dashboard/index"))
-const Txs = lazy(() => import('../pages/transactions/tx.details.bond'))
+const Txs = lazy(() => import('../pages/transactions/index'))
 const Blocks = lazy(() => import('../pages/transactions/tx.details.unbond')) 
 const Validators = lazy(() => import("../pages/transactions/tx.set.ipaddress"))
 

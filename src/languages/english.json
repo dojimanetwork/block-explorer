@@ -1,4 +1,11 @@
 {
+  "titles":{
+    "dashboard": "Dashboard",
+    "blocks": "Blocks",
+    "txs": "Transactions",
+    "pools": "Pools",
+    "validators": "Validators"
+  },
   "dashbord":{
       "graph_title":{
           "txTitle": "Transaction",

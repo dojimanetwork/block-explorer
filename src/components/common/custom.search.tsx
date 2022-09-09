@@ -7,11 +7,15 @@ import { BlockNumbers } from "../../types";
 
 interface PlaceholderSearchIfc {
   onChangePlc?: (asset: string | null) => void;
+  plcTxt: string;
+  width?: string;
+  height?: string
 }
 
 function CustomSearch(props: PlaceholderSearchIfc) {
   const options = BlockNumbers;
-  const classes = useStyles();
+  const classes = useStyles({ ...props });
+  const { plcTxt } = props
 
   return (
     <Autocomplete
@@ -34,24 +38,24 @@ function CustomSearch(props: PlaceholderSearchIfc) {
         <TextField
           className={classes.placeholder}
           {...params}
-          placeholder="🔍   Search by TxHash/Bloclk"
+          placeholder={plcTxt}
         />
       )}
     />
   );
 }
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles<Theme, PlaceholderSearchIfc>((theme: Theme) => ({
   placeholder: {
     "& .MuiOutlinedInput-root": {
       borderRadius: "8px",
       backgroundColor: "rgba(93, 93, 93, 0.1)",
       width: "15vw",
-      height: "5vh",
+      height: "4vh",
       padding: "0px 0px 0px 1vw",
       color: SearchTxtClr,
       letterSpacing: "-0.26px",
-      fontSize: "1.65vh",
+      fontSize: "1.5vh",
       border: 'solid 0.8px #343739',
     },
     "&.MuiAutocomplete-listbox": {

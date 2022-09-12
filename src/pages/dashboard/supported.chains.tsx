@@ -2,7 +2,7 @@ import { Theme, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import CustomGrid from "../../components/common/custom.grid";
 import HorizontalFlex from "../../components/common/horizontal.flex";
-import { SupportedChainData } from "../../components/constants/supported.chains.data";
+import { SupportedChainData } from "../../components/constants/dashboard/supported.chains.data";
 import { SupportedClr } from "../../constants/colors";
 import { vpx18, vpx30 } from "../../constants/px.vh";
 import { wpx25 } from "../../constants/px.vw";

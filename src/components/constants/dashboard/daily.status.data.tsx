@@ -1,4 +1,4 @@
-import { OrangeClr, PurpleClr, YellowClr } from "../../constants/colors";
+import { OrangeClr, PurpleClr, YellowClr } from "../../../constants/colors";
 
 export const DailyStatusData = [
     {

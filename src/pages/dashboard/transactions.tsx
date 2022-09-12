@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 import CustomGrid from "../../components/common/custom.grid";
 import HorizontalFlex from "../../components/common/horizontal.flex";
 import VerticalFlex from "../../components/common/vertical.flex";
-import { DashboardTxsData } from "../../components/constants/dashboard.txs.data";
+import { DashboardTxsData } from "../../components/constants/dashboard/dashboard.txs.data";
 import { px10, px3, px5 } from "../../constants/px.rem";
 import { vpx10, vpx14, vpx18, vpx22, vpx30, vpx8 } from "../../constants/px.vh";
 import { wpx20 } from "../../constants/px.vw";

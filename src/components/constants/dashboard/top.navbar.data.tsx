@@ -1,5 +1,5 @@
-import { MarketClr, PriceClr, VolumeClr } from '../../constants/colors'
-import IconImg from '../../static/top-navbar/icon.svg'
+import { MarketClr, PriceClr, VolumeClr } from '../../../constants/colors'
+import IconImg from '../../../static/top-navbar/icon.svg'
 
 export const TopNavBarHeadersData = [
     {

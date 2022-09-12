@@ -1,4 +1,4 @@
-import { GreenClr, OrangeClr, RedClr, YellowClr } from "../../constants/colors";
+import { GreenClr, OrangeClr, RedClr, YellowClr } from "../../../constants/colors";
 
 export const DashboardTxsData = [
     {

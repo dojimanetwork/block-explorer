@@ -8,7 +8,7 @@ import { vpx12, vpx22, vpx25 } from "../../constants/px.vh";
 import useLanguage from "../../hooks/useLanguage";
 import TxImg from "../../static/dashboard/hor_tx.svg";
 import CloseIcon from "@mui/icons-material/Close";
-import { TxsTitles } from "../../components/constants/tx.data";
+import { TxsTitles } from "../../components/constants/txs/tx.data";
 import { OrangeClr } from "../../constants/colors";
 import TxTypeButton from "../../components/common/tx.type.btn";
 import TxItem from "./tx.item";
@@ -50,7 +50,7 @@ function TransactionsView() {
             <CustomGrid md={6}>
               <HorizontalFlex justifyContent="flex-end" >
               {txTitlesData.map((data) => (
-                <TxTypeButton txt={data.txt} />
+                <TxTypeButton txt={data.btnTxt} />
               ))}
               </HorizontalFlex>
             </CustomGrid>
@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   title: {
     fontSize: `${vpx22}`,
     color: theme.palette.common.white,
-    fontWeight: "normal",
+    fontWeight: '400',
     letterSpacing: `-0.44px`,
   },
   buttonsRoot: {

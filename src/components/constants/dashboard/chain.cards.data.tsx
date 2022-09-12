@@ -1,5 +1,5 @@
-import TetherImg from '../../static/chains/tether.svg'
-import AvalancheImg from '../../static/chains/avalanche.svg'
+import TetherImg from '../../../static/chains/tether.svg'
+import AvalancheImg from '../../../static/chains/avalanche.svg'
 
 export const ChainCardsData = [
     {

@@ -1,9 +1,9 @@
-import ArweaveImg from '../../static/chains/arweave.svg'
-import BinanceImg from '../../static/chains/binance.svg'
-import BtcImg from '../../static/chains/bitcoin.svg'
-import PolkaImg from '../../static/chains/polkadot.svg'
-import PolygonImg from '../../static/chains/polygon.svg'
-import SolanaImg from '../../static/chains/solana.svg'
+import ArweaveImg from '../../../static/chains/arweave.svg'
+import BinanceImg from '../../../static/chains/binance.svg'
+import BtcImg from '../../../static/chains/bitcoin.svg'
+import PolkaImg from '../../../static/chains/polkadot.svg'
+import PolygonImg from '../../../static/chains/polygon.svg'
+import SolanaImg from '../../../static/chains/solana.svg'
 
 export const SupportedChainData = [
     {

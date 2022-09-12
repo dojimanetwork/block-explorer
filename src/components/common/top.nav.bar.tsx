@@ -4,7 +4,7 @@ import { TopNavBarClr } from "../../constants/colors";
 import { vpx14, vpx80 } from "../../constants/px.vh";
 import { wpx6 } from "../../constants/px.vw";
 import DojimaTextLogo from "../../static/top-navbar/dojima-logo.svg";
-import { TopNavBarHeadersData } from "../constants/top.navbar.data";
+import { TopNavBarHeadersData } from "../constants/dashboard/top.navbar.data";
 import CustomGrid from "./custom.grid";
 import CustomSearch from "./custom.search";
 import HorizontalFlex from "./horizontal.flex";

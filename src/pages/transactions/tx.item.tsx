@@ -9,107 +9,163 @@ import {
   BlueClr,
   GreenClr,
   OrangeClr,
-  RedClr
+  RedClr,
 } from "../../constants/colors";
 import { vpx10, vpx12, vpx14, vpx15, vpx5, vpx9 } from "../../constants/px.vh";
 import { wpx12, wpx15 } from "../../constants/px.vw";
 import PolkaImg from "../../static/chains/polkadot.svg";
 import TxImg from "../../static/dashboard/hor_tx.svg";
-import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
-import EastRoundedIcon from '@mui/icons-material/EastRounded';
+import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
+import EastRoundedIcon from "@mui/icons-material/EastRounded";
+import { TxData } from "../../components/constants/txs/tx.data";
+import { px10, px3, px5 } from "../../constants/px.rem";
 
 function TxItem() {
   const classes = useStyles();
+  const txData = TxData;
 
   return (
-    <CustomGrid md={12}>
+    <CustomGrid md={12} className={classes.root} >
       <VerticalFlex>
-        <HorizontalFlex>
-          <CustomGrid md={2.46}>
-            <Paper className={classes.txTypeTitleCard}>
-              <HorizontalFlex alignItems="center">
-                <Typography className={classes.txTypeTitleTxt}>
-                  92FFC23DEC
-                </Typography>
-                <Typography className={classes.txTypeDate}>
-                  12/9/2022 , 09:13:49 PM
-                </Typography>
-                <Paper className={classes.txTypeNum}>
-                  <Typography className={classes.txTypeNumTxt}>21</Typography>
+        {txData.map((data) => (
+          <CustomGrid className={classes.cardRoot} >
+            <HorizontalFlex>
+              <CustomGrid md={2.7}>
+                <Paper className={classes.txTypeTitleCard}>
+                  <HorizontalFlex alignItems="center">
+                    <CustomGrid md={10}>
+                      <HorizontalFlex>
+                        <Typography className={classes.txTypeTitleTxt}>
+                          {data.txType}
+                        </Typography>
+                        <Typography className={classes.txTypeDate}>
+                          {data.dataTime}
+                        </Typography>
+                      </HorizontalFlex>
+                    </CustomGrid>
+                    <CustomGrid md={2}>
+                      <HorizontalFlex justifyContent="flex-end">
+                        <Paper className={classes.txTypeNum}>
+                          <Typography className={classes.txTypeNumTxt}>
+                            {data.num}
+                          </Typography>
+                        </Paper>
+                      </HorizontalFlex>
+                    </CustomGrid>
+                  </HorizontalFlex>
                 </Paper>
-              </HorizontalFlex>
-            </Paper>
-          </CustomGrid>
-          <CustomGrid md={9.16}>
-            <Paper className={classes.txTypeRightTopCard}>
+              </CustomGrid>
+              <CustomGrid md={8.8}>
+                <Paper className={classes.txTypeRightTopCard}>
+                  <HorizontalFlex>
+                    <CustomColoredPaper color={GreenClr} txt="ObsTxIn" />
+                    <CustomColoredPaper color={RedClr} txt="Network fee" />
+                    <CustomColoredPaper color={OrangeClr} txt="refund" />
+                  </HorizontalFlex>
+                </Paper>
+              </CustomGrid>
+            </HorizontalFlex>
+            <CustomGrid>
               <HorizontalFlex>
-                <CustomColoredPaper color={GreenClr} txt="ObsTxIn" />
-                <CustomColoredPaper color={RedClr} txt="Network fee" />
-                <CustomColoredPaper color={OrangeClr} txt="refund" />
+                <CustomGrid md={2.77}>
+                  <Paper className={classes.txTypeLeftCard}>
+                    <VerticalFlex>
+                      <Typography className={classes.hashAddress}>
+                        #{data.hashAddress}
+                      </Typography>
+                      <HorizontalFlex alignItems="center">
+                        <img
+                          src={PolkaImg}
+                          alt="dojima"
+                          className={classes.chainImg}
+                        />
+                        <Typography className={classes.gasFeeNum}>
+                          {data.gasFee}
+                        </Typography>
+                      </HorizontalFlex>
+                    </VerticalFlex>
+                  </Paper>
+                </CustomGrid>
+                <CustomGrid md={8.73}>
+                  <Paper className={classes.txTypeRightCard}>
+                    <VerticalFlex>
+                      <HorizontalFlex alignItems="center">
+                        <img
+                          src={PolkaImg}
+                          alt="dojima"
+                          className={classes.chainImg}
+                        />
+                        <Typography className={classes.chainName}>
+                          {data.chainName}
+                        </Typography>
+                      </HorizontalFlex>
+                      <HorizontalFlex
+                        alignItems="center"
+                        className={classes.textMargin}
+                      >
+                        <img
+                          src={TxImg}
+                          alt="dojima"
+                          className={classes.chainImg}
+                        />
+                        <Typography className={classes.address}>
+                          {data.chainAdd}
+                        </Typography>
+                        <ContentCopyRoundedIcon className={classes.copyIcon} />
+                        <EastRoundedIcon className={classes.arrowIcon} />
+                        <Typography className={classes.address}>
+                          {data.chainType}
+                        </Typography>
+                      </HorizontalFlex>
+                      <HorizontalFlex
+                        alignItems="center"
+                        className={classes.textMargin}
+                      >
+                        <img
+                          src={PolkaImg}
+                          alt="dojima"
+                          className={classes.chainImg}
+                        />
+                        <Typography
+                          style={{ color: "#fff" }}
+                          className={classes.address}
+                        >
+                          {data.numCoins}
+                        </Typography>
+                      </HorizontalFlex>
+                    </VerticalFlex>
+                  </Paper>
+                </CustomGrid>
               </HorizontalFlex>
-            </Paper>
+            </CustomGrid>
           </CustomGrid>
-        </HorizontalFlex>
-        <CustomGrid>
-          <HorizontalFlex>
-            <CustomGrid md={2.53}>
-              <Paper className={classes.txTypeLeftCard}>
-                <VerticalFlex>
-                  <Typography className={classes.hashAddress}>
-                    #92FFC23DEC...2A18A525FC
-                  </Typography>
-                  <HorizontalFlex alignItems="center">
-                    <img
-                      src={PolkaImg}
-                      alt="dojima"
-                      className={classes.chainImg}
-                    />
-                    <Typography className={classes.gasFeeNum}>0.03</Typography>
-                  </HorizontalFlex>
-                </VerticalFlex>
-              </Paper>
-            </CustomGrid>
-            <CustomGrid md={9.09}>
-              <Paper className={classes.txTypeRightCard}>
-                <VerticalFlex>
-                  <HorizontalFlex alignItems="center">
-                    <img
-                      src={PolkaImg}
-                      alt="dojima"
-                      className={classes.chainImg}
-                    />
-                    <Typography className={classes.chainName}>polkadot</Typography>
-                  </HorizontalFlex>
-                  <HorizontalFlex alignItems="center" className={classes.textMargin} >
-                    <img
-                      src={TxImg}
-                      alt="dojima"
-                      className={classes.chainImg}
-                    />
-                    <Typography className={classes.address}>Dojima1j82...h073r</Typography>
-                    <ContentCopyRoundedIcon className={classes.copyIcon} />
-                    <EastRoundedIcon className={classes.arrowIcon} />
-                    <Typography className={classes.address} >Band Module</Typography>
-                  </HorizontalFlex>
-                  <HorizontalFlex alignItems="center" className={classes.textMargin} >
-                    <img
-                      src={PolkaImg}
-                      alt="dojima"
-                      className={classes.chainImg}
-                    />
-                    <Typography style={{ color: '#fff' }} className={classes.address}>16,899 Dojima coin</Typography>
-                  </HorizontalFlex>
-                </VerticalFlex>
-              </Paper>
-            </CustomGrid>
-          </HorizontalFlex>
-        </CustomGrid>
+        ))}
       </VerticalFlex>
     </CustomGrid>
   );
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
+  root:{
+    overflowY: "scroll",
+    overflowX: "hidden",
+    maxHeight: "70vh",
+    "&::-webkit-scrollbar-track": {
+      border: theme.palette.grey[900],
+      backgroundColor: theme.palette.grey[800],
+    },
+    "&::-webkit-scrollbar": {
+      width: `${px3}`,
+    },
+    "&::-webkit-scrollbar-thumb": {
+      backgroundImage: "radial-gradient(at center, #fbb58a -20%, #ff751f 100%)",
+      borderRadius: `${px10}`,
+      maxHeight: `${px5}`,
+    },
+  },
+  cardRoot:{
+    margin: `0px 0px 2.5vh 0px`
+  },
   txTypeTitleCard: {
     borderRadius: "6px",
     backgroundColor: `${BackgroundClr}`,
@@ -155,10 +211,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     border: `solid 0.5px #4b4e4f`,
     margin: `0vh 0px 0px 0vw`,
     opacity: 0.8,
-    borderLeftWidth: "0.5px",
-    borderTopWidth: "0.5px",
-    borderRightWidth: "0px",
-    borderBottomWidth: "0.5px",
+    borderWidth: '0.5px 0px 0.5px 0.5px',
     boxShadow: "none",
   },
   txTypeRightCard: {
@@ -168,13 +221,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: `rgba(0, 129, 255, 0.1)`,
     border: `solid #4b4e4f`,
     opacity: 0.8,
-    borderLeftWidth: "0px",
-    borderTopWidth: "0px",
-    borderRightWidth: "0.5px",
-    borderBottomWidth: "0.5px",
+    borderWidth: '0px 0.5px 0.5px 0px',
     boxShadow: "none",
     borderRadius: "0px 0px 6px 0px",
-    margin: `0px 0px 0px 0vw`
+    margin: `0px 0px 0px 0vw`,
   },
   txTypeRightTopCard: {
     backgroundColor: "transparent",
@@ -205,15 +255,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: theme.palette.common.white,
     margin: `0px 0px 0px 0.6vw`,
   },
-  chainName:{
+  chainName: {
     fontSize: `${vpx14}`,
     fontWeight: 500,
     color: theme.palette.common.white,
     margin: `0px 0px 0px 0.5vw`,
   },
-  address:{
+  address: {
     fontSize: `${vpx14}`,
-    fontWeight: 'normal',
+    fontWeight: "normal",
     color: OrangeClr,
     margin: `0px 0.3vw 0px 0.5vw`,
   },
@@ -221,17 +271,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: `${vpx14}`,
     width: `${wpx12}`,
     color: theme.palette.common.white,
-    opacity: 0.7
+    opacity: 0.7,
   },
-  arrowIcon:{
+  arrowIcon: {
     height: `${vpx14}`,
     width: `${wpx12}`,
     color: theme.palette.common.white,
     margin: `0px 0.5vw 0px 0.7vw`,
   },
-  textMargin:{
-    margin: `1vh 0px 0px 0px`
-  }
+  textMargin: {
+    margin: `1vh 0px 0px 0px`,
+  },
 }));
 
 export default TxItem;

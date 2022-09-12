@@ -2,7 +2,7 @@ import { Paper, Theme, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import CustomGrid from "../../components/common/custom.grid";
 import VerticalFlex from "../../components/common/vertical.flex";
-import { DailyStatusData } from "../../components/constants/daily.status.data";
+import { DailyStatusData } from "../../components/constants/dashboard/daily.status.data";
 import { vpx10, vpx18 } from "../../constants/px.vh";
 
 function DailyStatus() {

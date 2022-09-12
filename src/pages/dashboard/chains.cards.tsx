@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 import CustomGrid from "../../components/common/custom.grid";
 import HorizontalFlex from "../../components/common/horizontal.flex";
 import VerticalFlex from "../../components/common/vertical.flex";
-import { ChainCardsData } from "../../components/constants/chain.cards.data";
+import { ChainCardsData } from "../../components/constants/dashboard/chain.cards.data";
 import { vpx14, vpx30, vpx8 } from "../../constants/px.vh";
 import { wpx25 } from "../../constants/px.vw";
 

@@ -6,6 +6,8 @@ const Dashboard = lazy(() => import("../pages/dashboard/index"))
 const Txs = lazy(() => import('../pages/transactions/index'))
 const Blocks = lazy(() => import('../pages/blocks/index')) 
 const Validators = lazy(() => import("../pages/transactions/tx.set.ipaddress"))
+const Pools = lazy(() => import('../pages/pools/index'))
+const TxUnbond = lazy(() => import('../pages/transactions/tx.details.unbond'))
 
 export default mount({
   "/block-explorer": NavBarWithView(
@@ -21,6 +23,12 @@ export default mount({
       }),
       "/validators": route({
         view: <Validators />,
+      }),
+      "/pools": route({
+        view: <Pools />,
+      }),
+      "/unbond": route({
+        view: <TxUnbond />,
       }),
     })
   ),

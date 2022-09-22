@@ -1,14 +1,14 @@
+import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
 import { Paper, Theme, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import CustomGrid from "../../components/common/custom.grid";
 import HorizontalFlex from "../../components/common/horizontal.flex";
 import VerticalFlex from "../../components/common/vertical.flex";
+import { BlocksInfoData } from "../../components/constants/blocks/blocks.data";
 import { vpx12, vpx14, vpx22 } from "../../constants/px.vh";
+import { wpx12 } from "../../constants/px.vw";
 import useLanguage from "../../hooks/useLanguage";
 import TransactionsView from "../transactions";
-import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
-import { wpx12 } from "../../constants/px.vw";
-import { BlocksInfoData } from "../../components/constants/blocks/blocks.data";
 
 function BlocksPage() {
   const lang = useLanguage();

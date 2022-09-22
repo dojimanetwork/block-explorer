@@ -12,4 +12,6 @@ export const PoolsUrl = `${LandingPageUrl}/block-explorer/pools`
 
 export const TxUnbondUrl = `${LandingPageUrl}/block-explorer/unbond`
 
+export const PoolDetailsUrl = `${LandingPageUrl}/block-explorer/pool-details`
+
 

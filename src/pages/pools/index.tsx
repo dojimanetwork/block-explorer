@@ -8,6 +8,7 @@ import { vpx22 } from "../../constants/px.vh";
 import useLanguage from "../../hooks/useLanguage";
 import PoolsImg from "../../static/side-navbar/validators.svg";
 import AvailablePools from "./available.pools";
+// import PoolDetails from "./pool.details";
 
 function Pools() {
   const classes = useStyles();
@@ -29,6 +30,7 @@ function Pools() {
         </CustomGrid>
         <CustomGrid>
           <AvailablePools />
+          {/* <PoolDetails /> */}
         </CustomGrid>
       </VerticalFlex>
     </CustomGrid>

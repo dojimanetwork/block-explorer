@@ -6,19 +6,22 @@ import VerticalFlex from "../../components/common/vertical.flex";
 import { AvailablePoolsData } from "../../components/constants/pools/available.pools";
 import { OrangeClr } from "../../constants/colors";
 import { vpx12, vpx14, vpx16, vpx20, vpx32 } from "../../constants/px.vh";
-import DojImg from "../../static/chains/binance.svg";
+import useNavi from "../../hooks/useNavi";
+import { PoolDetailsUrl } from "../../routes/route.constants";
+import DojImg from "../../static/chains/dojima-logo.svg";
 import Img from "../../static/pools/bnb.svg";
 
 function AvailablePools() {
   const classes = useStyles();
   const availablePools = AvailablePoolsData;
+  const { navigateToUrl } = useNavi()
 
   return (
     <CustomGrid md={12} className={classes.root}>
       <HorizontalFlex>
         {availablePools.map((data) => (
-          <CustomGrid md={2.5} className={classes.cardsRoot} >
-            <Paper className={classes.poolCard}>
+          <CustomGrid md={2.5} className={classes.cardsRoot}>
+            <Paper onClick={() => navigateToUrl(PoolDetailsUrl) } className={classes.poolCard}>
               <VerticalFlex alignItems="center">
                 <CustomGrid>
                   <img src={Img} alt="bnb" className={classes.chainImg} />
@@ -47,7 +50,7 @@ function AvailablePools() {
                           <CustomGrid>
                             <img
                               src={DojImg}
-                              alt="dashboard"
+                              alt="chain"
                               className={classes.imageRoot}
                             />
                           </CustomGrid>
@@ -68,8 +71,8 @@ function AvailablePools() {
                         <HorizontalFlex alignItems="center">
                           <CustomGrid>
                             <img
-                              src={DojImg}
-                              alt="dashboard"
+                              src={Img}
+                              alt="chain"
                               className={classes.imageRoot}
                             />
                           </CustomGrid>
@@ -107,13 +110,14 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     margin: `${vpx20} 0px 0px 0px`,
   },
-  cardsRoot:{
-    margin: `0px 3vw 3vh 0px`
+  cardsRoot: {
+    margin: `0px 3vw 3vh 0px`,
   },
   poolCard: {
     height: `35vh`,
     backgroundColor: "#171717",
     border: "0.6px solid rgba(255, 255, 255, 0.1)",
+    cursor: 'pointer'
   },
   chainImg: {
     height: `${vpx32}`,
@@ -121,7 +125,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   imageRoot: {
     height: `${vpx14}`,
-    margin: `0px 0.5vw 0px 0px`,
+    margin: `0px 0.2vw 0px 0px`,
   },
   title: {
     fontSize: `${vpx16}`,

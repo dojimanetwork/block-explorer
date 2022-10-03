@@ -1,17 +1,15 @@
 import CheckIcon from "@mui/icons-material/Check";
 import { Paper, Theme, Typography } from "@mui/material";
-import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
 import { makeStyles } from "@mui/styles";
 import CustomGrid from "../../components/common/custom.grid";
 import HorizontalFlex from "../../components/common/horizontal.flex";
+import CustomPagintaion from "../../components/common/pagination";
 import VerticalFlex from "../../components/common/vertical.flex";
 import { PoolInfoData } from "../../components/constants/pools/available.pools";
-import { OrangeClr } from "../../constants/colors";
-import { vpx12, vpx14, vpx16, vpx22, vpx35 } from "../../constants/px.vh";
+import { vpx12, vpx14, vpx22, vpx35 } from "../../constants/px.vh";
 import { wpx20 } from "../../constants/px.vw";
 import EthImg from "../../static/pools/eth.svg";
-import TransactionsView from "../transactions";
+import TxItem from "../transactions/tx.item";
 import PoolsSelectButtons from "./pool.select.buttons";
 
 function PoolDetails() {
@@ -113,18 +111,11 @@ function PoolDetails() {
           </HorizontalFlex>
         </CustomGrid>
         <CustomGrid>
-          <TransactionsView />
+          <TxItem />
         </CustomGrid>
         <CustomGrid className={classes.paginationRoot} md={12}>
           <HorizontalFlex justifyContent="flex-end">
-            <Stack spacing={1}>
-              <Pagination
-                className={classes.pagination}
-                variant="outlined"
-                shape="rounded"
-                count={10}
-              />
-            </Stack>
+            <CustomPagintaion />
           </HorizontalFlex>
         </CustomGrid>
       </VerticalFlex>
@@ -190,17 +181,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   paginationRoot: {
     margin: `2vh 0px 2vh 0px`,
   },
-  pagination: {
-    "& .MuiPaginationItem-root": {
-      color: OrangeClr,
-      fontSize: `${vpx16}`,
-      "&.Mui-selected": {
-        background: OrangeClr,
-        color: "white",
-        height: `3vh`,
-      },
-    },
-  },
+  
 }));
 
 export default PoolDetails;

@@ -12,6 +12,7 @@ import { TxsTitles } from "../../components/constants/txs/tx.data";
 import { OrangeClr } from "../../constants/colors";
 import TxTypeButton from "../../components/common/tx.type.btn";
 import TxItem from "./tx.item";
+import CustomPagintaion from "../../components/common/pagination";
 
 function TransactionsView() {
   const classes = useStyles();
@@ -23,12 +24,21 @@ function TransactionsView() {
     <CustomGrid md={12}>
       <VerticalFlex>
         <CustomGrid md={12}>
-          <HorizontalFlex alignItems="center">
-            <CustomGrid>
-              <img src={TxImg} alt="dashboard" className={classes.imageRoot} />
+          <HorizontalFlex>
+            <CustomGrid md={6}>
+              <HorizontalFlex alignItems="center">
+                <img
+                  src={TxImg}
+                  alt="dashboard"
+                  className={classes.imageRoot}
+                />
+                <Typography className={classes.title}>{txs}</Typography>
+              </HorizontalFlex>
             </CustomGrid>
-            <CustomGrid>
-              <Typography className={classes.title}>{txs}</Typography>
+            <CustomGrid md={6}>
+              <HorizontalFlex justifyContent="flex-end">
+                <CustomPagintaion />
+              </HorizontalFlex>
             </CustomGrid>
           </HorizontalFlex>
         </CustomGrid>
@@ -48,16 +58,16 @@ function TransactionsView() {
               </HorizontalFlex>
             </CustomGrid>
             <CustomGrid md={6}>
-              <HorizontalFlex justifyContent="flex-end" >
-              {txTitlesData.map((data) => (
-                <TxTypeButton txt={data.btnTxt} />
-              ))}
+              <HorizontalFlex justifyContent="flex-end">
+                {txTitlesData.map((data) => (
+                  <TxTypeButton txt={data.btnTxt} />
+                ))}
               </HorizontalFlex>
             </CustomGrid>
           </HorizontalFlex>
         </CustomGrid>
-        <CustomGrid md={12} >
-           <TxItem />     
+        <CustomGrid md={12}>
+          <TxItem />
         </CustomGrid>
       </VerticalFlex>
     </CustomGrid>
@@ -73,7 +83,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   title: {
     fontSize: `${vpx22}`,
     color: theme.palette.common.white,
-    fontWeight: '400',
+    fontWeight: "400",
     letterSpacing: `-0.44px`,
   },
   buttonsRoot: {
@@ -113,16 +123,16 @@ const useStyles = makeStyles((theme: Theme) => ({
       backgroundColor: "rgba(255, 117, 31, 0.1)",
     },
   },
-  txTypeTxt:{
+  txTypeTxt: {
     fontSize: `${vpx12}`,
     color: theme.palette.common.white,
     fontWeight: "normal",
     opacity: 0.45,
-    "&:active":{
+    "&:active": {
       color: OrangeClr,
-      opacity: 1
-    }
-  }
+      opacity: 1,
+    },
+  },
 }));
 
 export default TransactionsView;

@@ -1,0 +1,8 @@
+<svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="27" cy="27" r="27" fill="#3F3F3F"/>
+<g opacity="0.5">
+<path opacity="0.5" d="M27 37C32.5228 37 37 32.5228 37 27C37 21.4772 32.5228 17 27 17C21.4772 17 17 21.4772 17 27C17 32.5228 21.4772 37 27 37Z" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.5" d="M27 23V27" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.5" d="M27 31H27.01" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

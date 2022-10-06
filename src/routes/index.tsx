@@ -5,7 +5,7 @@ const DojimaBlockExplorer = lazy(() => import("../pages/index"));
 const Dashboard = lazy(() => import("../pages/dashboard/index"))
 const Txs = lazy(() => import('../pages/transactions/index'))
 const Blocks = lazy(() => import('../pages/blocks/index')) 
-const Validators = lazy(() => import("../pages/transactions/tx.set.ipaddress"))
+const Validators = lazy(() => import("../pages/Validators/index"))
 const Pools = lazy(() => import('../pages/pools/index'))
 const TxUnbond = lazy(() => import('../pages/transactions/tx.details.unbond'))
 const PoolDetails = lazy(() => import('../pages/pools/pool.details'))

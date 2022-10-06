@@ -1,16 +1,19 @@
-import { Typography } from "@mui/material";
+import { Theme, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import CustomGrid from "../../components/common/custom.grid";
 import HorizontalFlex from "../../components/common/horizontal.flex";
 import VerticalFlex from "../../components/common/vertical.flex";
-import { PriceClr } from "../../constants/colors";
-import { vpx22, vpx25 } from "../../constants/px.vh";
+import { vpx22, vpx30 } from "../../constants/px.vh";
+import { wpx30 } from "../../constants/px.vw";
+import useLanguage from "../../hooks/useLanguage";
 import ValidatorsImg from "../../static/side-navbar/validators.svg";
 import StatusItemView from "./status.view.item";
 import CustomTable from "./table";
 
 function ValidatorsView() {
   const classes = useStyles();
+  const lang = useLanguage();
+  const { validators } = lang.languageText.titles
 
   return (
     <CustomGrid md={12}>
@@ -25,14 +28,14 @@ function ValidatorsView() {
               />
             </CustomGrid>
             <CustomGrid>
-              <Typography className={classes.title}>Validators</Typography>
+              <Typography className={classes.title}>{validators}</Typography>
             </CustomGrid>
           </HorizontalFlex>
         </CustomGrid>
         <CustomGrid md={12} >
           <HorizontalFlex>
             <StatusItemView/>
-            <CustomTable headers={[]} rows={[]} />
+            <CustomTable headers={['jejsj','kflsjal','jejsj','kflsjal','jejsj','kflsjal','jejsj','kflsjal']} rows={['kdsfghjk','kdsfghjk','kdsfghjk','kdsfghjk','kdsfghjk','kdsfghjk']} />
           </HorizontalFlex>
         </CustomGrid>
         {/* <CustomGrid>
@@ -50,16 +53,15 @@ function ValidatorsView() {
   );
 }
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme: Theme) => ({
   imageRoot: {
-    height: `${vpx25}`,
-    width: `${vpx25}`,
+    height: `${vpx30}`,
+    width: `${wpx30}`,
     margin: `0px 0.5vw 0px 0px`,
   },
   title: {
     fontSize: `${vpx22}`,
-    color: PriceClr,
-    fontWeight: "bold",
+    color: '#f3f3f3',
     letterSpacing: `-0.44px`,
   },
 }));

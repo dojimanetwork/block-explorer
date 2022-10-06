@@ -23,7 +23,7 @@ function BlocksPage() {
           <HorizontalFlex>
             <CustomGrid md={6}>
               <HorizontalFlex>
-                <CustomGrid md={1.5}>
+                <CustomGrid md={1.3}>
                   <Typography className={classes.title}>{blocks}</Typography>
                 </CustomGrid>
                 <CustomGrid md={10.5}>
@@ -61,8 +61,7 @@ function BlocksPage() {
                       <Typography style={{ color: `${data.color}` }} className={classes.infoValue} >{data.value}</Typography>
                     </VerticalFlex>
                   </CustomGrid>
-                  ))}
-                  
+                  ))}  
                 </HorizontalFlex>
             </CustomGrid>
           </Paper>

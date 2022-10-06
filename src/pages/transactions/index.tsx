@@ -42,7 +42,7 @@ function TransactionsView() {
             </CustomGrid>
           </HorizontalFlex>
         </CustomGrid>
-        <CustomGrid md={12} className={classes.buttonsRoot}>
+        <CustomGrid md={12}>
           <HorizontalFlex>
             <CustomGrid md={6}>
               <HorizontalFlex>
@@ -85,9 +85,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: theme.palette.common.white,
     fontWeight: "400",
     letterSpacing: `-0.44px`,
-  },
-  buttonsRoot: {
-    margin: `2vh 0px 0px 0px`,
   },
   searchItem: {
     borderRadius: "8px",

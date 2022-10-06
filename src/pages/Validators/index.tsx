@@ -8,12 +8,12 @@ import { wpx30 } from "../../constants/px.vw";
 import useLanguage from "../../hooks/useLanguage";
 import ValidatorsImg from "../../static/side-navbar/validators.svg";
 import StatusItemView from "./status.view.item";
-import CustomTable from "./table";
+import CustomTable from "../../components/common/table";
 
 function ValidatorsView() {
   const classes = useStyles();
   const lang = useLanguage();
-  const { validators } = lang.languageText.titles
+  const { validators } = lang.languageText.titles;
 
   return (
     <CustomGrid md={12}>
@@ -32,10 +32,29 @@ function ValidatorsView() {
             </CustomGrid>
           </HorizontalFlex>
         </CustomGrid>
-        <CustomGrid md={12} >
+        <CustomGrid md={12}>
           <HorizontalFlex>
-            <StatusItemView/>
-            <CustomTable headers={['jejsj','kflsjal','jejsj','kflsjal','jejsj','kflsjal','jejsj','kflsjal']} rows={['kdsfghjk','kdsfghjk','kdsfghjk','kdsfghjk','kdsfghjk','kdsfghjk']} />
+            <StatusItemView />
+            <CustomTable
+              headers={[
+                "jejsj",
+                "kflsjal",
+                "jejsj",
+                "kflsjal",
+                "jejsj",
+                "kflsjal",
+                "jejsj",
+                "kflsjal",
+              ]}
+              rows={[
+                "kdsfghjk",
+                "kdsfghjk",
+                "kdsfghjk",
+                "kdsfghjk",
+                "kdsfghjk",
+                "kdsfghjk",
+              ]}
+            />
           </HorizontalFlex>
         </CustomGrid>
         {/* <CustomGrid>
@@ -61,9 +80,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   title: {
     fontSize: `${vpx22}`,
-    color: '#f3f3f3',
+    color: "#f3f3f3",
     letterSpacing: `-0.44px`,
   },
 }));
 
-export default ValidatorsView; 
+export default ValidatorsView;

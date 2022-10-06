@@ -4,6 +4,7 @@ import { DashboardUrl } from "./route.constants";
 const DojimaBlockExplorer = lazy(() => import("../pages/index"));
 const Dashboard = lazy(() => import("../pages/dashboard/index"))
 const Txs = lazy(() => import('../pages/transactions/index'))
+const BlocksTable = lazy(() => import('../pages/blocks/blocks.table')) 
 const Blocks = lazy(() => import('../pages/blocks/index')) 
 const Validators = lazy(() => import("../pages/Validators/index"))
 const Pools = lazy(() => import('../pages/pools/index'))
@@ -15,6 +16,9 @@ export default mount({
     mount({
       "/dashboard": route({
         view: <Dashboard />,
+      }),
+      "/blocks-table": route({
+        view: <BlocksTable />,
       }),
       "/blocks": route({
         view: <Blocks />,

@@ -4,6 +4,8 @@ export const DashboardUrl = `${LandingPageUrl}/block-explorer/dashboard`
 
 export const BlocksUrl = `${LandingPageUrl}/block-explorer/blocks`
 
+export const BlocksTableUrl = `${LandingPageUrl}/block-explorer/blocks-table`
+
 export const TransactionsUrl = `${LandingPageUrl}/block-explorer/transactions`
 
 export const ValidatorsUrl = `${LandingPageUrl}/block-explorer/validators`

@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  /* border: 1px solid red; */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #171717;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

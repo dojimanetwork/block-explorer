@@ -35,6 +35,7 @@ function BlocksTable() {
         <CustomGrid className={classes.tableRoot} >
           <CustomTable
           rowOnClick={() => navigateToUrl(BlocksUrl)}
+          tableWidth="90vw"
             headers={[
               "jejsj",
               "kflsjal",

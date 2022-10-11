@@ -9,6 +9,7 @@ import useLanguage from "../../hooks/useLanguage";
 import ValidatorsImg from "../../static/side-navbar/validators.svg";
 import StatusItemView from "./status.view.item";
 import CustomTable from "../../components/common/table";
+import CustomPagintaion from "../../components/common/pagination";
 
 function ValidatorsView() {
   const classes = useStyles();
@@ -57,6 +58,11 @@ function ValidatorsView() {
             />
           </HorizontalFlex>
         </CustomGrid>
+        <CustomGrid className={classes.paginationRoot} >
+          <HorizontalFlex justifyContent="flex-end" >
+          <CustomPagintaion />
+          </HorizontalFlex>
+        </CustomGrid>
         {/* <CustomGrid>
           <HorizontalFlex>
             <CustomGrid md={6}>
@@ -83,6 +89,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: "#f3f3f3",
     letterSpacing: `-0.44px`,
   },
+  paginationRoot:{
+    margin: `2vh 0px 0px 0px`
+  }
 }));
 
 export default ValidatorsView;

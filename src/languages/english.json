@@ -4,7 +4,8 @@
     "blocks": "Blocks",
     "txs": "Transactions",
     "pools": "Pools",
-    "validators": "Validators"
+    "validators": "Validators",
+    "address": "Address"
   },
   "dashbord":{
       "graph_title":{

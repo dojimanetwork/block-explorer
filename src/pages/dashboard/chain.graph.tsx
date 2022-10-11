@@ -12,7 +12,7 @@ import TxIcon from "../../static/graph/transaction.svg";
 function DashboardGraph() {
   const classes = useStyles();
   const lang = useLanguage();
-  const {txTitle, blockTitle} = lang.languageText.dashbord.graph_title
+  const { txTitle, blockTitle } = lang.languageText.dashbord.graph_title;
 
   return (
     <CustomGrid md={11.5}>
@@ -36,7 +36,7 @@ function DashboardGraph() {
           </CustomGrid>
         </HorizontalFlex>
         <CustomGrid>
-          <ChainGraph/>
+          <ChainGraph />
         </CustomGrid>
       </Paper>
     </CustomGrid>

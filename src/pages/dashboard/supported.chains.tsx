@@ -31,7 +31,7 @@ function SupportedChains() {
       <CustomGrid md={12} className={classes.coinsRoot}>
         <HorizontalFlex>
           {chainData.map((data, index: number) => (
-            <CustomGrid md={1.5}>
+            <CustomGrid key={`${data},${index}`} md={1.5}>
               <HorizontalFlex>
                 <CustomGrid>
                   <img

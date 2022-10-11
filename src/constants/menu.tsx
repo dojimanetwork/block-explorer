@@ -4,7 +4,7 @@ import TransactionImg from '../static/side-navbar/transaction.svg'
 import IcBlockImg from '../static/side-navbar/ic_block_chain.svg'
 import IcObjectiveImg from '../static/side-navbar/ic_objective_block.svg'
 import ValidatorsImg from '../static/side-navbar/validators.svg'
-import { BlocksTableUrl, DashboardUrl, PoolsUrl, TransactionsUrl, TxUnbondUrl, ValidatorsUrl } from '../routes/route.constants'
+import { AddressViewUrl, BlocksTableUrl, DashboardUrl, PoolsUrl, TransactionsUrl, TxUnbondUrl, ValidatorsUrl } from '../routes/route.constants'
 
   export const menuData = [
     {
@@ -66,7 +66,7 @@ import { BlocksTableUrl, DashboardUrl, PoolsUrl, TransactionsUrl, TxUnbondUrl, V
       name: IcObjectiveImg,
       active: false,
       Icon: undefined,
-      link: TxUnbondUrl,
+      link: AddressViewUrl,
       public: false,
       private: true,
       md: 1.5,

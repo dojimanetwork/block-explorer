@@ -16,4 +16,8 @@ export const TxUnbondUrl = `${LandingPageUrl}/block-explorer/unbond`
 
 export const PoolDetailsUrl = `${LandingPageUrl}/block-explorer/pool-details`
 
+export const AddressViewUrl = `${LandingPageUrl}/block-explorer/address`
+
+export const AddressTypeUrl = `${LandingPageUrl}/block-explorer/address-type`
+
 

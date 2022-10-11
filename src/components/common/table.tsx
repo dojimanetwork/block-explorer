@@ -8,6 +8,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { makeStyles } from "@mui/styles";
+import { BackgroundClr } from "../../constants/colors";
 import { px5, px10, px3 } from "../../constants/px.rem";
 
 export type row = any;
@@ -91,7 +92,7 @@ const useStyles = makeStyles<Theme, TableProps>((theme: Theme) => ({
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#04153b",
+    backgroundColor: "#264da3",
     color: theme.palette.grey[200],
     borderBottom: `1px solid ${theme.palette.grey[700]}`,
     overflow: "scroll",
@@ -109,7 +110,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
-    backgroundColor: "#04153b",
+    backgroundColor: `${BackgroundClr}`,
     color: theme.palette.grey[500],
     borderBottom: `1px solid ${theme.palette.grey[800]}`,
     cursor: "pointer",

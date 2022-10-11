@@ -10,6 +10,8 @@ const Validators = lazy(() => import("../pages/Validators/index"))
 const Pools = lazy(() => import('../pages/pools/index'))
 const TxUnbond = lazy(() => import('../pages/transactions/tx.details.unbond'))
 const PoolDetails = lazy(() => import('../pages/pools/pool.details'))
+const AddressView = lazy(() => import('../pages/address/index'))
+const AddressType = lazy(() => import('../pages/address/address.type'))
 
 export default mount({
   "/block-explorer": NavBarWithView(
@@ -38,6 +40,12 @@ export default mount({
       "/unbond": route({
         view: <TxUnbond />,
       }),
+      "/address": route({
+        view: <AddressView />,
+      }),
+      "/address-type": route({
+        view: <AddressType />,
+      }),     
     })
   ),
   "/": redirect(`${DashboardUrl}`),

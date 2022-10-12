@@ -1,10 +1,10 @@
+import { BlocksTableUrl, DashboardUrl, PoolsUrl, TransactionsUrl, ValidatorsUrl, VaultTableUrl } from '../routes/route.constants'
 import BlockImg from '../static/side-navbar/block.svg'
 import DashImg from '../static/side-navbar/dash.svg'
-import TransactionImg from '../static/side-navbar/transaction.svg'
 import IcBlockImg from '../static/side-navbar/ic_block_chain.svg'
 import IcObjectiveImg from '../static/side-navbar/ic_objective_block.svg'
+import TransactionImg from '../static/side-navbar/transaction.svg'
 import ValidatorsImg from '../static/side-navbar/validators.svg'
-import { AddressViewUrl, BlocksTableUrl, DashboardUrl, PoolsUrl, TransactionsUrl, TxUnbondUrl, ValidatorsUrl } from '../routes/route.constants'
 
   export const menuData = [
     {
@@ -66,7 +66,7 @@ import { AddressViewUrl, BlocksTableUrl, DashboardUrl, PoolsUrl, TransactionsUrl
       name: IcObjectiveImg,
       active: false,
       Icon: undefined,
-      link: AddressViewUrl,
+      link: VaultTableUrl,
       public: false,
       private: true,
       md: 1.5,

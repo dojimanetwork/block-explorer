@@ -8,11 +8,12 @@ import VerticalFlex from "../../components/common/vertical.flex";
 import { PoolInfoData } from "../../components/constants/pools/available.pools";
 import { vpx12, vpx14, vpx22, vpx35 } from "../../constants/px.vh";
 import { wpx20 } from "../../constants/px.vw";
-import EthImg from "../../static/pools/eth.svg";
+import VaultImg from "../../static/side-navbar/vault-icon.svg";
+import PoolsSelectButtons from "../pools/pool.select.buttons";
 import TxItem from "../transactions/tx.item";
-import PoolsSelectButtons from "./pool.select.buttons";
 
-function PoolDetails() {
+
+function VaultAddress() {
   const classes = useStyles();
   const poolInfoData = PoolInfoData;
 
@@ -23,9 +24,9 @@ function PoolDetails() {
           <HorizontalFlex>
             <CustomGrid md={6}>
               <HorizontalFlex>
-                <img src={EthImg} alt="chain" className={classes.chainImg} />
+                <img src={VaultImg} alt="chain" className={classes.chainImg} />
                 <CustomGrid>
-                  <Typography className={classes.title}>ETH.ETH</Typography>
+                  <Typography className={classes.title}>Address</Typography>
                 </CustomGrid>
               </HorizontalFlex>
             </CustomGrid>
@@ -94,7 +95,7 @@ function PoolDetails() {
         <CustomGrid md={12}>
           <HorizontalFlex>
             <CustomGrid md={6}>
-              <PoolsSelectButtons txt1="Transaction" txt2="Provider" txt3="Vault"/>
+              <PoolsSelectButtons txt1="Transaction" txt2="Coins" />
             </CustomGrid>
             <CustomGrid md={6}>
               <HorizontalFlex justifyContent="flex-end">
@@ -184,4 +185,4 @@ const useStyles = makeStyles((theme: Theme) => ({
   
 }));
 
-export default PoolDetails;
+export default VaultAddress;

@@ -20,4 +20,8 @@ export const AddressViewUrl = `${LandingPageUrl}/block-explorer/address`
 
 export const AddressTypeUrl = `${LandingPageUrl}/block-explorer/address-type`
 
+export const VaultTableUrl = `${LandingPageUrl}/block-explorer/vault-table`
+
+export const VaultAddressUrl = `${LandingPageUrl}/block-explorer/vault-address`
+
 

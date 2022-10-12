@@ -12,6 +12,8 @@ const TxUnbond = lazy(() => import('../pages/transactions/tx.details.unbond'))
 const PoolDetails = lazy(() => import('../pages/pools/pool.details'))
 const AddressView = lazy(() => import('../pages/address/index'))
 const AddressType = lazy(() => import('../pages/address/address.type'))
+const VaultView = lazy(() => import('../pages/vault/vault.table'))
+const VaultAddress = lazy(() => import('../pages/vault/vault.address'))
 
 export default mount({
   "/block-explorer": NavBarWithView(
@@ -45,6 +47,12 @@ export default mount({
       }),
       "/address-type": route({
         view: <AddressType />,
+      }),  
+      "/vault-table": route({
+        view: <VaultView />,
+      }),     
+      "/vault-address": route({
+        view: <VaultAddress />,
       }),     
     })
   ),

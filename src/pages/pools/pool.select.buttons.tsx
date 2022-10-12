@@ -6,14 +6,21 @@ import { OrangeClr } from '../../constants/colors';
 import { px6 } from '../../constants/px.rem';
 import { vpx14 } from '../../constants/px.vh';
 
-function PoolsSelectButtons() {
+interface PoolsButtonIfc {
+  txt1?: string;
+  txt2?: string;
+  txt3?: string
+}
+
+function PoolsSelectButtons(props: PoolsButtonIfc) {
     const classes = useStyles();
+    const { txt1, txt2, txt3 } = props
 
   return (
     <ButtonGroup>
-      <Button className={classes.button}>Transaction</Button>
-      <Button className={classes.button}>Provider</Button>
-      <Button className={classes.button}>Vault</Button>
+      <Button className={classes.button}>{txt1}</Button>
+      <Button className={classes.button}>{txt2}</Button>
+      <Button className={classes.button}>{txt3}</Button>
     </ButtonGroup>
   );
 }

@@ -20,6 +20,13 @@ function BlocksView() {
     fetchData();
   }, []);
 
+  var inverval_timer;
+
+  //getting latest data for every 5 seconds
+  inverval_timer = setInterval(function () {
+    fetchData();
+  }, 5000);
+
   const fetchData = async () => {
     let response = await axios.get("http://localhost:26657/status?");
     if (response.status === 200) {

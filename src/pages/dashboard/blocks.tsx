@@ -17,21 +17,29 @@ function BlocksView() {
   const txsData = DashboardBlocksData;
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    setInterval(async () => {
+      await fetchBlockDataByNumber();
+    }, 5000);
+    // eslint-disable-next-line
+  });
 
-  var inverval_timer;
-
-  //getting latest data for every 5 seconds
-  inverval_timer = setInterval(function () {
-    fetchData();
-  }, 5000);
-
-  const fetchData = async () => {
+  const fetchBlockDataByNumber = async () => {
+    // const blockHeight = await fetchBlocksData();
     let response = await axios.get("http://localhost:26657/status?");
     if (response.status === 200) {
       let result: BlockStatusType = response.data;
+      // blockHeight = result.result.sync_info.latest_block_height;
+      let blockHeight = result.result.sync_info.latest_block_height;
       console.log("++++++", result.result.sync_info.latest_block_height);
+      let res = await axios.get(
+        `http://localhost:26657/block?height=${Number(blockHeight)}`
+      );
+      if (res.status === 200) {
+        let rslt = res.data;
+        console.log("block height ++++++", rslt);
+        console.log("block data ++++++", res.data);
+        return result;
+      }
     }
   };
 

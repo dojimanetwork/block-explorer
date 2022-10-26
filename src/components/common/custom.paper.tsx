@@ -1,5 +1,5 @@
-import { Paper, Theme } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { Paper, Theme } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
 export interface PaperIfc {
   height?: string;
@@ -21,12 +21,12 @@ const useStyles = makeStyles<Theme, PaperIfc>((theme: Theme) => ({
   paperRoot: {
     height: ({ height }) => height ?? `44vh`,
     width: ({ width }) => width ?? `12vw`,
-    backgroundColor: ({ bgClr }) => bgClr ?? "transparent",
-    boxShadow: "10px 15px 10px 0 rgba(0, 0, 0, 0.2)",
+    backgroundColor: ({ bgClr }) => bgClr ?? 'transparent',
+    boxShadow: '10px 15px 10px 0 rgba(0, 0, 0, 0.2)',
     backgroundImage: ({ radiantClr }) =>
       `radial-gradient(140% 70% at 100% 0%, ${radiantClr} -40%, rgba(0, 0, 0, 0) 70%) ,linear-gradient(359deg, rgba(255, 255, 255, 0.16) -80%, rgba(255, 255, 255, 0.04) 97.48%)`,
     padding: ({ padding }) => padding ?? `1vh 1.2vw 1vh 1.2vw`,
-    border: "0.5px solid rgba(255, 255, 255, 0.4)",
+    border: '0.5px solid rgba(255, 255, 255, 0.4)',
     margin: ({ margin }) => margin ?? `0px 0px 1.5vh 0px`,
   },
 }));

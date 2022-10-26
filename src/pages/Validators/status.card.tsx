@@ -1,12 +1,10 @@
-import { Theme, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import CustomGrid from "../../components/common/custom.grid";
-import HorizontalFlex from "../../components/common/horizontal.flex";
-import VerticalFlex from "../../components/common/vertical.flex";
-import { vpx14, vpx17 } from "../../constants/px.vh";
-import {
-    wpx48
-} from "../../constants/px.vw";
+import { Theme, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import CustomGrid from '../../components/common/custom.grid';
+import HorizontalFlex from '../../components/common/horizontal.flex';
+import VerticalFlex from '../../components/common/vertical.flex';
+import { vpx14, vpx17 } from '../../constants/px.vh';
+import { wpx48 } from '../../constants/px.vw';
 
 interface BalanceProps {
   title?: string;
@@ -44,17 +42,17 @@ const useStyles = makeStyles<Theme, BalanceProps>((theme: Theme) => ({
     margin: `0px 0.5vw 0px 0px`,
   },
   title: {
-    color: "#fff",
+    color: '#fff',
     fontSize: `${vpx14}`,
     fontWeight: 'normal',
-    lineHeight: "normal",
-    letterSpacing: "-0.24px",
+    lineHeight: 'normal',
+    letterSpacing: '-0.24px',
     opacity: 0.7,
   },
   value: {
-    lineHeight: "normal",
-    letterSpacing: "-0.32px",
-    color: "#fff",
+    lineHeight: 'normal',
+    letterSpacing: '-0.32px',
+    color: '#fff',
     fontSize: `${vpx17}`,
     fontWeight: '500',
   },

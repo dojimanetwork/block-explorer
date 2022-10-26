@@ -1,9 +1,9 @@
-import { Theme } from "@mui/material";
-import Button from "@mui/material/Button";
-import { makeStyles } from "@mui/styles";
-import { TitleClr } from "../../constants/colors";
-import { px12 } from "../../constants/px.rem";
-import { vpx16, vpx50 } from "../../constants/px.vh";
+import { Theme } from '@mui/material';
+import Button from '@mui/material/Button';
+import { makeStyles } from '@mui/styles';
+import { TitleClr } from '../../constants/colors';
+import { px12 } from '../../constants/px.rem';
+import { vpx16, vpx50 } from '../../constants/px.vh';
 
 interface ButtonProps {
   width?: string;
@@ -42,33 +42,33 @@ function CommonButton(props: ButtonProps) {
 
 const MuiStyles = makeStyles((theme: Theme) => ({
   button: {
-    backgroundImage: "linear-gradient(to left, #8552CF 100%,#B99BEC 0%);",
-    "&.MuiButton-root": {
-      width: "12vw",
+    backgroundImage: 'linear-gradient(to left, #8552CF 100%,#B99BEC 0%);',
+    '&.MuiButton-root': {
+      width: '12vw',
       height: `${vpx50}`,
       border: `2px solid #B99BEC`,
       borderRadius: `${px12}`,
       color: `${TitleClr}`,
-      overFlow: "flex-wrap",
+      overFlow: 'flex-wrap',
       fontSize: `${vpx16}`,
       fontWeight: 500,
       fontFamily: 'Inter',
       cursor: 'pointer',
-      zIndex: 1
+      zIndex: 1,
     },
-    [theme.breakpoints.down("sm")]:{
-      "&.MuiButton-root": {
-        width: "40vw",
+    [theme.breakpoints.down('sm')]: {
+      '&.MuiButton-root': {
+        width: '40vw',
         height: `${vpx50}`,
         border: `2px solid #B99BEC`,
         borderRadius: `${px12}`,
         color: `${TitleClr}`,
-        overFlow: "flex-wrap",
+        overFlow: 'flex-wrap',
         fontSize: `${vpx16}`,
         fontWeight: 500,
         fontFamily: 'Inter',
       },
-    }
+    },
   },
 }));
 

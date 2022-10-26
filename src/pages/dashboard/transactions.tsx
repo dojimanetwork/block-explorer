@@ -1,13 +1,13 @@
-import { Paper, Theme, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import CustomGrid from "../../components/common/custom.grid";
-import HorizontalFlex from "../../components/common/horizontal.flex";
-import VerticalFlex from "../../components/common/vertical.flex";
-import { DashboardTxsData } from "../../components/constants/dashboard/dashboard.txs.data";
-import { px10, px3, px5 } from "../../constants/px.rem";
-import { vpx10, vpx14, vpx18, vpx22, vpx30, vpx8 } from "../../constants/px.vh";
-import { wpx20 } from "../../constants/px.vw";
-import TransactionImg from "../../static/side-navbar/transaction.svg";
+import { Paper, Theme, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import CustomGrid from '../../components/common/custom.grid';
+import HorizontalFlex from '../../components/common/horizontal.flex';
+import VerticalFlex from '../../components/common/vertical.flex';
+import { DashboardTxsData } from '../../components/constants/dashboard/dashboard.txs.data';
+import { px10, px3, px5 } from '../../constants/px.rem';
+import { vpx10, vpx14, vpx18, vpx22, vpx30, vpx8 } from '../../constants/px.vh';
+import { wpx20 } from '../../constants/px.vw';
+import TransactionImg from '../../static/side-navbar/transaction.svg';
 
 function Transactions() {
   const classes = useStyles();
@@ -92,27 +92,27 @@ function Transactions() {
 const useStyles = makeStyles((theme: Theme) => ({
   paperRoot: {
     height: `60vh`,
-    backgroundColor: "transparent",
+    backgroundColor: 'transparent',
     // backgroundImage: `radial-gradient(140% 70% at 100% 0%,#264da3 -40%, rgba(0, 0, 0, 0) 70%) ,linear-gradient(359deg, rgba(255, 255, 255, 0.16) -80%, rgba(255, 255, 255, 0.04) 97.48%)`,
     padding: `2vh 2vw 2vh 2vw`,
-    border: "0.5px solid rgba(255, 255, 255, 0.4)",
+    border: '0.5px solid rgba(255, 255, 255, 0.4)',
     margin: `3.5vh 0px 1.5vh 0px`,
     opacity: 0.9,
-    overflow: "scroll",
+    overflow: 'scroll',
   },
   contentRoot: {
-    overflowY: "scroll",
-    overflowX: "hidden",
-    maxHeight: "47vh",
-    "&::-webkit-scrollbar-track": {
+    overflowY: 'scroll',
+    overflowX: 'hidden',
+    maxHeight: '47vh',
+    '&::-webkit-scrollbar-track': {
       border: theme.palette.grey[900],
       backgroundColor: theme.palette.grey[800],
     },
-    "&::-webkit-scrollbar": {
+    '&::-webkit-scrollbar': {
       width: `${px3}`,
     },
-    "&::-webkit-scrollbar-thumb": {
-      backgroundImage: "radial-gradient(at center, #fbb58a -20%, #ff751f 100%)",
+    '&::-webkit-scrollbar-thumb': {
+      backgroundImage: 'radial-gradient(at center, #fbb58a -20%, #ff751f 100%)',
       borderRadius: `${px10}`,
       maxHeight: `${px5}`,
     },
@@ -123,7 +123,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   title: {
     fontSize: `${vpx18}`,
     color: theme.palette.common.white,
-    fontWeight: "normal",
+    fontWeight: 'normal',
     letterSpacing: `-0.44px`,
   },
   imageRoot: {
@@ -138,8 +138,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   hashId: {
     color: theme.palette.common.white,
     fontSize: `${vpx14}`,
-    fontWeight: "normal",
-    letterSpacing: "-0.28px",
+    fontWeight: 'normal',
+    letterSpacing: '-0.28px',
     opacity: 0.8,
   },
   valuePaper: {
@@ -154,15 +154,15 @@ const useStyles = makeStyles((theme: Theme) => ({
   time: {
     color: theme.palette.common.white,
     fontSize: `${vpx10}`,
-    fontWeight: "normal",
-    fontStyle: "normal",
+    fontWeight: 'normal',
+    fontStyle: 'normal',
     opacity: 0.6,
   },
   horizontalDivider: {
-    height: "0.6px",
+    height: '0.6px',
     margin: `2vh 0px 0px 0px`,
     backgroundImage:
-      "linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0.42) 100%)",
+      'linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0.42) 100%)',
     opacity: 0.2,
   },
 }));

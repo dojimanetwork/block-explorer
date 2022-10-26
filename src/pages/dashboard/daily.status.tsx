@@ -1,9 +1,9 @@
-import { Paper, Theme, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import CustomGrid from "../../components/common/custom.grid";
-import VerticalFlex from "../../components/common/vertical.flex";
-import { DailyStatusData } from "../../components/constants/dashboard/daily.status.data";
-import { vpx10, vpx18 } from "../../constants/px.vh";
+import { Paper, Theme, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import CustomGrid from '../../components/common/custom.grid';
+import VerticalFlex from '../../components/common/vertical.flex';
+import { DailyStatusData } from '../../components/constants/dashboard/daily.status.data';
+import { vpx10, vpx18 } from '../../constants/px.vh';
 
 function DailyStatus() {
   const classes = useStyles();
@@ -41,32 +41,32 @@ const useStyles = makeStyles((theme: Theme) => ({
   paperRoot: {
     height: `40vh`,
     width: `12vw`,
-    backgroundColor: "transparent",
+    backgroundColor: 'transparent',
     // boxShadow: "10px 15px 10px 0 rgba(0, 0, 0, 0.2)",
     backgroundImage: `radial-gradient(140% 70% at 100% 0%,#264da3 -40%, rgba(0, 0, 0, 0) 70%) ,linear-gradient(359deg, rgba(255, 255, 255, 0.16) -120%, rgba(255, 255, 255, 0.04) 97.48%)`,
     padding: `2vh 1.2vw 2vh 1.2vw`,
-    border: "0.5px solid rgba(255, 255, 255, 0.4)",
+    border: '0.5px solid rgba(255, 255, 255, 0.4)',
     margin: `0px 0px 1.5vh 0px`,
     opacity: 0.9,
   },
   title: {
     color: theme.palette.common.white,
     fontSize: `${vpx18}`,
-    fontWeight: "normal",
-    letterSpacing: "-0.36px",
+    fontWeight: 'normal',
+    letterSpacing: '-0.36px',
   },
   value: {
     fontSize: `${vpx10}`,
     fontWeight: '300',
-    letterSpacing: "-0.28px",
+    letterSpacing: '-0.28px',
   },
   dividerRoot: {
     margin: `2vh 0px 2.5vh 0px`,
   },
   horizontalDivider: {
-    height: "0.6px",
+    height: '0.6px',
     backgroundImage:
-      "linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0.42) 100%)",
+      'linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0.42) 100%)',
     opacity: 0.2,
   },
 }));

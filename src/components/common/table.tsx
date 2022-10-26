@@ -1,15 +1,15 @@
-import { Theme } from "@mui/material";
-import Paper from "@mui/material/Paper";
-import { styled } from "@mui/material/styles";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import { makeStyles } from "@mui/styles";
-import { BackgroundClr } from "../../constants/colors";
-import { px5, px10, px3 } from "../../constants/px.rem";
+import { Theme } from '@mui/material';
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import { makeStyles } from '@mui/styles';
+import { BackgroundClr } from '../../constants/colors';
+import { px5, px10, px3 } from '../../constants/px.rem';
 
 export type row = any;
 
@@ -68,19 +68,19 @@ function CustomTable(props: TableProps) {
 const useStyles = makeStyles<Theme, TableProps>((theme: Theme) => ({
   Paper: {
     border: ({ border }) => border ?? `1px solid ${theme.palette.grey[700]}`,
-    borderRadius: "8px",
+    borderRadius: '8px',
     maxHeight: ({ tableHeight }) => tableHeight,
     maxWidth: ({ tableWidth }) => tableWidth,
-    "&::-webkit-scrollbar-track": {
+    '&::-webkit-scrollbar-track': {
       border: theme.palette.grey[900],
       backgroundColor: theme.palette.grey[800],
     },
-    "&::-webkit-scrollbar": {
+    '&::-webkit-scrollbar': {
       width: `${px3}`,
       height: `${px3}`,
     },
-    "&::-webkit-scrollbar-thumb": {
-      backgroundImage: "linear-gradient(171deg, #f81 -21%, #ff1267 149%)",
+    '&::-webkit-scrollbar-thumb': {
+      backgroundImage: 'linear-gradient(171deg, #f81 -21%, #ff1267 149%)',
       borderRadius: `${px10}`,
       maxHeight: `${px5}`,
     },
@@ -92,20 +92,20 @@ const useStyles = makeStyles<Theme, TableProps>((theme: Theme) => ({
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#264da3",
+    backgroundColor: '#264da3',
     color: theme.palette.grey[200],
     borderBottom: `1px solid ${theme.palette.grey[700]}`,
-    overflow: "scroll",
-    [theme.breakpoints.down("sm")]: {
+    overflow: 'scroll',
+    [theme.breakpoints.down('sm')]: {
       fontSize: 12,
-      padding: "12px",
-      "@media (min-width: 355px) and (max-width: 380px)": {
-        padding: "8px",
+      padding: '12px',
+      '@media (min-width: 355px) and (max-width: 380px)': {
+        padding: '8px',
       },
     },
-    "&::-webkit-scrollbar": {
-      width: "0px",
-      height: "0px",
+    '&::-webkit-scrollbar': {
+      width: '0px',
+      height: '0px',
     },
   },
   [`&.${tableCellClasses.body}`]: {
@@ -113,27 +113,27 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     backgroundColor: `${BackgroundClr}`,
     color: theme.palette.grey[500],
     borderBottom: `1px solid ${theme.palette.grey[800]}`,
-    cursor: "pointer",
-    "&:active": {
+    cursor: 'pointer',
+    '&:active': {
       backgroundColor: theme.palette.grey[600],
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('sm')]: {
       fontSize: 11,
-      padding: "8px",
-      "@media (min-width: 355px) and (max-width: 380px)": {
-        fontSize: "9px",
-        padding: "8px",
+      padding: '8px',
+      '@media (min-width: 355px) and (max-width: 380px)': {
+        fontSize: '9px',
+        padding: '8px',
       },
     },
   },
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  "&:nth-of-type(odd)": {
+  '&:nth-of-type(odd)': {
     backgroundColor: theme.palette.action.hover,
   },
   // hide last border
-  "&:last-child td, &:last-child th": {
+  '&:last-child td, &:last-child th': {
     // border: 0,
   },
 }));

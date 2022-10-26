@@ -1,13 +1,13 @@
-import { Theme, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import React from "react";
-import CustomGrid from "../../components/common/custom.grid";
-import HorizontalFlex from "../../components/common/horizontal.flex";
-import VerticalFlex from "../../components/common/vertical.flex";
-import { vpx22 } from "../../constants/px.vh";
-import useLanguage from "../../hooks/useLanguage";
-import PoolsImg from "../../static/side-navbar/validators.svg";
-import AvailablePools from "./available.pools";
+import { Theme, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import React from 'react';
+import CustomGrid from '../../components/common/custom.grid';
+import HorizontalFlex from '../../components/common/horizontal.flex';
+import VerticalFlex from '../../components/common/vertical.flex';
+import { vpx22 } from '../../constants/px.vh';
+import useLanguage from '../../hooks/useLanguage';
+import PoolsImg from '../../static/side-navbar/validators.svg';
+import AvailablePools from './available.pools';
 // import PoolDetails from "./pool.details";
 
 function Pools() {
@@ -16,7 +16,7 @@ function Pools() {
   const { pools } = lang.languageText.titles;
 
   return (
-    <CustomGrid md={12} >
+    <CustomGrid md={12}>
       <VerticalFlex>
         <CustomGrid>
           <HorizontalFlex alignItems="center">
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   title: {
     fontSize: `${vpx22}`,
     color: theme.palette.common.white,
-    fontWeight: "normal",
+    fontWeight: 'normal',
     letterSpacing: `-0.44px`,
   },
 }));

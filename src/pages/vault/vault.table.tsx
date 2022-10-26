@@ -1,15 +1,15 @@
-import { Theme, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import CustomGrid from "../../components/common/custom.grid";
-import HorizontalFlex from "../../components/common/horizontal.flex";
-import CustomPagintaion from "../../components/common/pagination";
-import CustomTable from "../../components/common/table";
-import VerticalFlex from "../../components/common/vertical.flex";
-import { vpx22, vpx25 } from "../../constants/px.vh";
-import useLanguage from "../../hooks/useLanguage";
-import useNavi from "../../hooks/useNavi";
-import { VaultAddressUrl } from "../../routes/route.constants";
-import VaultImg from "../../static/side-navbar/vault-icon.svg";
+import { Theme, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import CustomGrid from '../../components/common/custom.grid';
+import HorizontalFlex from '../../components/common/horizontal.flex';
+import CustomPagintaion from '../../components/common/pagination';
+import CustomTable from '../../components/common/table';
+import VerticalFlex from '../../components/common/vertical.flex';
+import { vpx22, vpx25 } from '../../constants/px.vh';
+import useLanguage from '../../hooks/useLanguage';
+import useNavi from '../../hooks/useNavi';
+import { VaultAddressUrl } from '../../routes/route.constants';
+import VaultImg from '../../static/side-navbar/vault-icon.svg';
 
 function VaultTable() {
   const classes = useStyles();
@@ -37,22 +37,22 @@ function VaultTable() {
             rowOnClick={() => navigateToUrl(VaultAddressUrl)}
             tableWidth="90vw"
             headers={[
-              "jejsj",
-              "kflsjal",
-              "jejsj",
-              "kflsjal",
-              "jejsj",
-              "kflsjal",
-              "jejsj",
-              "kflsjal",
+              'jejsj',
+              'kflsjal',
+              'jejsj',
+              'kflsjal',
+              'jejsj',
+              'kflsjal',
+              'jejsj',
+              'kflsjal',
             ]}
             rows={[
-              "kdsfghjk",
-              "kdsfghjk",
-              "kdsfghjk",
-              "kdsfghjk",
-              "kdsfghjk",
-              "kdsfghjk",
+              'kdsfghjk',
+              'kdsfghjk',
+              'kdsfghjk',
+              'kdsfghjk',
+              'kdsfghjk',
+              'kdsfghjk',
             ]}
           />
         </CustomGrid>
@@ -69,7 +69,7 @@ function VaultTable() {
 const useStyles = makeStyles((theme: Theme) => ({
   title: {
     color: theme.palette.common.white,
-    fontWeight: "400",
+    fontWeight: '400',
     fontSize: `${vpx22}`,
   },
   imageRoot: {

@@ -1,12 +1,12 @@
-import { Theme } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import { Router, View } from "react-navi";
-import CustomGrid from "./components/common/custom.grid";
-import DojimaProvider from "./providers";
-import { createBrowserNavigation } from "navi";
-import routes from "./routes";
-import { Suspense } from "react";
-import { BackgroundClr } from "./constants/colors";
+import { Theme } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import { Router, View } from 'react-navi';
+import CustomGrid from './components/common/custom.grid';
+import DojimaProvider from './providers';
+import { createBrowserNavigation } from 'navi';
+import routes from './routes';
+import { Suspense } from 'react';
+import { BackgroundClr } from './constants/colors';
 
 function App() {
   const classes = useStyles();

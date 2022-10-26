@@ -1,13 +1,13 @@
-import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
-import { Paper, Theme, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import CustomGrid from "../../components/common/custom.grid";
-import HorizontalFlex from "../../components/common/horizontal.flex";
-import VerticalFlex from "../../components/common/vertical.flex";
-import { AddressInfoData } from "../../components/constants/address/address.data";
-import { vpx12, vpx14, vpx18, vpx22 } from "../../constants/px.vh";
-import { wpx12 } from "../../constants/px.vw";
-import TxItem from "../transactions/tx.item";
+import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
+import { Paper, Theme, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import CustomGrid from '../../components/common/custom.grid';
+import HorizontalFlex from '../../components/common/horizontal.flex';
+import VerticalFlex from '../../components/common/vertical.flex';
+import { AddressInfoData } from '../../components/constants/address/address.data';
+import { vpx12, vpx14, vpx18, vpx22 } from '../../constants/px.vh';
+import { wpx12 } from '../../constants/px.vw';
+import TxItem from '../transactions/tx.item';
 
 function AddressType() {
   const classes = useStyles();
@@ -68,8 +68,13 @@ function AddressType() {
           </Paper>
         </CustomGrid>
         <CustomGrid>
-          <HorizontalFlex className={classes.txTitleRoot} >
-            <Typography style={{ fontSize: `${vpx18}`, fontWeight: 'normal' }} className={classes.title}>Transactions</Typography>
+          <HorizontalFlex className={classes.txTitleRoot}>
+            <Typography
+              style={{ fontSize: `${vpx18}`, fontWeight: 'normal' }}
+              className={classes.title}
+            >
+              Transactions
+            </Typography>
           </HorizontalFlex>
           <TxItem />
         </CustomGrid>
@@ -81,7 +86,7 @@ function AddressType() {
 const useStyles = makeStyles((theme: Theme) => ({
   title: {
     fontSize: `${vpx22}`,
-    color: "#f3f3f3",
+    color: '#f3f3f3',
     letterSpacing: `-0.44px`,
   },
   addressRoot: {
@@ -99,13 +104,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: `${wpx12}`,
     color: theme.palette.common.white,
     opacity: 0.5,
-    cursor: "pointer",
+    cursor: 'pointer',
   },
   infoCard: {
     height: `10vh`,
     backgroundColor: `rgba(39, 42, 44, 0.76)`,
     // opacity: 0.5,
-    padding: "2vh 1.5vw 2vh 1.5vw",
+    padding: '2vh 1.5vw 2vh 1.5vw',
     margin: `0.5vh 0px 2vh 0px`,
   },
   infoTitle: {
@@ -126,9 +131,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: `${vpx14}`,
     margin: `0px 0.2vw 0px 0px`,
   },
-  txTitleRoot:{
+  txTitleRoot: {
     margin: `1vh 0px 2vh 0px`,
-  }
+  },
 }));
 
 export default AddressType;

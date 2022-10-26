@@ -1,20 +1,20 @@
-import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
-import { Paper, Theme, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import CustomGrid from "../../components/common/custom.grid";
-import HorizontalFlex from "../../components/common/horizontal.flex";
-import VerticalFlex from "../../components/common/vertical.flex";
-import { BlocksInfoData } from "../../components/constants/blocks/blocks.data";
-import { vpx12, vpx14, vpx22 } from "../../constants/px.vh";
-import { wpx12 } from "../../constants/px.vw";
-import useLanguage from "../../hooks/useLanguage";
-import TransactionsView from "../transactions";
+import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
+import { Paper, Theme, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import CustomGrid from '../../components/common/custom.grid';
+import HorizontalFlex from '../../components/common/horizontal.flex';
+import VerticalFlex from '../../components/common/vertical.flex';
+import { BlocksInfoData } from '../../components/constants/blocks/blocks.data';
+import { vpx12, vpx14, vpx22 } from '../../constants/px.vh';
+import { wpx12 } from '../../constants/px.vw';
+import useLanguage from '../../hooks/useLanguage';
+import TransactionsView from '../transactions';
 
 function BlocksPage() {
   const lang = useLanguage();
   const { blocks } = lang.languageText.titles;
   const classes = useStyles();
-  const blocksInfo = BlocksInfoData
+  const blocksInfo = BlocksInfoData;
 
   return (
     <CustomGrid md={12}>
@@ -51,18 +51,25 @@ function BlocksPage() {
           </HorizontalFlex>
         </CustomGrid>
         <CustomGrid>
-          <Paper className={classes.infoCard} >
+          <Paper className={classes.infoCard}>
             <CustomGrid>
-                <HorizontalFlex>
-                  {blocksInfo.map((data) => (
-                    <CustomGrid md={3}>
+              <HorizontalFlex>
+                {blocksInfo.map((data) => (
+                  <CustomGrid md={3}>
                     <VerticalFlex>
-                      <Typography className={classes.infoTitle} >{data.title}</Typography>
-                      <Typography style={{ color: `${data.color}` }} className={classes.infoValue} >{data.value}</Typography>
+                      <Typography className={classes.infoTitle}>
+                        {data.title}
+                      </Typography>
+                      <Typography
+                        style={{ color: `${data.color}` }}
+                        className={classes.infoValue}
+                      >
+                        {data.value}
+                      </Typography>
                     </VerticalFlex>
                   </CustomGrid>
-                  ))}  
-                </HorizontalFlex>
+                ))}
+              </HorizontalFlex>
             </CustomGrid>
           </Paper>
         </CustomGrid>
@@ -77,7 +84,7 @@ function BlocksPage() {
 const useStyles = makeStyles((theme: Theme) => ({
   title: {
     color: theme.palette.common.white,
-    fontWeight: "400",
+    fontWeight: '400',
     fontSize: `${vpx22}`,
   },
   addressRoot: {
@@ -95,25 +102,25 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: `${wpx12}`,
     color: theme.palette.common.white,
     opacity: 0.5,
-    cursor: "pointer",
+    cursor: 'pointer',
   },
-  infoCard:{
+  infoCard: {
     height: `10vh`,
     backgroundColor: `rgba(39, 42, 44, 0.76)`,
     // opacity: 0.5,
     padding: '2vh 1.5vw 2vh 1.5vw',
-    margin: `0.5vh 0px 2vh 0px`
+    margin: `0.5vh 0px 2vh 0px`,
   },
-  infoTitle:{
+  infoTitle: {
     color: theme.palette.common.white,
     fontSize: `${vpx12}`,
     fontWeight: 400,
-    opacity: 0.6
+    opacity: 0.6,
   },
-  infoValue:{
+  infoValue: {
     fontSize: `${vpx12}`,
     fontWeight: 400,
-    margin: `1vh 0px 0px 0px`
+    margin: `1vh 0px 0px 0px`,
   },
 }));
 

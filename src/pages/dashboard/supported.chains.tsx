@@ -1,12 +1,12 @@
-import { Theme, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import CustomGrid from "../../components/common/custom.grid";
-import HorizontalFlex from "../../components/common/horizontal.flex";
-import { SupportedChainData } from "../../components/constants/dashboard/supported.chains.data";
-import { SupportedClr } from "../../constants/colors";
-import { vpx18, vpx30 } from "../../constants/px.vh";
-import { wpx25 } from "../../constants/px.vw";
-import IcBlockImg from "../../static/side-navbar/ic_block_chain.svg";
+import { Theme, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import CustomGrid from '../../components/common/custom.grid';
+import HorizontalFlex from '../../components/common/horizontal.flex';
+import { SupportedChainData } from '../../components/constants/dashboard/supported.chains.data';
+import { SupportedClr } from '../../constants/colors';
+import { vpx18, vpx30 } from '../../constants/px.vh';
+import { wpx25 } from '../../constants/px.vw';
+import IcBlockImg from '../../static/side-navbar/ic_block_chain.svg';
 
 function SupportedChains() {
   const classes = useStyles();
@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   title: {
     fontSize: `${vpx18}`,
     color: theme.palette.common.white,
-    fontWeight: "normal",
+    fontWeight: 'normal',
     letterSpacing: `-0.44px`,
   },
   coinsRoot: {
@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   chainTitle: {
     fontSize: `${vpx18}`,
-    fontWeight: "normal",
+    fontWeight: 'normal',
     margin: `0px 0px 0px 0.5vw`,
     color: SupportedClr,
   },

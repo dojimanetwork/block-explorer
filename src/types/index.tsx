@@ -1,32 +1,32 @@
-import { ReactNode } from "react";
-import { GridSize, GridSpacing, GridWrap } from "@mui/material";
+import { ReactNode } from 'react';
+import { GridSize, GridSpacing, GridWrap } from '@mui/material';
 
 // Custom Grid Component Props
 export declare type GridItemsAlignment =
-  | "flex-start"
-  | "center"
-  | "flex-end"
-  | "stretch"
-  | "baseline";
+  | 'flex-start'
+  | 'center'
+  | 'flex-end'
+  | 'stretch'
+  | 'baseline';
 export declare type GridContentAlignment =
-  | "stretch"
-  | "center"
-  | "flex-start"
-  | "flex-end"
-  | "space-between"
-  | "space-around";
+  | 'stretch'
+  | 'center'
+  | 'flex-start'
+  | 'flex-end'
+  | 'space-between'
+  | 'space-around';
 export declare type GridDirection =
-  | "row"
-  | "row-reverse"
-  | "column"
-  | "column-reverse";
+  | 'row'
+  | 'row-reverse'
+  | 'column'
+  | 'column-reverse';
 export declare type GridJustification =
-  | "flex-start"
-  | "center"
-  | "flex-end"
-  | "space-between"
-  | "space-around"
-  | "space-evenly";
+  | 'flex-start'
+  | 'center'
+  | 'flex-end'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly';
 export interface GridComponentProps {
   xs?: boolean | GridSize;
   md?: boolean | GridSize;
@@ -44,7 +44,7 @@ export interface GridComponentProps {
   item?: boolean;
   GridStyles?: string;
   onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
-  onScroll?: React.UIEventHandler<HTMLDivElement> | undefined
+  onScroll?: React.UIEventHandler<HTMLDivElement> | undefined;
 }
 
 export interface ChildrenType {
@@ -52,9 +52,9 @@ export interface ChildrenType {
 }
 
 export const BlockNumbers = [
-  "234245",
-  "223456",
-  "62562564",
+  '234245',
+  '223456',
+  '62562564',
   // "polkadot",
-  "265625",
+  '265625',
 ];

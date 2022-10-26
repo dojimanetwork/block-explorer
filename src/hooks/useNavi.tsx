@@ -1,4 +1,4 @@
-import { useNavigation } from "react-navi";
+import { useNavigation } from 'react-navi';
 
 export default function useNavi() {
   const { navigate } = useNavigation();

@@ -1,41 +1,41 @@
-import React from "react";
-import { ResponsiveLine } from "@nivo/line";
+import React from 'react';
+import { ResponsiveLine } from '@nivo/line';
 
 const data: any = [
   {
-    id: "japan",
-    color: "hsl(70, 70%, 50%)",
+    id: 'japan',
+    color: 'hsl(70, 70%, 50%)',
     data: [
       {
-        x: "plane",
+        x: 'plane',
         y: 140,
       },
       {
-        x: "helicopter",
+        x: 'helicopter',
         y: 80,
       },
       {
-        x: "boat",
+        x: 'boat',
         y: 134,
       },
       {
-        x: "train",
+        x: 'train',
         y: 202,
       },
       {
-        x: "subway",
+        x: 'subway',
         y: 143,
       },
       {
-        x: "bus",
+        x: 'bus',
         y: 266,
       },
       {
-        x: "car",
+        x: 'car',
         y: 223,
       },
       {
-        x: "moto",
+        x: 'moto',
         y: 100,
       },
     ],
@@ -84,11 +84,11 @@ const MyResponsiveLine = ({ data }: { data: any }) => (
   <ResponsiveLine
     data={data}
     margin={{ top: 20, right: 110, bottom: 50, left: 20 }}
-    xScale={{ type: "point" }}
+    xScale={{ type: 'point' }}
     yScale={{
-      type: "linear",
-      min: "auto",
-      max: "auto",
+      type: 'linear',
+      min: 'auto',
+      max: 'auto',
       stacked: true,
       reverse: false,
     }}
@@ -100,45 +100,45 @@ const MyResponsiveLine = ({ data }: { data: any }) => (
       tickSize: 5,
       tickPadding: 5,
       tickRotation: 0,
-      legend: "transportation",
+      legend: 'transportation',
       legendOffset: 36,
-      legendPosition: "middle",
+      legendPosition: 'middle',
     }}
     axisLeft={{
       //   orient: "left",
       tickSize: 5,
       tickPadding: 5,
       tickRotation: 0,
-      legend: "count",
+      legend: 'count',
       legendOffset: -40,
-      legendPosition: "middle",
+      legendPosition: 'middle',
     }}
     pointSize={10}
-    pointColor={{ theme: "background" }}
+    pointColor={{ theme: 'background' }}
     pointBorderWidth={2}
-    pointBorderColor={{ from: "serieColor" }}
+    pointBorderColor={{ from: 'serieColor' }}
     pointLabelYOffset={-12}
     useMesh={true}
     legends={[
       {
-        anchor: "bottom-right",
-        direction: "column",
+        anchor: 'bottom-right',
+        direction: 'column',
         justify: false,
         translateX: 100,
         translateY: 0,
         itemsSpacing: 0,
-        itemDirection: "left-to-right",
+        itemDirection: 'left-to-right',
         itemWidth: 80,
         itemHeight: 20,
         itemOpacity: 0.75,
         symbolSize: 12,
-        symbolShape: "circle",
-        symbolBorderColor: "rgba(0, 0, 0, .5)",
+        symbolShape: 'circle',
+        symbolBorderColor: 'rgba(0, 0, 0, .5)',
         effects: [
           {
-            on: "hover",
+            on: 'hover',
             style: {
-              itemBackground: "rgba(0, 0, 0, .03)",
+              itemBackground: 'rgba(0, 0, 0, .03)',
               itemOpacity: 1,
             },
           },
@@ -150,7 +150,7 @@ const MyResponsiveLine = ({ data }: { data: any }) => (
 
 export default function ChainGraph() {
   return (
-    <div style={{ width: "45vw", height: "40vh" }}>
+    <div style={{ width: '45vw', height: '40vh' }}>
       <MyResponsiveLine data={data} />
     </div>
   );

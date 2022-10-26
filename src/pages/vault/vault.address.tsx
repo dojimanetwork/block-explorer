@@ -1,17 +1,16 @@
-import CheckIcon from "@mui/icons-material/Check";
-import { Paper, Theme, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import CustomGrid from "../../components/common/custom.grid";
-import HorizontalFlex from "../../components/common/horizontal.flex";
-import CustomPagintaion from "../../components/common/pagination";
-import VerticalFlex from "../../components/common/vertical.flex";
-import { PoolInfoData } from "../../components/constants/pools/available.pools";
-import { vpx12, vpx14, vpx22, vpx35 } from "../../constants/px.vh";
-import { wpx20 } from "../../constants/px.vw";
-import VaultImg from "../../static/side-navbar/vault-icon.svg";
-import PoolsSelectButtons from "../pools/pool.select.buttons";
-import TxItem from "../transactions/tx.item";
-
+import CheckIcon from '@mui/icons-material/Check';
+import { Paper, Theme, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import CustomGrid from '../../components/common/custom.grid';
+import HorizontalFlex from '../../components/common/horizontal.flex';
+import CustomPagintaion from '../../components/common/pagination';
+import VerticalFlex from '../../components/common/vertical.flex';
+import { PoolInfoData } from '../../components/constants/pools/available.pools';
+import { vpx12, vpx14, vpx22, vpx35 } from '../../constants/px.vh';
+import { wpx20 } from '../../constants/px.vw';
+import VaultImg from '../../static/side-navbar/vault-icon.svg';
+import PoolsSelectButtons from '../pools/pool.select.buttons';
+import TxItem from '../transactions/tx.item';
 
 function VaultAddress() {
   const classes = useStyles();
@@ -127,13 +126,13 @@ function VaultAddress() {
 const useStyles = makeStyles((theme: Theme) => ({
   title: {
     color: theme.palette.common.white,
-    fontWeight: "400",
+    fontWeight: '400',
     fontSize: `${vpx22}`,
   },
   infoCard: {
     height: `13vh`,
     backgroundColor: `rgba(39, 42, 44, 0.76)`,
-    padding: "2vh 1.5vw 2vh 1.5vw",
+    padding: '2vh 1.5vw 2vh 1.5vw',
     margin: `2vh 0px 2vh 0px`,
   },
   infoTitle: {
@@ -154,26 +153,26 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: `0px 1vw 0px 0px`,
   },
   searchItem: {
-    borderRadius: "8px",
-    backdropFilter: "blur(30px)",
-    backgroundColor: "rgba(0, 105, 42, 0.06)",
-    width: "fit-content",
-    height: "4vh",
-    padding: "1vh 0.8vw 0px 1vw",
+    borderRadius: '8px',
+    backdropFilter: 'blur(30px)',
+    backgroundColor: 'rgba(0, 105, 42, 0.06)',
+    width: 'fit-content',
+    height: '4vh',
+    padding: '1vh 0.8vw 0px 1vw',
     color: `rgba(0, 129, 255, 0.1)`,
-    border: "solid 0.5px rgba(0, 129, 255, 0.1)",
+    border: 'solid 0.5px rgba(0, 129, 255, 0.1)',
     margin: `0px 0px 0px 1vw`,
   },
   searchItemTxt: {
     fontSize: `${vpx12}`,
-    color: "#008134",
-    fontWeight: "normal",
+    color: '#008134',
+    fontWeight: 'normal',
   },
   crctIcon: {
-    fontSize: "1.9vh",
-    color: "#008134",
+    fontSize: '1.9vh',
+    color: '#008134',
     margin: `0px 0.5vw 0px 0vw`,
-    cursor: "pointer",
+    cursor: 'pointer',
   },
   imageRoot: {
     height: `${vpx14}`,
@@ -182,7 +181,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   paginationRoot: {
     margin: `2vh 0px 2vh 0px`,
   },
-  
 }));
 
 export default VaultAddress;

@@ -1,4 +1,4 @@
-import {Grid} from '@mui/material';
+import { Grid } from '@mui/material';
 import { memo } from 'react';
 import { GridComponentProps } from '../../types/index';
 
@@ -13,7 +13,7 @@ function HorizontalFlex({
   xs,
   alignContent,
   justifyContent,
-    wrap
+  wrap,
 }: GridComponentProps) {
   return (
     <Grid

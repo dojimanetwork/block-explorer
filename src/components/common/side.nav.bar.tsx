@@ -1,29 +1,29 @@
-import { GridSize, Paper, SvgIconTypeMap, Theme } from "@mui/material";
-import { OverridableComponent } from "@mui/material/OverridableComponent";
-import { makeStyles } from "@mui/styles";
-import { useEffect, useState } from "react";
-import { SideNavBarClr } from "../../constants/colors";
+import { GridSize, Paper, SvgIconTypeMap, Theme } from '@mui/material';
+import { OverridableComponent } from '@mui/material/OverridableComponent';
+import { makeStyles } from '@mui/styles';
+import { useEffect, useState } from 'react';
+import { SideNavBarClr } from '../../constants/colors';
 // import { menuData } from "../../constants/menu";
-import { px40 } from "../../constants/px.rem";
-import { vpx30 } from "../../constants/px.vh";
-import { wpx30 } from "../../constants/px.vw";
-import IcSettingsImg from "../../static/side-navbar/ic-settings.svg";
-import { restoreMenuBar } from "../../utils/helpers";
+import { px40 } from '../../constants/px.rem';
+import { vpx30 } from '../../constants/px.vh';
+import { wpx30 } from '../../constants/px.vw';
+import IcSettingsImg from '../../static/side-navbar/ic-settings.svg';
+import { restoreMenuBar } from '../../utils/helpers';
 import {
   getPrevPrivateMenuIndex,
   storePrevPrivateMenuIndex,
-} from "../../utils/storage";
+} from '../../utils/storage';
 // import { SideNavBarData } from "../constants/side.navbar.data";
-import CustomGrid from "./custom.grid";
-import IconTextLink from "./icon.text.link";
-import VerticalFlex from "./vertical.flex";
-import FindIndex from "lodash/findIndex";
-import useNavi from "../../hooks/useNavi";
+import CustomGrid from './custom.grid';
+import IconTextLink from './icon.text.link';
+import VerticalFlex from './vertical.flex';
+import FindIndex from 'lodash/findIndex';
+import useNavi from '../../hooks/useNavi';
 
 export interface MenuItem {
   name?: any;
   active: boolean;
-  Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> | any;
+  Icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>> | any;
   link: string;
   public?: boolean;
   private?: boolean;
@@ -76,10 +76,10 @@ function SideNavBar(props: MenuBarProps) {
     navigateToUrl(`${menu[index].link}`);
   };
   useEffect(() => {
-    window.history.pushState(null, "", window.location.pathname);
-    window.addEventListener("popstate", onBackButtonEvent);
+    window.history.pushState(null, '', window.location.pathname);
+    window.addEventListener('popstate', onBackButtonEvent);
     return () => {
-      window.removeEventListener("popstate", onBackButtonEvent);
+      window.removeEventListener('popstate', onBackButtonEvent);
     };
     // eslint-disable-next-line
   }, []);
@@ -127,24 +127,24 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     height: `65vh`,
     backgroundColor: `${SideNavBarClr}`,
-    padding: "4vh 0vh 4vh 0vh",
+    padding: '4vh 0vh 4vh 0vh',
     width: `5vw`,
-    boxShadow: "-2px 0 30px 0 rgba(0, 129, 255, 0.2)",
+    boxShadow: '-2px 0 30px 0 rgba(0, 129, 255, 0.2)',
     borderTopRightRadius: `${px40}`,
     borderBottomRightRadius: `${px40}`,
-    position: "fixed",
+    position: 'fixed',
   },
   imageRoot: {
     margin: `0px 0px 4vh 0px`,
     height: `${vpx30}`,
     width: `${wpx30}`,
-    cursor: "pointer",
+    cursor: 'pointer',
   },
   settingsImage: {
     margin: `10vh 0px 0px 0px`,
     height: `${vpx30}`,
     width: `${wpx30}`,
-    cursor: "pointer",
+    cursor: 'pointer',
   },
 }));
 

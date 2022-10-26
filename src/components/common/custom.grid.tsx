@@ -1,9 +1,9 @@
-import { Grid } from "@mui/material";
-import { memo } from "react";
-import { GridComponentProps } from "../../types";
+import { Grid } from '@mui/material';
+import { memo } from 'react';
+import { GridComponentProps } from '../../types';
 
-export interface LocalGridComponent extends GridComponentProps{
-  styles?: any
+export interface LocalGridComponent extends GridComponentProps {
+  styles?: any;
 }
 
 function CustomGridItem(props: LocalGridComponent) {
@@ -22,7 +22,7 @@ function CustomGridItem(props: LocalGridComponent) {
     wrap,
     className,
     onClick,
-    styles
+    styles,
   } = props;
   return (
     <Grid

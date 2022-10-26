@@ -1,138 +1,137 @@
-import { linearGradientDef } from "@nivo/core";
-import { ResponsiveLine } from "@nivo/line";
+import { linearGradientDef } from '@nivo/core';
+import { ResponsiveLine } from '@nivo/line';
 const data: any = [
   {
-    id:"Transaction",
+    id: 'Transaction',
     data: [
       {
-        x: "plane",
+        x: 'plane',
         y: 140,
       },
       {
-        x: "helicopter",
+        x: 'helicopter',
         y: 80,
       },
       {
-        x: "boat",
+        x: 'boat',
         y: 134,
       },
       {
-        x: "train",
+        x: 'train',
         y: 202,
       },
       {
-        x: "subway",
+        x: 'subway',
         y: 143,
       },
       {
-        x: "bus",
+        x: 'bus',
         y: 266,
       },
       {
-        x: "car",
+        x: 'car',
         y: 223,
       },
       {
-        x: "moto",
+        x: 'moto',
         y: 100,
       },
     ],
   },
   {
-    id: "Blocks",
+    id: 'Blocks',
     data: [
       {
-        x: "plane",
-        y: 267
+        x: 'plane',
+        y: 267,
       },
       {
-        x: "helicopter",
-        y: 192
+        x: 'helicopter',
+        y: 192,
       },
       {
-        x: "boat",
-        y: 259
+        x: 'boat',
+        y: 259,
       },
       {
-        x: "train",
-        y: 40
+        x: 'train',
+        y: 40,
       },
       {
-        x: "subway",
-        y: 34
+        x: 'subway',
+        y: 34,
       },
       {
-        x: "bus",
-        y: 1
+        x: 'bus',
+        y: 1,
       },
       {
-        x: "car",
-        y: 100
+        x: 'car',
+        y: 100,
       },
       {
-        x: "moto",
-        y: 194
-      }
-    ]
-  }
+        x: 'moto',
+        y: 194,
+      },
+    ],
+  },
 ];
 const MyResponsiveLine = ({ data }: { data: any }) => (
   <ResponsiveLine
     data={data}
     margin={{ top: 30, right: 30, bottom: 20, left: 35 }}
-    xScale={{ type: "point" }}
+    xScale={{ type: 'point' }}
     yScale={{
-      type: "linear",
-      min: "auto",
-      max: "auto",
+      type: 'linear',
+      min: 'auto',
+      max: 'auto',
       stacked: true,
       reverse: false,
     }}
     colors={['#FF751F', '#8C59DA']}
     defs={[
-      linearGradientDef("gradient", [
-          { offset: 0, color: 'inherit' },
-          { offset: 100, color: 'inherit', opacity: 0 },
+      linearGradientDef('gradient', [
+        { offset: 0, color: 'inherit' },
+        { offset: 100, color: 'inherit', opacity: 0 },
       ]),
     ]}
-    fill={[{ match: "*", id: ("gradient"),
-  }]}
+    fill={[{ match: '*', id: 'gradient' }]}
     enableArea={true}
     axisBottom={{
       tickSize: 0,
       tickPadding: 5,
       legendOffset: 36,
-      legendPosition: "middle",
+      legendPosition: 'middle',
     }}
     axisLeft={{
       tickSize: 0,
       tickPadding: 10,
       legendOffset: -40,
-      legendPosition: "middle",
+      legendPosition: 'middle',
     }}
     pointSize={5}
     pointColor="#FFFFFF"
     pointBorderWidth={2}
-    pointBorderColor={{ from: "serieColor" }}
+    pointBorderColor={{ from: 'serieColor' }}
     useMesh={true}
     enableGridX={false}
     lineWidth={1}
     areaBaselineValue={100}
     theme={{
-      grid: { line: { stroke: "#2a2d2f", strokeDasharray: '6' } },
+      grid: { line: { stroke: '#2a2d2f', strokeDasharray: '6' } },
       axis: {
-      ticks:{
-       text:{
-         fill:"#fafafa"
-       }
-      }}
-    }
-    }
+        ticks: {
+          text: {
+            fill: '#fafafa',
+          },
+        },
+      },
+    }}
   />
 );
 export default function ChainGraph() {
   return (
-    <div style={{ width: "46.5vw", height: "33vh",}}>
+    <div style={{ width: '46.5vw', height: '33vh' }}>
       <MyResponsiveLine data={data} />
     </div>
   );

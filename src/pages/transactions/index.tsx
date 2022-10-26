@@ -1,18 +1,18 @@
-import { Paper, Theme, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import CustomGrid from "../../components/common/custom.grid";
-import CustomSearch from "../../components/common/custom.search";
-import HorizontalFlex from "../../components/common/horizontal.flex";
-import VerticalFlex from "../../components/common/vertical.flex";
-import { vpx12, vpx22, vpx25 } from "../../constants/px.vh";
-import useLanguage from "../../hooks/useLanguage";
-import TxImg from "../../static/dashboard/hor_tx.svg";
-import CloseIcon from "@mui/icons-material/Close";
-import { TxsTitles } from "../../components/constants/txs/tx.data";
-import { OrangeClr } from "../../constants/colors";
-import TxTypeButton from "../../components/common/tx.type.btn";
-import TxItem from "./tx.item";
-import CustomPagintaion from "../../components/common/pagination";
+import { Paper, Theme, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import CustomGrid from '../../components/common/custom.grid';
+import CustomSearch from '../../components/common/custom.search';
+import HorizontalFlex from '../../components/common/horizontal.flex';
+import VerticalFlex from '../../components/common/vertical.flex';
+import { vpx12, vpx22, vpx25 } from '../../constants/px.vh';
+import useLanguage from '../../hooks/useLanguage';
+import TxImg from '../../static/dashboard/hor_tx.svg';
+import CloseIcon from '@mui/icons-material/Close';
+import { TxsTitles } from '../../components/constants/txs/tx.data';
+import { OrangeClr } from '../../constants/colors';
+import TxTypeButton from '../../components/common/tx.type.btn';
+import TxItem from './tx.item';
+import CustomPagintaion from '../../components/common/pagination';
 
 function TransactionsView() {
   const classes = useStyles();
@@ -83,49 +83,49 @@ const useStyles = makeStyles((theme: Theme) => ({
   title: {
     fontSize: `${vpx22}`,
     color: theme.palette.common.white,
-    fontWeight: "400",
+    fontWeight: '400',
     letterSpacing: `-0.44px`,
   },
   searchItem: {
-    borderRadius: "8px",
-    backgroundColor: "rgba(0, 129, 255, 0.1)",
-    width: "fit-content",
-    height: "4vh",
-    padding: "1vh 0.8vw 0px 1vw",
+    borderRadius: '8px',
+    backgroundColor: 'rgba(0, 129, 255, 0.1)',
+    width: 'fit-content',
+    height: '4vh',
+    padding: '1vh 0.8vw 0px 1vw',
     color: `rgba(0, 129, 255, 0.1)`,
-    border: "solid 0.5px rgba(0, 129, 255, 0.1)",
+    border: 'solid 0.5px rgba(0, 129, 255, 0.1)',
     margin: `0px 0px 0px 1vw`,
   },
   searchItemTxt: {
     fontSize: `${vpx12}`,
-    color: "#0081ff",
-    fontWeight: "normal",
+    color: '#0081ff',
+    fontWeight: 'normal',
   },
   closeIcon: {
-    fontSize: "1.9vh",
-    color: "#0081ff",
+    fontSize: '1.9vh',
+    color: '#0081ff',
     margin: `0px 0px 0px 0.5vw`,
-    cursor: "pointer",
+    cursor: 'pointer',
   },
   txTypeTitles: {
-    borderRadius: "3px",
-    backgroundColor: "rgba(93, 93, 93, 0.1)",
-    width: "fit-content",
-    height: "4vh",
-    padding: "1vh 0.8vw 0px 1vw",
-    border: "solid 0.5px rgba(93, 93, 93, 0.1)",
+    borderRadius: '3px',
+    backgroundColor: 'rgba(93, 93, 93, 0.1)',
+    width: 'fit-content',
+    height: '4vh',
+    padding: '1vh 0.8vw 0px 1vw',
+    border: 'solid 0.5px rgba(93, 93, 93, 0.1)',
     margin: `0px 0px 0px 0.7vw`,
-    cursor: "pointer",
-    "&:active": {
-      backgroundColor: "rgba(255, 117, 31, 0.1)",
+    cursor: 'pointer',
+    '&:active': {
+      backgroundColor: 'rgba(255, 117, 31, 0.1)',
     },
   },
   txTypeTxt: {
     fontSize: `${vpx12}`,
     color: theme.palette.common.white,
-    fontWeight: "normal",
+    fontWeight: 'normal',
     opacity: 0.45,
-    "&:active": {
+    '&:active': {
       color: OrangeClr,
       opacity: 1,
     },

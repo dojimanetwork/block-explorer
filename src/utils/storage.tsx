@@ -31,14 +31,14 @@ export const clearLs = () => {
 
 //store, remove, get previously click private menu bar item
 export const getPrevPrivateMenuIndex = (): number | undefined => {
-  const index = getFromSs("prevPrivateMenuIndex");
+  const index = getFromSs('prevPrivateMenuIndex');
   return index ? index : undefined;
 };
 
 export const storePrevPrivateMenuIndex = (index: number) => {
-  setToSs("prevPrivateMenuIndex", index);
+  setToSs('prevPrivateMenuIndex', index);
 };
 
 export const removePrevPrivateMenuIndex = () => {
-  removeFromSs("prevPrivateMenuIndex");
+  removeFromSs('prevPrivateMenuIndex');
 };

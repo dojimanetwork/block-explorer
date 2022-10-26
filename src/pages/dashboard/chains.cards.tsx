@@ -1,11 +1,11 @@
-import { Paper, Theme, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import CustomGrid from "../../components/common/custom.grid";
-import HorizontalFlex from "../../components/common/horizontal.flex";
-import VerticalFlex from "../../components/common/vertical.flex";
-import { ChainCardsData } from "../../components/constants/dashboard/chain.cards.data";
-import { vpx14, vpx30, vpx8 } from "../../constants/px.vh";
-import { wpx25 } from "../../constants/px.vw";
+import { Paper, Theme, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import CustomGrid from '../../components/common/custom.grid';
+import HorizontalFlex from '../../components/common/horizontal.flex';
+import VerticalFlex from '../../components/common/vertical.flex';
+import { ChainCardsData } from '../../components/constants/dashboard/chain.cards.data';
+import { vpx14, vpx30, vpx8 } from '../../constants/px.vh';
+import { wpx25 } from '../../constants/px.vw';
 
 function ChainsCards() {
   const classes = useStyles();
@@ -85,10 +85,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   paperRoot: {
     height: `12vh`,
     width: `17vw`,
-    backgroundColor: "transparent",
-    boxShadow: "10px 15px 10px 0 rgba(0, 0, 0, 0.2)",
+    backgroundColor: 'transparent',
+    boxShadow: '10px 15px 10px 0 rgba(0, 0, 0, 0.2)',
     padding: `1vh 1.2vw 1vh 1.2vw`,
-    border: "0.5px solid rgba(255, 255, 255, 0.4)",
+    border: '0.5px solid rgba(255, 255, 255, 0.4)',
     margin: `0px 0px 1.5vh 0px`,
     // opacity: 0.7
   },
@@ -106,7 +106,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: `${vpx14}`,
     fontWeight: 500,
     margin: `0.8vh 0px 0px 0vw`,
-    fontStyle: "normal",
+    fontStyle: 'normal',
   },
   timeRoot: {
     margin: `2vh 0px 0px 0px`,
@@ -114,8 +114,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   time: {
     color: theme.palette.common.white,
     fontSize: `${vpx8}`,
-    fontWeight: "normal",
-    fontStyle: "normal",
+    fontWeight: 'normal',
+    fontStyle: 'normal',
   },
   hash: {
     color: theme.palette.common.white,

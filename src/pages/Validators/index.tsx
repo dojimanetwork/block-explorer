@@ -1,15 +1,15 @@
-import { Theme, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import CustomGrid from "../../components/common/custom.grid";
-import HorizontalFlex from "../../components/common/horizontal.flex";
-import VerticalFlex from "../../components/common/vertical.flex";
-import { vpx22, vpx30 } from "../../constants/px.vh";
-import { wpx30 } from "../../constants/px.vw";
-import useLanguage from "../../hooks/useLanguage";
-import ValidatorsImg from "../../static/side-navbar/validators.svg";
-import StatusItemView from "./status.view.item";
-import CustomTable from "../../components/common/table";
-import CustomPagintaion from "../../components/common/pagination";
+import { Theme, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import CustomGrid from '../../components/common/custom.grid';
+import HorizontalFlex from '../../components/common/horizontal.flex';
+import VerticalFlex from '../../components/common/vertical.flex';
+import { vpx22, vpx30 } from '../../constants/px.vh';
+import { wpx30 } from '../../constants/px.vw';
+import useLanguage from '../../hooks/useLanguage';
+import ValidatorsImg from '../../static/side-navbar/validators.svg';
+import StatusItemView from './status.view.item';
+import CustomTable from '../../components/common/table';
+import CustomPagintaion from '../../components/common/pagination';
 
 function ValidatorsView() {
   const classes = useStyles();
@@ -38,29 +38,29 @@ function ValidatorsView() {
             <StatusItemView />
             <CustomTable
               headers={[
-                "jejsj",
-                "kflsjal",
-                "jejsj",
-                "kflsjal",
-                "jejsj",
-                "kflsjal",
-                "jejsj",
-                "kflsjal",
+                'jejsj',
+                'kflsjal',
+                'jejsj',
+                'kflsjal',
+                'jejsj',
+                'kflsjal',
+                'jejsj',
+                'kflsjal',
               ]}
               rows={[
-                "kdsfghjk",
-                "kdsfghjk",
-                "kdsfghjk",
-                "kdsfghjk",
-                "kdsfghjk",
-                "kdsfghjk",
+                'kdsfghjk',
+                'kdsfghjk',
+                'kdsfghjk',
+                'kdsfghjk',
+                'kdsfghjk',
+                'kdsfghjk',
               ]}
             />
           </HorizontalFlex>
         </CustomGrid>
-        <CustomGrid className={classes.paginationRoot} >
-          <HorizontalFlex justifyContent="flex-end" >
-          <CustomPagintaion />
+        <CustomGrid className={classes.paginationRoot}>
+          <HorizontalFlex justifyContent="flex-end">
+            <CustomPagintaion />
           </HorizontalFlex>
         </CustomGrid>
         {/* <CustomGrid>
@@ -86,12 +86,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   title: {
     fontSize: `${vpx22}`,
-    color: "#f3f3f3",
+    color: '#f3f3f3',
     letterSpacing: `-0.44px`,
   },
-  paginationRoot:{
-    margin: `2vh 0px 0px 0px`
-  }
+  paginationRoot: {
+    margin: `2vh 0px 0px 0px`,
+  },
 }));
 
 export default ValidatorsView;

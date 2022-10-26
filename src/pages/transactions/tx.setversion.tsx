@@ -1,16 +1,13 @@
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
-import { Paper, Theme, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import CustomGrid from "../../components/common/custom.grid";
-import HorizontalFlex from "../../components/common/horizontal.flex";
-import VerticalFlex from "../../components/common/vertical.flex";
-import {
-    GreyClr,
-  OrangeClr
-} from "../../constants/colors";
-import { vpx12, vpx15, vpx18, vpx20, vpx8 } from "../../constants/px.vh";
-import { wpx15 } from "../../constants/px.vw";
-import useLanguage from "../../hooks/useLanguage";
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import { Paper, Theme, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import CustomGrid from '../../components/common/custom.grid';
+import HorizontalFlex from '../../components/common/horizontal.flex';
+import VerticalFlex from '../../components/common/vertical.flex';
+import { GreyClr, OrangeClr } from '../../constants/colors';
+import { vpx12, vpx15, vpx18, vpx20, vpx8 } from '../../constants/px.vh';
+import { wpx15 } from '../../constants/px.vw';
+import useLanguage from '../../hooks/useLanguage';
 
 function TxSetVersion() {
   const classes = useStyles();
@@ -93,12 +90,12 @@ function TxSetVersion() {
                       </HorizontalFlex>
                     </CustomGrid>
                   </HorizontalFlex>
-                </CustomGrid>         
+                </CustomGrid>
                 <CustomGrid md={12} className={classes.valueRoot}>
                   <HorizontalFlex>
                     <CustomGrid md={2}>
                       <Typography className={classes.valueTitle}>
-                       Signer
+                        Signer
                       </Typography>
                     </CustomGrid>
                     <CustomGrid md={0.5}>
@@ -118,7 +115,7 @@ function TxSetVersion() {
                   <HorizontalFlex>
                     <CustomGrid md={2}>
                       <Typography className={classes.valueTitle}>
-                      Version 
+                        Version
                       </Typography>
                     </CustomGrid>
                     <CustomGrid md={0.5}>
@@ -129,7 +126,7 @@ function TxSetVersion() {
                         className={classes.value}
                         style={{ color: OrangeClr }}
                       >
-                       1.95.3
+                        1.95.3
                       </Typography>
                     </CustomGrid>
                   </HorizontalFlex>
@@ -162,40 +159,40 @@ function TxSetVersion() {
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    margin: "4vh 0px 0px 0px",
+    margin: '4vh 0px 0px 0px',
   },
   paperRoot: {
     height: `38.656527249683144vh`,
-    backgroundColor: "transparent",
+    backgroundColor: 'transparent',
     // boxShadow: "10px 15px 10px 0 rgba(0, 0, 0, 0.2)",
     // backgroundImage: `radial-gradient(140% 70% at 100% 0%,#264da3 -40%, rgba(0, 0, 0, 0) 70%) ,linear-gradient(359deg, rgba(255, 255, 255, 0.16) -80%, rgba(255, 255, 255, 0.04) 97.48%)`,
     padding: `3.2vh 1.5vw 3.5vh 1.5vw`,
-    border: "0.5px solid rgba(255, 255, 255, 0.4)",
+    border: '0.5px solid rgba(255, 255, 255, 0.4)',
     opacity: 0.9,
-    borderRadius: "8px",
+    borderRadius: '8px',
   },
   memosPaper: {
     height: `13vh`,
-    backgroundColor: "transparent",
+    backgroundColor: 'transparent',
     // boxShadow: "10px 15px 10px 0 rgba(0, 0, 0, 0.2)",
     // backgroundImage: `radial-gradient(140% 70% at 100% 0%,#264da3 -40%, rgba(0, 0, 0, 0) 70%) ,linear-gradient(359deg, rgba(255, 255, 255, 0.16) -80%, rgba(255, 255, 255, 0.04) 97.48%)`,
     padding: `3.2vh 1.5vw 13.5vh 1.5vw`,
-    border: "0.5px solid rgba(255, 255, 255, 0.4)",
+    border: '0.5px solid rgba(255, 255, 255, 0.4)',
     opacity: 0.9,
     margin: `2.5vh 0px 2.5vh 0px`,
-    borderRadius: "8px",
+    borderRadius: '8px',
   },
   title: {
     color: theme.palette.common.white,
     fontSize: `${vpx20}`,
-    fontWeight: "normal",
-    letterSpacing: "-0.36px",
+    fontWeight: 'normal',
+    letterSpacing: '-0.36px',
     opacity: 0.6,
   },
   horizontalDivider: {
-    height: "0.6px",
+    height: '0.6px',
     backgroundImage:
-      "linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0.42) 100%)",
+      'linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0.42) 100%)',
     opacity: 0.2,
   },
   headerRoot: {
@@ -207,8 +204,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   valueTitle: {
     color: theme.palette.common.white,
     fontSize: `${vpx15}`,
-    fontWeight: "normal",
-    letterSpacing: "-0.36px",
+    fontWeight: 'normal',
+    letterSpacing: '-0.36px',
     opacity: 0.7,
     width: `10vw`,
   },
@@ -220,8 +217,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   value: {
     color: theme.palette.common.white,
     fontSize: `${vpx15}`,
-    fontWeight: "normal",
-    letterSpacing: "-0.36px",
+    fontWeight: 'normal',
+    letterSpacing: '-0.36px',
   },
   copyIcon: {
     fontSize: `${vpx12}`,
@@ -239,7 +236,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: `1.8vh`,
     width: `fit-content`,
     padding: `0.1vh 0.5vw 0.1vh 0.5vw`,
-    borderRadius: "2px",
+    borderRadius: '2px',
     margin: `0px 0.5vw 0px 0px`,
   },
   valuePaperTxt: {
@@ -254,17 +251,17 @@ const useStyles = makeStyles((theme: Theme) => ({
   memosTxt: {
     color: theme.palette.common.white,
     fontSize: `${vpx15}`,
-    fontWeight: "normal",
-    letterSpacing: "-0.36px",
+    fontWeight: 'normal',
+    letterSpacing: '-0.36px',
     margin: `2vh 0px 0px 0px`,
   },
   outTxt: {
     color: theme.palette.common.white,
     fontSize: `${vpx15}`,
-    fontWeight: "normal",
-    letterSpacing: "-0.36px",
+    fontWeight: 'normal',
+    letterSpacing: '-0.36px',
     margin: `0px 0px 0px 0px`,
   },
 }));
 
-export default  TxSetVersion;
+export default TxSetVersion;

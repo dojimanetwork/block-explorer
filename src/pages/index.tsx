@@ -1,6 +1,7 @@
 import { Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { View } from 'react-navi';
+import HandleDashFunCalls from '../api';
 import CustomGrid from '../components/common/custom.grid';
 import HorizontalFlex from '../components/common/horizontal.flex';
 import SideNavBar from '../components/common/side.nav.bar';
@@ -25,6 +26,7 @@ function DojimaBlockExplorer() {
           </CustomGrid>
         </HorizontalFlex>
       </CustomGrid>
+      <HandleDashFunCalls />
     </>
   );
 }

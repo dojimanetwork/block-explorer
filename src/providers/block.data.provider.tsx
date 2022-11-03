@@ -14,17 +14,19 @@ export interface BlocksDataIfc {
   blockHeight: string;
   latestBlockHash: string;
   latestHashTxs: number;
-  latestTime: string
+  latestTime: string;
 }
 
 export interface BlockDataReducerIfc {
-  blockChainData: BlocksDataIfc[]
+  blockChainData: BlocksDataIfc[];
+  prevBlockHeight: string;
 }
 
 export const BlockChainDataContext = createContext<BlockChainDataIfc>({
   BlockChainDataDispatch: () => {},
   blockChainDataState: {
-    blockChainData:[]
+    blockChainData: [],
+    prevBlockHeight: "-1",
   },
 });
 

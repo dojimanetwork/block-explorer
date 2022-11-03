@@ -10,7 +10,6 @@ import { menuData } from '../constants/menu';
 
 function DojimaBlockExplorer() {
   const classes = useStyles();
-
   return (
     <>
       <TopNavBar />

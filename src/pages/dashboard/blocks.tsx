@@ -2,6 +2,7 @@ import { Paper, Theme, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import CustomGrid from "../../components/common/custom.grid";
 import HorizontalFlex from "../../components/common/horizontal.flex";
+import CustomLoader from "../../components/common/loader";
 import VerticalFlex from "../../components/common/vertical.flex";
 import { px10, px3, px5 } from "../../constants/px.rem";
 import { vpx10, vpx14, vpx18, vpx22, vpx30 } from "../../constants/px.vh";
@@ -13,7 +14,7 @@ function BlocksView() {
   const classes = useStyles();
   const { blockChainDataState } = useBlockChainData();
   const txsData = blockChainDataState.blockChainData;
-  console.log("Array ", blockChainDataState.blockChainData);
+  // console.log("Array ", blockChainDataState.blockChainData);
 
   return (
     <CustomGrid md={11.5}>
@@ -48,7 +49,7 @@ function BlocksView() {
           </CustomGrid>
           <CustomGrid className={classes.contentRoot}>
             {txsData.length === 0 ? (
-              <Typography>No Transactions</Typography>
+              <CustomLoader loaderMargin="20vh 0px 0px 0px" loaderTxt="Please wait..." />
             ) : (
               txsData.map((data:any, index: number) => (
                 <CustomGrid

@@ -6,7 +6,7 @@ const Dashboard = lazy(() => import('../pages/dashboard/index'));
 const Txs = lazy(() => import('../pages/transactions/index'));
 const BlocksTable = lazy(() => import('../pages/blocks/blocks.table'));
 const Blocks = lazy(() => import('../pages/blocks/index'));
-const Validators = lazy(() => import('../pages/Validators/index'));
+// const Validators = lazy(() => import('../pages/Validators/index'));
 const Pools = lazy(() => import('../pages/pools/index'));
 const TxUnbond = lazy(() => import('../pages/transactions/tx.details.unbond'));
 const PoolDetails = lazy(() => import('../pages/pools/pool.details'));
@@ -14,6 +14,7 @@ const AddressView = lazy(() => import('../pages/address/index'));
 const AddressType = lazy(() => import('../pages/address/address.type'));
 const VaultView = lazy(() => import('../pages/vault/vault.table'));
 const VaultAddress = lazy(() => import('../pages/vault/vault.address'));
+const ValidatorsInfo = lazy(() => import('../pages/Validators/validators.info'))
 
 export default mount({
   '/block-explorer': NavBarWithView(
@@ -30,8 +31,8 @@ export default mount({
       '/transactions': route({
         view: <Txs />,
       }),
-      '/validators': route({
-        view: <Validators />,
+      '/validators-info': route({
+        view: <ValidatorsInfo />,
       }),
       '/pools': route({
         view: <Pools />,

@@ -52,7 +52,6 @@ function BlocksPage() {
         </CustomGrid>
         <CustomGrid>
           <Paper className={classes.infoCard}>
-            <CustomGrid>
               <HorizontalFlex>
                 {blocksInfo.map((data) => (
                   <CustomGrid md={3}>
@@ -70,7 +69,6 @@ function BlocksPage() {
                   </CustomGrid>
                 ))}
               </HorizontalFlex>
-            </CustomGrid>
           </Paper>
         </CustomGrid>
         <CustomGrid>

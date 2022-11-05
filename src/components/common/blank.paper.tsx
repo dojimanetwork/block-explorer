@@ -26,7 +26,7 @@ const useStyles = makeStyles<Theme, BlankPaperIfc>((theme: Theme) =>({
         backgroundColor:({ backgroundClr }) => backgroundClr ?? `rgba(39, 42, 44, 0.76)`,
         // opacity: 0.5,
         padding: "2vh 1.5vw 2vh 1.5vw",
-        margin:({ margin }) => margin ?? `1vh 0px 1vh 0px`,
+        margin:({ margin }) => margin ?? `1vh 0px 0.5vh 0px`,
       },
 }))
 

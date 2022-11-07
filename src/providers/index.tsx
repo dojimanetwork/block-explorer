@@ -4,16 +4,19 @@ import { ThemeProvider } from "@mui/material";
 import { StyledEngineProvider } from "@mui/material";
 import BlockChainDataProvider from "./block.data.provider";
 import LanguageProvider from "./LanguageProvider";
+import NodeDataProvider from "./node.data.provider";
 
 function DojimaProvider(props: ChildrenType) {
   const Theme = DojimaTheme({ isDark: true });
   return (
     <StyledEngineProvider injectFirst>
-      <BlockChainDataProvider>
-        <ThemeProvider theme={Theme}>
-          <LanguageProvider>{props.children}</LanguageProvider>
-        </ThemeProvider>
-      </BlockChainDataProvider>
+      <NodeDataProvider>
+        <BlockChainDataProvider>
+          <ThemeProvider theme={Theme}>
+            <LanguageProvider>{props.children}</LanguageProvider>
+          </ThemeProvider>
+        </BlockChainDataProvider>
+      </NodeDataProvider>
     </StyledEngineProvider>
   );
 }

@@ -21,5 +21,21 @@
       "title3": "Type",
       "title4": "Date and Time"
     }
+  },
+  "vallidators_info_titles":{
+    "node": "Node",
+    "ip_add": "IP Address",
+    "version": "Version",
+    "status": "Status",
+    "public_keys": "Public Keys",
+    "bond": "Bond",
+    "slash_point": "Slash Point",
+    "current_award": "Current Award",
+    "rq_to_leave": "Request To Leave",
+    "forced_to_leave": "Forced To Leave",
+    "leave_height": "Leave Height",
+    "jail_address": "Jail Node Address",
+    "jail_release": "Jail Node Release Height",
+    "jail_reason": "Jail Reason"
   }
 }

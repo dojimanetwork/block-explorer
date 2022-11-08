@@ -1,7 +1,6 @@
 import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
 import { Theme, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React from "react";
 import BlankPaper from "../../components/common/blank.paper";
 import CustomGrid from "../../components/common/custom.grid";
 import HorizontalFlex from "../../components/common/horizontal.flex";
@@ -9,6 +8,7 @@ import VerticalFlex from "../../components/common/vertical.flex";
 import { GreenClr, OrangeClr } from "../../constants/colors";
 import { vpx14, vpx16, vpx22, vpx25, vpx30 } from "../../constants/px.vh";
 import { wpx15 } from "../../constants/px.vw";
+import useLanguage from "../../hooks/useLanguage";
 import useNodeData from "../../hooks/useNodeDetails";
 import BlocksImg from "../../static/side-navbar/block.svg";
 
@@ -16,6 +16,23 @@ function ValidatorsInfo() {
   const classes = useStyles();
   const { nodeDataState } = useNodeData();
   const nodeDetails = nodeDataState.nodeData;
+  const lang = useLanguage();
+  const {
+    node,
+    ip_add,
+    slash_point,
+    status,
+    bond,
+    version,
+    public_keys,
+    current_award,
+    rq_to_leave,
+    forced_to_leave,
+    leave_height,
+    jail_address,
+    jail_reason,
+    jail_release,
+  } = lang.languageText.vallidators_info_titles;
 
   return (
     <CustomGrid md={12}>
@@ -23,7 +40,7 @@ function ValidatorsInfo() {
         <HorizontalFlex alignItems="center">
           <img src={BlocksImg} alt="blocks" className={classes.imageRoot} />
           <Typography className={classes.title}>
-            Node: {nodeDetails.node_address}
+            {node}: {nodeDetails.node_address}
           </Typography>
           <ContentCopyRoundedIcon className={classes.copyIcon} />
         </HorizontalFlex>
@@ -32,7 +49,7 @@ function ValidatorsInfo() {
             <CustomGrid md={4}>
               <VerticalFlex>
                 <Typography className={classes.infoTitle}>
-                  IP Address
+                  {ip_add}
                 </Typography>
                 <Typography className={classes.infoValue}>
                   {nodeDetails.ip_address}
@@ -41,7 +58,7 @@ function ValidatorsInfo() {
             </CustomGrid>
             <CustomGrid md={4}>
               <VerticalFlex>
-                <Typography className={classes.infoTitle}>Version</Typography>
+                <Typography className={classes.infoTitle}>{version}</Typography>
                 <Typography className={classes.infoValue}>
                   {nodeDetails.version}
                 </Typography>
@@ -49,7 +66,7 @@ function ValidatorsInfo() {
             </CustomGrid>
             <CustomGrid md={4}>
               <VerticalFlex>
-                <Typography className={classes.infoTitle}>Status</Typography>
+                <Typography className={classes.infoTitle}>{status}</Typography>
                 <Typography
                   style={{ color: GreenClr }}
                   className={classes.infoValue}
@@ -64,7 +81,7 @@ function ValidatorsInfo() {
           <VerticalFlex>
             <HorizontalFlex>
               <Typography className={classes.infoTitle}>
-                Public Keys:
+                {public_keys}:
               </Typography>
               <Typography
                 style={{ color: OrangeClr, margin: "0px 0px 0px 0.5vw" }}
@@ -85,7 +102,7 @@ function ValidatorsInfo() {
             </BlankPaper>
             <HorizontalFlex>
               <Typography className={classes.infoTitle}>
-                Public Keys:
+                {public_keys}:
               </Typography>
               <Typography
                 style={{ color: OrangeClr, margin: "0px 0px 0px 0.5vw" }}
@@ -110,7 +127,7 @@ function ValidatorsInfo() {
           <HorizontalFlex>
             <CustomGrid md={4}>
               <VerticalFlex>
-                <Typography className={classes.infoTitle}>Bond</Typography>
+                <Typography className={classes.infoTitle}>{bond}</Typography>
                 <Typography className={classes.infoValue}>
                   {nodeDetails.bond}
                 </Typography>
@@ -119,7 +136,7 @@ function ValidatorsInfo() {
             <CustomGrid md={4}>
               <VerticalFlex>
                 <Typography className={classes.infoTitle}>
-                  Slash Point
+                  {slash_point}
                 </Typography>
                 <Typography className={classes.infoValue}>
                   {nodeDetails.slash_points}
@@ -129,7 +146,7 @@ function ValidatorsInfo() {
             <CustomGrid md={4}>
               <VerticalFlex>
                 <Typography className={classes.infoTitle}>
-                  Current Award
+                  {current_award}
                 </Typography>
                 <Typography className={classes.infoValue}>
                   {nodeDetails.current_award}
@@ -143,7 +160,7 @@ function ValidatorsInfo() {
             <CustomGrid md={4}>
               <VerticalFlex>
                 <Typography className={classes.infoTitle}>
-                  Request To Leave
+                  {rq_to_leave}
                 </Typography>
                 <Typography className={classes.infoValue}>
                   {nodeDetails.requested_to_leave === false ? "FALSE" : "TRUE"}
@@ -153,7 +170,7 @@ function ValidatorsInfo() {
             <CustomGrid md={4}>
               <VerticalFlex>
                 <Typography className={classes.infoTitle}>
-                  Forced To Leave
+                  {forced_to_leave}
                 </Typography>
                 <Typography className={classes.infoValue}>
                   {nodeDetails.forced_to_leave === false ? "FALSE" : "TRUE"}
@@ -163,7 +180,7 @@ function ValidatorsInfo() {
             <CustomGrid md={4}>
               <VerticalFlex>
                 <Typography className={classes.infoTitle}>
-                  Leave Height
+                 {leave_height}
                 </Typography>
                 <Typography className={classes.infoValue}>
                   {nodeDetails.leave_height}
@@ -177,7 +194,7 @@ function ValidatorsInfo() {
             <CustomGrid md={4}>
               <VerticalFlex>
                 <Typography className={classes.infoTitle}>
-                  Jail Node Address
+                  {jail_address}
                 </Typography>
                 <Typography className={classes.infoValue}>
                   {nodeDetails.jail.node_address}
@@ -187,7 +204,7 @@ function ValidatorsInfo() {
             <CustomGrid md={4}>
               <VerticalFlex>
                 <Typography className={classes.infoTitle}>
-                  Jail Node Realease Height
+                  {jail_release}
                 </Typography>
                 <Typography className={classes.infoValue}>
                   {nodeDetails.jail.hasOwnProperty("release_height") === false
@@ -199,7 +216,7 @@ function ValidatorsInfo() {
             <CustomGrid md={4}>
               <VerticalFlex>
                 <Typography className={classes.infoTitle}>
-                  Jail Reason
+                  {jail_reason}
                 </Typography>
                 <Typography className={classes.infoValue}>
                   {nodeDetails.jail.hasOwnProperty("reason") === false

@@ -46,7 +46,6 @@ function HandleDashFunCalls() {
     if (response.status === 200) {
       let result: BlockStatusType = response.data;
       // console.log(prevBlockHeight,result.result.sync_info.latest_block_height);
-
       if (
         result !== (null || undefined) &&
         prevBlockHeight !== result.result.sync_info.latest_block_height

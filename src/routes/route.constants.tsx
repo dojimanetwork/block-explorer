@@ -16,6 +16,8 @@ export const PoolsUrl = `${LandingPageUrl}/block-explorer/pools`;
 
 export const TxUnbondUrl = `${LandingPageUrl}/block-explorer/unbond`;
 
+export const TxHashInfoSearchUrl = `${LandingPageUrl}/block-explorer/tx-hash-info`
+
 export const PoolDetailsUrl = `${LandingPageUrl}/block-explorer/pool-details`;
 
 export const AddressViewUrl = `${LandingPageUrl}/block-explorer/address`;

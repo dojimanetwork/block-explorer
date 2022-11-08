@@ -15,6 +15,7 @@ const AddressType = lazy(() => import('../pages/address/address.type'));
 const VaultView = lazy(() => import('../pages/vault/vault.table'));
 const VaultAddress = lazy(() => import('../pages/vault/vault.address'));
 const ValidatorsInfo = lazy(() => import('../pages/Validators/validators.info'))
+const TxHashInfoSearch = lazy(() => import('../pages/transactions/tx.hash.info.search'))
 
 export default mount({
   '/block-explorer': NavBarWithView(
@@ -30,6 +31,9 @@ export default mount({
       }),
       '/transactions': route({
         view: <Txs />,
+      }),
+      '/tx-hash-info': route({
+        view: <TxHashInfoSearch />,
       }),
       '/validators-info': route({
         view: <ValidatorsInfo />,

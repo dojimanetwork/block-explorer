@@ -1,39 +1,51 @@
-import { AppBar, Theme, Toolbar, Typography } from '@mui/material';
-import { makeStyles } from '@mui/styles';
-import axios from 'axios';
-import { TxByHashDetailsType } from '../../api/tx.by.hash.api';
-import { TopNavBarClr } from '../../constants/colors';
-import { vpx14, vpx80 } from '../../constants/px.vh';
-import { wpx6 } from '../../constants/px.vw';
-import useNavi from '../../hooks/useNavi';
-import useTxHashData from '../../hooks/useTxHashData';
-import { update_tx_hash_data } from '../../reducers/tx.hash.data.reducer';
-import { TxHashInfoSearchUrl } from '../../routes/route.constants';
-import DojimaTextLogo from '../../static/top-navbar/dojima-logo.svg';
-import { TopNavBarHeadersData } from '../constants/dashboard/top.navbar.data';
-import CustomGrid from './custom.grid';
-import CustomSearch from './custom.search';
-import HorizontalFlex from './horizontal.flex';
-import TextSwitch from './text.switch';
-import VerticalFlex from './vertical.flex';
+import { AppBar, Theme, Toolbar, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import axios from "axios";
+import { TxByHashDetailsType } from "../../api/tx.by.hash.api";
+import { TopNavBarClr } from "../../constants/colors";
+import { vpx14, vpx80 } from "../../constants/px.vh";
+import { wpx6 } from "../../constants/px.vw";
+import useNavi from "../../hooks/useNavi";
+import useTxHashData from "../../hooks/useTxHashData";
+import { update_tx_hash_data } from "../../reducers/tx.hash.data.reducer";
+import { TxHashInfoSearchUrl } from "../../routes/route.constants";
+import DojimaTextLogo from "../../static/top-navbar/dojima-logo.svg";
+import { TopNavBarHeadersData } from "../constants/dashboard/top.navbar.data";
+import CustomGrid from "./custom.grid";
+import CustomSearch from "./custom.search";
+import HorizontalFlex from "./horizontal.flex";
+import TextSwitch from "./text.switch";
+import VerticalFlex from "./vertical.flex";
+import SearchIcon from "@mui/icons-material/Search";
+import { useState } from "react";
+import useSnackbar from "../../hooks/useSnackBar";
 
 function TopNavBar() {
   const classes = useStyles();
   const HeaderData = TopNavBarHeadersData;
-  const { TxHashDataDispatch} = useTxHashData();
-  const { navigateToUrl } = useNavi()
+  const { TxHashDataDispatch } = useTxHashData();
+  const { navigateToUrl } = useNavi();
+  const [hashValue, setHashValue] = useState<string | undefined>("");
+  const { DisplayMessage } = useSnackbar()
 
-  const handleTxHashSearch =async () => {
-    let details:TxByHashDetailsType = await axios.get("http://localhost:1317/cosmos/tx/v1beta1/txs/66BED060C117B7EC5CECCCEDE2C17B4C15BA183ADA170F52DC1EAA3F8C83A9BD");
-    if (details.status === 200) {
-      console.log(details);
-      TxHashDataDispatch({
-        type: update_tx_hash_data,
-        payload: details.data
-      })
-      navigateToUrl(TxHashInfoSearchUrl)
+  const handleTxHashSearch = async () => {
+    try {
+      let details: TxByHashDetailsType = await axios.get(
+        `http://localhost:1317/cosmos/tx/v1beta1/txs/${hashValue}`
+      );
+      if (details.status === 200) {
+        if (hashValue !== "") {
+          TxHashDataDispatch({
+            type: update_tx_hash_data,
+            payload: details.data,
+          });
+          navigateToUrl(TxHashInfoSearchUrl);
+        }
+      }
+    } catch (error) {
+      DisplayMessage("Please Check Tx Hash","error")
     }
-  }
+  };
 
   return (
     <AppBar>
@@ -49,8 +61,23 @@ function TopNavBar() {
           <CustomGrid md={7}>
             <HorizontalFlex>
               <CustomGrid md={4}>
-                <CustomSearch plcTxt="🔍   Search By TxHash" />
-                <Typography onClick={() => handleTxHashSearch()} style={{ cursor: "pointer"}} >Click</Typography>
+                <HorizontalFlex alignItems="center">
+                  <CustomSearch
+                    onChangePlc={(hash) => setHashValue(hash)}
+                    plcTxt="Search By TxHash"
+                  />
+                  <SearchIcon
+                    style={{
+                      cursor: "pointer",
+                      height: "3.1vh",
+                      margin: `0px 0px 0px 0.5vw`,
+                      color: "white",
+                      opacity: 0.6,
+                    }}
+                    onClick={() => handleTxHashSearch()}
+                  />
+                  {/* <Typography onClick={() => handleTxHashSearch()} style={{ cursor: "pointer"}} >Click</Typography> */}
+                </HorizontalFlex>
               </CustomGrid>
               {HeaderData.map((data, index: number) => (
                 <CustomGrid md={2} key={`${data},${index}`}>
@@ -71,7 +98,7 @@ function TopNavBar() {
                           <Typography
                             style={{
                               fontSize: `${vpx14}`,
-                              letterSpacing: '0.3px',
+                              letterSpacing: "0.3px",
                               fontWeight: 500,
                               color: data.color,
                             }}
@@ -102,7 +129,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     height: `${vpx80}`,
     backgroundColor: `${TopNavBarClr}`,
-    padding: '0vh 2vh 0px 2vh',
+    padding: "0vh 2vh 0px 2vh",
   },
   logoRoot: {
     height: `3.5vh`,
@@ -122,8 +149,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   title: {
     color: theme.palette.common.white,
     fontSize: `${vpx14}`,
-    fontWeight: 'normal',
-    letterSpacing: '-0.18px',
+    fontWeight: "normal",
+    letterSpacing: "-0.18px",
   },
   switchRoot: {
     margin: `0.5vh 0px 0px 0px`,
@@ -132,8 +159,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: `0px 0px 0px 2vw`,
   },
   verticalDivider: {
-    width: '2px',
-    height: '30px',
+    width: "2px",
+    height: "30px",
     backgroundColor: theme.palette.common.black,
     margin: `0px 0px 0px 0px`,
   },

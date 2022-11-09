@@ -7,6 +7,7 @@ import { createBrowserNavigation } from 'navi';
 import routes from './routes';
 import { Suspense } from 'react';
 import { BackgroundClr } from './constants/colors';
+import AllSnackbar from './components/snackbar';
 
 function App() {
   const classes = useStyles();
@@ -20,6 +21,7 @@ function App() {
       <Suspense>
         <Router navigation={navigation}>
           <CustomGrid md={12} className={classes.root}>
+            <AllSnackbar />
             <View />
           </CustomGrid>
         </Router>

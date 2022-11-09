@@ -58,3 +58,5 @@ export const BlockNumbers = [
   // "polkadot",
   '265625',
 ];
+
+export type SnackbarTypes = "success" | "error" | "warning" | "info";

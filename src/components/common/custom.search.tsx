@@ -1,9 +1,9 @@
-import { Theme } from '@mui/material';
-import TextField from '@mui/material/TextField';
-import { makeStyles } from '@mui/styles';
+import { Theme } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import { makeStyles } from "@mui/styles";
 
 interface PlaceholderSearchIfc {
-  onChangePlc?: (asset: string | null) => void;
+  onChangePlc?: (hash: string | undefined) => void;
   plcTxt: string;
   width?: string;
   height?: string;
@@ -11,7 +11,7 @@ interface PlaceholderSearchIfc {
 
 function CustomSearch(props: PlaceholderSearchIfc) {
   const classes = useStyles({ ...props });
-  const { plcTxt } = props;
+  const { plcTxt, onChangePlc } = props;
 
   return (
     // <Autocomplete
@@ -31,31 +31,33 @@ function CustomSearch(props: PlaceholderSearchIfc) {
     //   }}
     //   freeSolo
     //   renderInput={(params) => (
-        <TextField
-          className={classes.placeholder}
-          // {...params}
-          placeholder={plcTxt}
-        />
-      // )}
+    <TextField
+      className={classes.placeholder}
+      // {...params}
+      onChange={(e) => onChangePlc ? onChangePlc(e.target.value) : undefined}
+      placeholder={plcTxt}
+      autoComplete="off"
+      autoCorrect="off"
+    /> // )}
     // />
   );
 }
 
 const useStyles = makeStyles<Theme, PlaceholderSearchIfc>((theme: Theme) => ({
   placeholder: {
-    '& .MuiOutlinedInput-root': {
-      borderRadius: '8px',
-      backgroundColor: '#343739',
-      width: '15vw',
-      height: '4vh',
-      padding: '0px 0px 0px 1vw',
+    "& .MuiOutlinedInput-root": {
+      borderRadius: "8px",
+      backgroundColor: "#343739",
+      width: "12vw",
+      height: "4vh",
+      padding: "0px 0px 0px 0.5vw",
       color: theme.palette.common.white,
-      letterSpacing: '-0.26px',
-      fontSize: '1.5vh',
-      border: 'solid 0.8px #343739',
+      letterSpacing: "-0.26px",
+      fontSize: "1.5vh",
+      border: "solid 0.8px #343739",
     },
-    '&.MuiAutocomplete-listbox': {
-      fontSize: '8px',
+    "&.MuiAutocomplete-listbox": {
+      fontSize: "8px",
     },
   },
   imageRoot: {

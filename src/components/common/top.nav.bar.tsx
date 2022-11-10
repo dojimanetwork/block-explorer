@@ -33,6 +33,8 @@ function TopNavBar() {
       let details: TxByHashDetailsType = await axios.get(
         `http://localhost:1317/cosmos/tx/v1beta1/txs/${hashValue}`
       );
+      console.log(details);
+      
       if (details.status === 200) {
         if (hashValue !== "") {
           TxHashDataDispatch({

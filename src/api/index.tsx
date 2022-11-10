@@ -9,7 +9,7 @@ import { BlockByHeightType } from "./block.height.api";
 import { BlockStatusType } from "./blocks.api";
 import { NodeDetailsType } from "./node.details.api";
 
-function convertISOtoUTC(date: string) {
+export function convertISOtoUTC(date: string) {
   const utcDate = new Date(date).toUTCString();
   return utcDate;
 }

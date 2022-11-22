@@ -22,10 +22,13 @@
       "title4": "Date and Time"
     },
     "tx_hash_info":{
+      "title": "Transaction Details",
       "title1": "Transaction Hash",
       "title2": "Block",
       "title3": "Type",
-      "title4": "Date and Time"
+      "title4": "Date and Time",
+      "title5": "Amount",
+      "title6": "Memo"
     }
   },
   "vallidators_info_titles":{

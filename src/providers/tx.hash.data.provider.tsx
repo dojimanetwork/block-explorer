@@ -1,7 +1,8 @@
 import React, { createContext, useReducer } from "react";
 import { TxByHashDataType } from "../api/tx.by.hash.api";
 import {
-  txHashDataIniSt, txHashDataReducer
+  txHashDataIniSt,
+  txHashDataReducer,
 } from "../reducers/tx.hash.data.reducer";
 
 import { ChildrenType } from "../types";
@@ -19,7 +20,17 @@ export const TxHashDataContext = createContext<TxHashDataIfc>({
   TxHashDataDispatch: () => {},
   txhashDataState: {
     txhashData: {
-      tx: {},
+      tx: {
+        auth_info: "",
+        body: {
+          extension_options: [],
+          memo: "",
+          messages: [],
+          non_critical_extension_options: [],
+          timeout_height: "",
+        },
+        signatures: "",
+      },
       tx_response: {
         code: 0,
         codespace: "",

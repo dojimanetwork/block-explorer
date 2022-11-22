@@ -17,18 +17,19 @@ import { DashboardUrl } from "../../routes/route.constants";
 function TxHashInfoSearch() {
   const classes = useStyles();
   const lang = useLanguage();
-  const { title1, title2, title4 } =
+  const { title1, title2, title4, title, title5, title6 } =
     lang.languageText.transaction.tx_hash_info;
   const { txhashDataState } = useTxHashData();
-  const txData = txhashDataState.txhashData.tx_response;
-  const { navigateToUrl } = useNavi()
+  const txDataTx = txhashDataState.txhashData.tx;
+  const txDataResponse = txhashDataState.txhashData.tx_response;
+  const { navigateToUrl } = useNavi();
 
-  useEffect(() =>{
-    if(txData.txhash === ""){
-      navigateToUrl(DashboardUrl)
+  useEffect(() => {
+    if (txDataResponse.txhash === "") {
+      navigateToUrl(DashboardUrl);
     }
     //eslint-disable-next-line
-  },[])
+  }, []);
 
   return (
     <CustomGrid className={classes.root} md={11.5}>
@@ -36,9 +37,7 @@ function TxHashInfoSearch() {
         <Paper className={classes.paperRoot}>
           <VerticalFlex>
             <CustomGrid md={12}>
-              <Typography className={classes.title}>
-                Transaction Details
-              </Typography>
+              <Typography className={classes.title}>{title}</Typography>
               <CustomGrid md={1.5}>
                 <div className={classes.horizontalDivider}></div>
               </CustomGrid>
@@ -58,7 +57,7 @@ function TxHashInfoSearch() {
                     <CustomGrid md={9.5}>
                       <HorizontalFlex alignItems="center">
                         <Typography className={classes.value}>
-                          {txData.txhash}
+                          {txDataResponse.txhash}
                         </Typography>
                         <ContentCopyIcon className={classes.copyIcon} />
                       </HorizontalFlex>
@@ -77,11 +76,90 @@ function TxHashInfoSearch() {
                     </CustomGrid>
                     <CustomGrid md={9.5}>
                       <Typography className={classes.value}>
-                        {txData.height}
+                        {txDataResponse.height}
                       </Typography>
                     </CustomGrid>
                   </HorizontalFlex>
                 </CustomGrid>
+                <CustomGrid md={12} className={classes.valueRoot}>
+                  <HorizontalFlex>
+                    <CustomGrid md={2}>
+                      <Typography className={classes.valueTitle}>
+                        {title5}
+                      </Typography>
+                    </CustomGrid>
+                    <CustomGrid md={0.5}>
+                      <Typography className={classes.dots}>:</Typography>
+                    </CustomGrid>
+                    <CustomGrid md={9.5}>
+                      <Typography style={{ color: OrangeClr }} className={classes.value}>
+                        {txDataTx.body.messages.length > 0
+                          ? txDataTx.body.messages[0].coins.length > 0
+                            ? txDataTx.body.messages[0].coins[0].amount
+                            : "undefined"
+                          : "undefined"}
+                      </Typography>
+                    </CustomGrid>
+                  </HorizontalFlex>
+                </CustomGrid>
+                <CustomGrid md={12} className={classes.valueRoot}>
+                  <HorizontalFlex>
+                    <CustomGrid md={2}>
+                      <Typography className={classes.valueTitle}>
+                        Gas Used
+                      </Typography>
+                    </CustomGrid>
+                    <CustomGrid md={0.5}>
+                      <Typography className={classes.dots}>:</Typography>
+                    </CustomGrid>
+                    <CustomGrid md={9.5}>
+                      <Typography
+                        className={classes.value}
+                        style={{ color: OrangeClr }}
+                      >
+                        {txDataResponse.gas_used}
+                      </Typography>
+                    </CustomGrid>
+                  </HorizontalFlex>
+                </CustomGrid>
+                <CustomGrid md={12} className={classes.valueRoot}>
+                  <HorizontalFlex>
+                    <CustomGrid md={2}>
+                      <Typography className={classes.valueTitle}>
+                        {title6}
+                      </Typography>
+                    </CustomGrid>
+                    <CustomGrid md={0.5}>
+                      <Typography className={classes.dots}>:</Typography>
+                    </CustomGrid>
+                    <CustomGrid md={9.5}>
+                      <Typography className={classes.value}>
+                        {txDataTx.body.messages.length > 0
+                          ? txDataTx.body.messages[0].memo
+                          : ""}
+                      </Typography>
+                    </CustomGrid>
+                  </HorizontalFlex>
+                </CustomGrid>
+                {/* <CustomGrid md={12} className={classes.valueRoot}>
+                  <HorizontalFlex>
+                    <CustomGrid md={2}>
+                      <Typography className={classes.valueTitle}>
+                        {title3}
+                      </Typography>
+                    </CustomGrid>
+                    <CustomGrid md={0.5}>
+                      <Typography className={classes.dots}>:</Typography>
+                    </CustomGrid>
+                    <CustomGrid md={9.5}>
+                      <Typography className={classes.value}>
+                        {txDataTx.body.messages.length > 0
+                          ? txDataTx.body.messages[0]["@type"]
+                          : ""}
+                      </Typography>
+                    </CustomGrid>
+                  </HorizontalFlex>
+                </CustomGrid> */}
                 {/* <CustomGrid md={12} className={classes.valueRoot}>
                   <HorizontalFlex>
                     <CustomGrid md={2}>
@@ -130,26 +208,6 @@ function TxHashInfoSearch() {
                   <HorizontalFlex>
                     <CustomGrid md={2}>
                       <Typography className={classes.valueTitle}>
-                        Gas Used
-                      </Typography>
-                    </CustomGrid>
-                    <CustomGrid md={0.5}>
-                      <Typography className={classes.dots}>:</Typography>
-                    </CustomGrid>
-                    <CustomGrid md={9.5}>
-                      <Typography
-                        className={classes.value}
-                        style={{ color: OrangeClr }}
-                      >
-                        {txData.gas_used}
-                      </Typography>
-                    </CustomGrid>
-                  </HorizontalFlex>
-                </CustomGrid>
-                <CustomGrid md={12} className={classes.valueRoot}>
-                  <HorizontalFlex>
-                    <CustomGrid md={2}>
-                      <Typography className={classes.valueTitle}>
                         {title4}
                       </Typography>
                     </CustomGrid>
@@ -158,7 +216,7 @@ function TxHashInfoSearch() {
                     </CustomGrid>
                     <CustomGrid md={9.5}>
                       <Typography className={classes.value}>
-                        {convertISOtoUTC(txData.timestamp)}
+                        {convertISOtoUTC(txDataResponse.timestamp)}
                       </Typography>
                     </CustomGrid>
                   </HorizontalFlex>
@@ -177,7 +235,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: "4vh 0px 0px 0px",
   },
   paperRoot: {
-    height: `38.656527249683144vh`,
+    minHeight: `30vh`,
     backgroundColor: "transparent",
     // boxShadow: "10px 15px 10px 0 rgba(0, 0, 0, 0.2)",
     // backgroundImage: `radial-gradient(140% 70% at 100% 0%,#264da3 -40%, rgba(0, 0, 0, 0) 70%) ,linear-gradient(359deg, rgba(255, 255, 255, 0.16) -80%, rgba(255, 255, 255, 0.04) 97.48%)`,

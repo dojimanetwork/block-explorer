@@ -2,7 +2,17 @@ import { TxHashDataReducerIfc } from "../providers/tx.hash.data.provider";
 
 const txHashDataIniSt: TxHashDataReducerIfc = {
   txhashData: {
-    tx: {},
+    tx: {
+      auth_info: "",
+      body: {
+        extension_options: [],
+        memo: "",
+        messages: [],
+        non_critical_extension_options: [],
+        timeout_height: "",
+      },
+      signatures: "",
+    },
     tx_response: {
       code: 0,
       codespace: "",

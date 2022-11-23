@@ -2,8 +2,9 @@ import { Paper, Theme, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import CustomGrid from '../../components/common/custom.grid';
 import HorizontalFlex from '../../components/common/horizontal.flex';
+import NoDataText from '../../components/common/no.data.text';
 import VerticalFlex from '../../components/common/vertical.flex';
-import { DashboardTxsData } from '../../components/constants/dashboard/dashboard.txs.data';
+// import { DashboardTxsData } from '../../components/constants/dashboard/dashboard.txs.data';
 import { px10, px3, px5 } from '../../constants/px.rem';
 import { vpx10, vpx14, vpx18, vpx22, vpx30, vpx8 } from '../../constants/px.vh';
 import { wpx20 } from '../../constants/px.vw';
@@ -11,7 +12,7 @@ import TransactionImg from '../../static/side-navbar/transaction.svg';
 
 function Transactions() {
   const classes = useStyles();
-  const txsData = DashboardTxsData;
+  // const txsData = DashboardTxsData;
 
   return (
     <CustomGrid md={11.5}>
@@ -46,7 +47,8 @@ function Transactions() {
               </CustomGrid>
             </HorizontalFlex>
           </CustomGrid>
-          <CustomGrid className={classes.contentRoot}>
+          <NoDataText margin='24vh 0px 0px 0px' loaderTxt='No Transactions' />
+          {/* <CustomGrid className={classes.contentRoot}>
             {txsData.map((data, index: number) => (
               <CustomGrid
                 key={`${data},${index}`}
@@ -82,7 +84,7 @@ function Transactions() {
                 </CustomGrid>
               </CustomGrid>
             ))}
-          </CustomGrid>
+          </CustomGrid> */}
         </VerticalFlex>
       </Paper>
     </CustomGrid>

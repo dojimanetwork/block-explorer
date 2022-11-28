@@ -3,23 +3,27 @@ import { makeStyles } from '@mui/styles';
 import CustomGrid from '../../components/common/custom.grid';
 import HorizontalFlex from '../../components/common/horizontal.flex';
 import VerticalFlex from '../../components/common/vertical.flex';
-import { ChainCardsData } from '../../components/constants/dashboard/chain.cards.data';
+import { px3, px10, px5 } from '../../constants/px.rem';
 import { vpx14, vpx30, vpx8 } from '../../constants/px.vh';
 import { wpx25 } from '../../constants/px.vw';
+import useBlockChainData from '../../hooks/useBlockChainData';
+import DojimaLogo from '../../static/dojima-logo.svg'
 
 function ChainsCards() {
   const classes = useStyles();
-  const chainsData = ChainCardsData;
+  const { blockChainDataState } = useBlockChainData();
+  const txsData = blockChainDataState.blockChainData;
+
   return (
     <CustomGrid md={12} className={classes.root}>
       <HorizontalFlex justifyContent="center">
         <CustomGrid>
-          {chainsData.map((data, index: number) => (
+          {txsData.map((data, index: number) => (
             <Paper
               className={classes.paperRoot}
-              style={{
-                backgroundImage: `radial-gradient(50% 100% at 91.25% 0%, ${data.radiantClr} -100%, rgba(0, 0, 0, 0) 100%) ,linear-gradient(359deg, rgba(255, 255, 255, 0.16) 2.57%, rgba(255, 255, 255, 0.04) 97.48%)`,
-              }}
+              // style={{
+              //   backgroundImage: `radial-gradient(50% 100% at 91.25% 0%, ${data.radiantClr} -100%, rgba(0, 0, 0, 0) 100%) ,linear-gradient(359deg, rgba(255, 255, 255, 0.16) 2.57%, rgba(255, 255, 255, 0.04) 97.48%)`,
+              // }}
               key={`${data},${index}`}
             >
               <VerticalFlex>
@@ -29,7 +33,7 @@ function ChainsCards() {
                       <HorizontalFlex alignItems="center">
                         <CustomGrid>
                           <img
-                            src={data.chainImg}
+                            src={DojimaLogo}
                             alt="chains"
                             className={classes.chainImg}
                           />
@@ -37,9 +41,9 @@ function ChainsCards() {
                         <CustomGrid>
                           <Typography
                             className={classes.chainTitle}
-                            style={{ color: `${data.titleClr}` }}
+                            // style={{ color: `${data.titleClr}` }}
                           >
-                            {data.chainTitle}
+                            {data.validatorAddress.substring(1,6)}
                           </Typography>
                         </CustomGrid>
                       </HorizontalFlex>
@@ -47,7 +51,7 @@ function ChainsCards() {
                     <CustomGrid md={6}>
                       <HorizontalFlex justifyContent="flex-end">
                         <Typography className={classes.tokensNum}>
-                          {data.tokensNum} Txns
+                          {data.latestHashTxs} Txns
                         </Typography>
                       </HorizontalFlex>
                     </CustomGrid>
@@ -57,13 +61,13 @@ function ChainsCards() {
                   <HorizontalFlex>
                     <CustomGrid md={6}>
                       <Typography className={classes.time}>
-                        {data.time} ago
+                        {data.latestTime} ago
                       </Typography>
                     </CustomGrid>
                     <CustomGrid md={6}>
                       <HorizontalFlex justifyContent="flex-end">
                         <Typography className={classes.hash}>
-                          #{data.hashNum}
+                          #{data.blockHeight}
                         </Typography>
                       </HorizontalFlex>
                     </CustomGrid>
@@ -81,6 +85,21 @@ function ChainsCards() {
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     margin: `2.5vh 0px 0px 0px`,
+    overflowY: "scroll",
+    overflowX: "hidden",
+    maxHeight: "40vh",
+    "&::-webkit-scrollbar-track": {
+      border: theme.palette.grey[900],
+      backgroundColor: theme.palette.grey[800],
+    },
+    "&::-webkit-scrollbar": {
+      width: `${px3}`,
+    },
+    "&::-webkit-scrollbar-thumb": {
+      backgroundImage: "radial-gradient(at center, #fbb58a -20%, #ff751f 100%)",
+      borderRadius: `${px10}`,
+      maxHeight: `${px5}`,
+    },
   },
   paperRoot: {
     height: `12vh`,
@@ -100,6 +119,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: `${vpx14}`,
     fontWeight: 500,
     margin: `0px 0px 0px 0.5vw`,
+    color: `#b9b9b9`,
   },
   tokensNum: {
     color: `#b9b9b9`,

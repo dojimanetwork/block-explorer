@@ -15,6 +15,7 @@ export interface BlocksDataIfc {
   latestBlockHash: string;
   latestHashTxs: number;
   latestTime: string;
+  validatorAddress: string
 }
 
 export interface BlockDataReducerIfc {

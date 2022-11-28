@@ -66,6 +66,7 @@ function HandleDashFunCalls() {
             let blockLatestTime = moment(latestTime).format("HH:mm:ss");
             // console.log("Seconds", moment.utc(moment(time, "HH:mm:ss").diff(moment(blockTime, "HH:mm:ss"))).format("ss"));
             let txs = blockByHeightResult.result.block.data.txs.length;
+            let validatorAddress = blockByHeightResult.result.block.last_commit.signatures[0].validator_address
             // console.log("entered 1 ");
             BlockChainDataDispatch({
               type: update_block_chain_data,
@@ -75,6 +76,7 @@ function HandleDashFunCalls() {
                   latestBlockHash: latestHash,
                   latestHashTxs: txs,
                   latestTime: blockLatestTime,
+                  validatorAddress: validatorAddress
                 },
                 prevBlockHeight: blockHeight,
               },

@@ -3,11 +3,11 @@ import { makeStyles } from '@mui/styles';
 import CustomGrid from '../../components/common/custom.grid';
 import HorizontalFlex from '../../components/common/horizontal.flex';
 import VerticalFlex from '../../components/common/vertical.flex';
-import { px3, px10, px5 } from '../../constants/px.rem';
+import { px10, px5 } from '../../constants/px.rem';
 import { vpx14, vpx30, vpx8 } from '../../constants/px.vh';
 import { wpx25 } from '../../constants/px.vw';
 import useBlockChainData from '../../hooks/useBlockChainData';
-import DojimaLogo from '../../static/dojima-logo.svg'
+import DojimaLogo from '../../static/dojima-logo.svg';
 
 function ChainsCards() {
   const classes = useStyles();
@@ -21,9 +21,9 @@ function ChainsCards() {
           {txsData.map((data, index: number) => (
             <Paper
               className={classes.paperRoot}
-              // style={{
-              //   backgroundImage: `radial-gradient(50% 100% at 91.25% 0%, ${data.radiantClr} -100%, rgba(0, 0, 0, 0) 100%) ,linear-gradient(359deg, rgba(255, 255, 255, 0.16) 2.57%, rgba(255, 255, 255, 0.04) 97.48%)`,
-              // }}
+              style={{
+                backgroundImage: `radial-gradient(50% 100% at 91.25% 0%, #FF9CD0 -100%, rgba(0, 0, 0, 0) 100%) ,linear-gradient(359deg, rgba(255, 255, 255, 0.16) 2.57%, rgba(255, 255, 255, 0.04) 97.48%)`,
+              }}
               key={`${data},${index}`}
             >
               <VerticalFlex>
@@ -41,7 +41,7 @@ function ChainsCards() {
                         <CustomGrid>
                           <Typography
                             className={classes.chainTitle}
-                            // style={{ color: `${data.titleClr}` }}
+                            style={{ color: '#E84142' }}
                           >
                             {data.validatorAddress.substring(1,6)}
                           </Typography>
@@ -87,13 +87,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: `2.5vh 0px 0px 0px`,
     overflowY: "scroll",
     overflowX: "hidden",
-    maxHeight: "40vh",
+    maxHeight: "38vh",
     "&::-webkit-scrollbar-track": {
       border: theme.palette.grey[900],
       backgroundColor: theme.palette.grey[800],
     },
     "&::-webkit-scrollbar": {
-      width: `${px3}`,
+      width: `0px`,
     },
     "&::-webkit-scrollbar-thumb": {
       backgroundImage: "radial-gradient(at center, #fbb58a -20%, #ff751f 100%)",
@@ -119,7 +119,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: `${vpx14}`,
     fontWeight: 500,
     margin: `0px 0px 0px 0.5vw`,
-    color: `#b9b9b9`,
+    // color: `#b9b9b9`,
   },
   tokensNum: {
     color: `#b9b9b9`,

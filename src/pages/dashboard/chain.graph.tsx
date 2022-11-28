@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     padding: `2vh 2vw 2vh 2vw`,
     border: '0.5px solid rgba(255, 255, 255, 0.4)',
     opacity: 0.9,
+    margin: `2.5vh 0px 0px 0px`
     // borderImage: 'linear-gradient(75deg, rgba(255, 255, 255, 0.4) 20%, #2e69ff 150%)',
     // borderImageSlice: '1',
     // borderRadius: '10px',

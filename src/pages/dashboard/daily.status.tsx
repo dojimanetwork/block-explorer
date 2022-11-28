@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundImage: `radial-gradient(140% 70% at 100% 0%,#264da3 -40%, rgba(0, 0, 0, 0) 70%) ,linear-gradient(359deg, rgba(255, 255, 255, 0.16) -120%, rgba(255, 255, 255, 0.04) 97.48%)`,
     padding: `2vh 1.2vw 2vh 1.2vw`,
     border: '0.5px solid rgba(255, 255, 255, 0.4)',
-    margin: `0px 0px 1.5vh 0px`,
+    margin: `2.5vh 0px 1.5vh 0px`,
     opacity: 0.9,
   },
   title: {

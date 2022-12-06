@@ -48,3 +48,13 @@ export type BlockStatusType = {
   id: number;
   result: BlockStatusResultType;
 };
+
+export type BlocksData = {
+  id: string;
+  height: string;
+  proposer_address: string;
+  transactions_count: string;
+  "time validate:": string;
+}
+
+export type BlocksDataTpye = Array<BlocksData>

@@ -19,6 +19,7 @@ import VerticalFlex from "./vertical.flex";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
 import useSnackbar from "../../hooks/useSnackBar";
+import { HermesApiBlockByHashUrl } from "../../data-urls";
 
 function TopNavBar() {
   const classes = useStyles();
@@ -31,7 +32,7 @@ function TopNavBar() {
   const handleTxHashSearch = async () => {
     try {
       let details: TxByHashDetailsType = await axios.get(
-        `http://localhost:1317/cosmos/tx/v1beta1/txs/${hashValue}`
+        `${HermesApiBlockByHashUrl}/${hashValue}`
       );
       // console.log(details);
       if (details.status === 200) {

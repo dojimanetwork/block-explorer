@@ -94,6 +94,8 @@ function HandleDashFunCalls() {
 
   const fetchNodeDetails = async () => {
     let response = await axios.get(HermesApiNodesUrl);
+    console.log(response);
+    
     if (response.status === 200) {
       let result: NodeDetailsType = response.data;
       if (result.length !== 0) {

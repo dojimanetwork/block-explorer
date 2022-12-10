@@ -16,6 +16,8 @@ function ValidatorsInfo() {
   const classes = useStyles();
   const { nodeDataState } = useNodeData();
   const nodeDetails = nodeDataState.nodeData;
+  console.log(nodeDetails.node_address);
+  
   const lang = useLanguage();
   const {
     node,

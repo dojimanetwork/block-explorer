@@ -25,7 +25,16 @@ export type NodeDetailsArrayType = {
     reason: string
   };
   current_award: string;
-  observe_chains: null;
+  observe_chains: [
+    {
+      chain: string;
+      height: number
+    },
+    {
+      chain: string;
+      height: number
+    }
+  ];
   preflight_status: {
     status: string;
     reason: string;

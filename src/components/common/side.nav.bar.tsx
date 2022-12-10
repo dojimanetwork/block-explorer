@@ -7,7 +7,7 @@ import { SideNavBarClr } from '../../constants/colors';
 import { px40 } from '../../constants/px.rem';
 import { vpx30 } from '../../constants/px.vh';
 import { wpx30 } from '../../constants/px.vw';
-import IcSettingsImg from '../../static/side-navbar/ic-settings.svg';
+// import IcSettingsImg from '../../static/side-navbar/ic-settings.svg';
 import { restoreMenuBar } from '../../utils/helpers';
 import {
   getPrevPrivateMenuIndex,
@@ -112,11 +112,11 @@ function SideNavBar(props: MenuBarProps) {
               onClick={(e) => handleMenuActive(e, index)}
             />
           ))}
-          <img
+          {/* <img
             src={IcSettingsImg}
             alt="settings"
             className={classes.settingsImage}
-          />
+          /> */}
         </VerticalFlex>
       </CustomGrid>
     </Paper>

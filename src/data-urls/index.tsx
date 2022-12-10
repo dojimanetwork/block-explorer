@@ -1,5 +1,5 @@
-export const HermesApiUrl = `http://api-test.h4s.dojima.network/`  //localhost:1317
-export const HermesRpcUrl = `http://rpc-test.h4s.dojima.network/`  //localhost:26657
+export const HermesApiUrl = process.env.REACT_APP_HERMES_API_URL as string  //localhost:1317
+export const HermesRpcUrl = process.env.REACT_APP_HERMES_RPC_URL as string  //localhost:26657
 export const HermesRpcStatusUrl = `${HermesRpcUrl}status`
 export const HermesRpcBlockByHeightUrl = `${HermesRpcUrl}block?height`
 export const HermesApiNodesUrl = `${HermesApiUrl}hermeschain/nodes`

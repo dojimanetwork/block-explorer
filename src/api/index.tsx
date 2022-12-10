@@ -1,14 +1,17 @@
 import axios from "axios";
 import moment from "moment";
 import { memo, useEffect } from "react";
-import { HermesApiNodesUrl, HermesRpcBlockByHeightUrl, HermesRpcStatusUrl } from "../data-urls";
+import { HermesApiNodesUrl, HermesApiPoolsUrl, HermesRpcBlockByHeightUrl, HermesRpcStatusUrl } from "../data-urls";
 import useBlockChainData from "../hooks/useBlockChainData";
 import useNodeData from "../hooks/useNodeDetails";
+import usePoolsData from "../hooks/usePoolsData";
 import { update_block_chain_data } from "../reducers/block.data.reducer";
 import { update_node_data } from "../reducers/node.data.reducer";
+import { update_pools_data } from "../reducers/pools.data.reducer";
 import { BlockByHeightType } from "./block.height.api";
 import { BlockStatusType } from "./blocks.api";
 import { NodeDetailsType } from "./node.details.api";
+import { PoolsData } from "./pools.api";
 
 export function convertISOtoUTC(date: string) {
   const utcDate = new Date(date).toUTCString();
@@ -19,9 +22,11 @@ function HandleDashFunCalls() {
   const { BlockChainDataDispatch, blockChainDataState } = useBlockChainData();
   const { prevBlockHeight } = blockChainDataState;
   const { NodeDataDispatch } = useNodeData();
+  const { PoolsDataDispatch } = usePoolsData()
 
   useEffect(() => {
     fetchNodeDetails();
+    fetchPoolsData();
     // fetchBlocksData();
     // eslint-disable-next-line
   }, []);
@@ -92,21 +97,36 @@ function HandleDashFunCalls() {
     }
   };
 
+  const fetchPoolsData = async () => {
+    let response = await axios.get(HermesApiPoolsUrl);
+    // console.log(response);
+      if (response.status === 200) {
+        let result: PoolsData = response.data;
+        // console.log(result);
+        if (result.length !== 0) {
+          PoolsDataDispatch({
+            type: update_pools_data,
+            payload: result
+          })
+        }
+      }
+    return null;
+  };
+
   const fetchNodeDetails = async () => {
     let response = await axios.get(HermesApiNodesUrl);
-    console.log(response);
-    
+    // console.log(response);
     if (response.status === 200) {
       let result: NodeDetailsType = response.data;
+      console.log(result);
       if (result.length !== 0) {
         NodeDataDispatch({
           type: update_node_data,
-          payload: result[0],
+          payload: result[0]
         });
       }
     }
   };
-
   return null;
 }
 

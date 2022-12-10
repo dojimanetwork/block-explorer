@@ -1,37 +1,45 @@
-import { Paper, Theme, Typography } from '@mui/material';
-import { makeStyles } from '@mui/styles';
-import CustomGrid from '../../components/common/custom.grid';
-import HorizontalFlex from '../../components/common/horizontal.flex';
-import VerticalFlex from '../../components/common/vertical.flex';
-import { AvailablePoolsData } from '../../components/constants/pools/available.pools';
-import { OrangeClr } from '../../constants/colors';
-import { vpx12, vpx14, vpx16, vpx20, vpx32 } from '../../constants/px.vh';
-import useNavi from '../../hooks/useNavi';
-import { PoolDetailsUrl } from '../../routes/route.constants';
-import DojImg from '../../static/chains/dojima-logo.svg';
-import Img from '../../static/pools/bnb.svg';
+import { Paper, Theme, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import CustomGrid from "../../components/common/custom.grid";
+import HorizontalFlex from "../../components/common/horizontal.flex";
+import VerticalFlex from "../../components/common/vertical.flex";
+import { OrangeClr } from "../../constants/colors";
+import { vpx12, vpx14, vpx16, vpx20, vpx32 } from "../../constants/px.vh";
+import useNavi from "../../hooks/useNavi";
+import usePoolsData from "../../hooks/usePoolsData";
+import { PoolDetailsUrl } from "../../routes/route.constants";
+// import DojImg from "../../static/chains/dojima-logo.svg";
+import DojimaLogo from "../../static/dojima-logo.svg";
 
 function AvailablePools() {
   const classes = useStyles();
-  const availablePools = AvailablePoolsData;
   const { navigateToUrl } = useNavi();
+  const { poolsDataState } = usePoolsData();
 
   return (
     <CustomGrid md={12} className={classes.root}>
       <HorizontalFlex>
-        {availablePools.map((data) => (
-          <CustomGrid md={2.5} className={classes.cardsRoot}>
+        {poolsDataState.poolsData.map((data, index: number) => (
+          <CustomGrid
+            key={`${data},${index}`}
+            md={2.5}
+            className={classes.cardsRoot}
+          >
             <Paper
-              onClick={() => navigateToUrl(PoolDetailsUrl)}
+              // onClick={() => navigateToUrl(PoolDetailsUrl)}
               className={classes.poolCard}
             >
               <VerticalFlex alignItems="center">
                 <CustomGrid>
-                  <img src={Img} alt="bnb" className={classes.chainImg} />
+                  <img
+                    src={DojimaLogo}
+                    alt="doj"
+                    className={classes.chainImg}
+                  />
                 </CustomGrid>
                 <CustomGrid>
                   <Typography className={classes.title}>
-                    {data.chain}
+                    {data.asset}
                   </Typography>
                 </CustomGrid>
                 <CustomGrid md={10}>
@@ -39,64 +47,64 @@ function AvailablePools() {
                     <VerticalFlex alignItems="center">
                       <CustomGrid>
                         <Typography
-                          style={{ margin: '2vh 0px 0px 1.5vh' }}
+                          style={{ margin: "2vh 0px 0px 0.6vh" }}
                           className={classes.infoTitle}
                         >
-                          {data.title1}
+                          balance doj
                         </Typography>
                         <Typography className={classes.infoValue}>
-                          ${data.value1}
+                          {data.balance_doj}
                         </Typography>
                       </CustomGrid>
                       <CustomGrid>
-                        <HorizontalFlex alignItems="center">
-                          <CustomGrid>
+                        <HorizontalFlex justifyContent="center" alignItems="center">
+                          {/* <CustomGrid>
                             <img
                               src={DojImg}
                               alt="chain"
                               className={classes.imageRoot}
                             />
-                          </CustomGrid>
+                          </CustomGrid> */}
                           <CustomGrid>
                             <Typography
-                              style={{ margin: '0px' }}
+                              style={{ margin: "0px" }}
                               className={classes.infoTitle}
                             >
-                              {data.title2}
+                             asset balance
                             </Typography>
                           </CustomGrid>
                         </HorizontalFlex>
                         <Typography className={classes.infoValue}>
-                          {data.value2}
+                          {data.balance_asset}
                         </Typography>
                       </CustomGrid>
                       <CustomGrid>
-                        <HorizontalFlex alignItems="center">
-                          <CustomGrid>
+                        <HorizontalFlex justifyContent="center" alignItems="center">
+                          {/* <CustomGrid>
                             <img
-                              src={Img}
+                              src={DojimaLogo}
                               alt="chain"
                               className={classes.imageRoot}
                             />
-                          </CustomGrid>
+                          </CustomGrid> */}
                           <CustomGrid>
                             <Typography
-                              style={{ margin: '0px' }}
+                              style={{ margin: "0px" }}
                               className={classes.infoTitle}
                             >
-                              {data.title3}
+                              status
                             </Typography>
                           </CustomGrid>
                         </HorizontalFlex>
                         <Typography className={classes.infoValue}>
-                          {data.value3}
+                          {data.status}
                         </Typography>
                       </CustomGrid>
-                      <CustomGrid>
+                      {/* <CustomGrid>
                         <Typography className={classes.infoValue}>
-                          {data.value4}
+                          {data.balance_asset}
                         </Typography>
-                      </CustomGrid>
+                      </CustomGrid> */}
                     </VerticalFlex>
                   </Paper>
                 </CustomGrid>
@@ -118,9 +126,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   poolCard: {
     height: `35vh`,
-    backgroundColor: '#171717',
-    border: '0.6px solid rgba(255, 255, 255, 0.1)',
-    cursor: 'pointer',
+    backgroundColor: "#171717",
+    border: "0.6px solid rgba(255, 255, 255, 0.1)",
+    // cursor: "pointer",
   },
   chainImg: {
     height: `${vpx32}`,
@@ -138,7 +146,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   insideCard: {
     height: `23vh`,
-    backgroundColor: '#0000001f',
+    backgroundColor: "#0000001f",
     width: `16vw`,
     margin: `0.7vh 0px 0px 0px`,
   },

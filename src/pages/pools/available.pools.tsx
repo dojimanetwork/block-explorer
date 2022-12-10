@@ -5,15 +5,15 @@ import HorizontalFlex from "../../components/common/horizontal.flex";
 import VerticalFlex from "../../components/common/vertical.flex";
 import { OrangeClr } from "../../constants/colors";
 import { vpx12, vpx14, vpx16, vpx20, vpx32 } from "../../constants/px.vh";
-import useNavi from "../../hooks/useNavi";
+// import useNavi from "../../hooks/useNavi";
 import usePoolsData from "../../hooks/usePoolsData";
-import { PoolDetailsUrl } from "../../routes/route.constants";
+// import { PoolDetailsUrl } from "../../routes/route.constants";
 // import DojImg from "../../static/chains/dojima-logo.svg";
 import DojimaLogo from "../../static/dojima-logo.svg";
 
 function AvailablePools() {
   const classes = useStyles();
-  const { navigateToUrl } = useNavi();
+  // const { navigateToUrl } = useNavi();
   const { poolsDataState } = usePoolsData();
 
   return (

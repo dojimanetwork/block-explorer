@@ -18,9 +18,9 @@ const ValidatorsInfo = lazy(() => import('../pages/Validators/validators.info'))
 const TxHashInfoSearch = lazy(() => import('../pages/transactions/tx.hash.info.search'))
 
 export default mount({
-  '/dashboard': NavBarWithView(
+  '/block-explorer': NavBarWithView(
     mount({
-      '/': route({
+      '/dashboard': route({
         view: <Dashboard />,
       }),
       '/blocks-table': route({
@@ -61,7 +61,7 @@ export default mount({
       }),
     })
   ),
-  '/block-explorer': redirect(`${DashboardUrl}`),
+  '/': redirect(`${DashboardUrl}`),
 });
 
 function NavBarWithView(routes: any) {

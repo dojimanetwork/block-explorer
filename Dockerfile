@@ -27,6 +27,6 @@ COPY --from=build /app/build /var/www/
 # needed this to make React Router work properly 
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 # Expose port 80 for HTTP Traffic 
-EXPOSE 80
+EXPOSE 82
 # start the nginx web server
 ENTRYPOINT ["nginx", "-g", "daemon off;"]

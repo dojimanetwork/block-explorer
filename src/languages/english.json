@@ -1,5 +1,5 @@
 {
-  "titles":{
+  "titles": {
     "dashboard": "Dashboard",
     "blocks": "Blocks",
     "txs": "Transactions",
@@ -8,20 +8,20 @@
     "address": "Address",
     "vault": "Vault"
   },
-  "dashbord":{
-      "graph_title":{
-          "txTitle": "Transaction",
-          "blockTitle": "Blocks"
-      }
+  "dashbord": {
+    "graph_title": {
+      "txTitle": "Transaction",
+      "blockTitle": "Blocks"
+    }
   },
-  "transaction":{
+  "transaction": {
     "tx_bond": {
       "title1": "Transaction Hash",
       "title2": "Block",
       "title3": "Type",
       "title4": "Date and Time"
     },
-    "tx_hash_info":{
+    "tx_hash_info": {
       "title": "Transaction Details",
       "title1": "Transaction Hash",
       "title2": "Block",
@@ -31,7 +31,7 @@
       "title6": "Memo"
     }
   },
-  "vallidators_info_titles":{
+  "vallidators_info_titles": {
     "node": "Node",
     "ip_add": "IP Address",
     "version": "Version",
@@ -46,5 +46,10 @@
     "jail_address": "Jail Node Address",
     "jail_release": "Jail Node Release Height",
     "jail_reason": "Jail Reason"
+  },
+  "server_under_maintainance": {
+    "title": "Server",
+    "under_maintainance": "UNDER MAINTENANCE",
+    "description": "A middle ground where users from all different ecosystems come together to build cross-chain"
   }
 }

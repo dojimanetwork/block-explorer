@@ -6,7 +6,7 @@ const Dashboard = lazy(() => import('../pages/dashboard/index'));
 const Txs = lazy(() => import('../pages/transactions/index'));
 const BlocksTable = lazy(() => import('../pages/blocks/blocks.table'));
 const Blocks = lazy(() => import('../pages/blocks/index'));
-// const Validators = lazy(() => import('../pages/Validators/index'));
+const Validators = lazy(() => import('../pages/Validators/index'));
 const Pools = lazy(() => import('../pages/pools/index'));
 const TxUnbond = lazy(() => import('../pages/transactions/tx.details.unbond'));
 const PoolDetails = lazy(() => import('../pages/pools/pool.details'));
@@ -34,6 +34,9 @@ export default mount({
       }),
       '/tx-hash-info': route({
         view: <TxHashInfoSearch />,
+      }),
+      '/validators': route({
+        view: <Validators />,
       }),
       '/validators-info': route({
         view: <ValidatorsInfo />,

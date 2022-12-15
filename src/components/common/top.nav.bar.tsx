@@ -1,4 +1,4 @@
-import { AppBar, Theme, Toolbar, Typography } from "@mui/material";
+import { AppBar, Theme, Toolbar } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import axios from "axios";
 import { TxByHashDetailsType } from "../../api/tx.by.hash.api";
@@ -10,12 +10,12 @@ import useTxHashData from "../../hooks/useTxHashData";
 import { update_tx_hash_data } from "../../reducers/tx.hash.data.reducer";
 import { TxHashInfoSearchUrl } from "../../routes/route.constants";
 import DojimaTextLogo from "../../static/top-navbar/dojima-logo.svg";
-import { TopNavBarHeadersData } from "../constants/dashboard/top.navbar.data";
+// import { TopNavBarHeadersData } from "../constants/dashboard/top.navbar.data";
 import CustomGrid from "./custom.grid";
 import CustomSearch from "./custom.search";
 import HorizontalFlex from "./horizontal.flex";
-import TextSwitch from "./text.switch";
-import VerticalFlex from "./vertical.flex";
+// import TextSwitch from "./text.switch";
+// import VerticalFlex from "./vertical.flex";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
 import useSnackbar from "../../hooks/useSnackBar";
@@ -23,7 +23,7 @@ import { HermesApiBlockByHashUrl } from "../../data-urls";
 
 function TopNavBar() {
   const classes = useStyles();
-  const HeaderData = TopNavBarHeadersData;
+  // const HeaderData = TopNavBarHeadersData;
   const { TxHashDataDispatch } = useTxHashData();
   const { navigateToUrl } = useNavi();
   const [hashValue, setHashValue] = useState<string | undefined>("");
@@ -61,7 +61,7 @@ function TopNavBar() {
             />
           </CustomGrid>
           <CustomGrid md={7}>
-            <HorizontalFlex>
+            <HorizontalFlex justifyContent="flex-end" >
               <CustomGrid md={4}>
                 <HorizontalFlex alignItems="center">
                   <CustomSearch
@@ -81,7 +81,7 @@ function TopNavBar() {
                   {/* <Typography onClick={() => handleTxHashSearch()} style={{ cursor: "pointer"}} >Click</Typography> */}
                 </HorizontalFlex>
               </CustomGrid>
-              {HeaderData.map((data, index: number) => (
+              {/* {HeaderData.map((data, index: number) => (
                 <CustomGrid md={2} key={`${data},${index}`}>
                   <HorizontalFlex alignItems="flex-end">
                     <CustomGrid>
@@ -115,10 +115,10 @@ function TopNavBar() {
                     </CustomGrid>
                   </HorizontalFlex>
                 </CustomGrid>
-              ))}
-              <CustomGrid md={2} className={classes.switchRoot}>
+              ))} */}
+              {/* <CustomGrid md={2} className={classes.switchRoot}>
                 <TextSwitch />
-              </CustomGrid>
+              </CustomGrid> */}
             </HorizontalFlex>
           </CustomGrid>
         </HorizontalFlex>

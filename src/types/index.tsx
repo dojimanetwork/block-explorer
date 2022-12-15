@@ -59,4 +59,6 @@ export const BlockNumbers = [
   '265625',
 ];
 
+export type MaintainanceError = "success" | "error"
+
 export type SnackbarTypes = "success" | "error" | "warning" | "info";

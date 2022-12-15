@@ -3,7 +3,7 @@ import {
   DashboardUrl,
   PoolsUrl,
   // TransactionsUrl,
-  ValidatorsInfoUrl,
+  ValidatorsUrl,
   // VaultTableUrl,
 } from '../routes/route.constants';
 // import BlockImg from '../static/side-navbar/block.svg';
@@ -51,7 +51,7 @@ export const menuData = [
     name: IcBlockImg,
     active: false,
     Icon: undefined,
-    link: ValidatorsInfoUrl,
+    link: ValidatorsUrl,
     public: false,
     private: true,
     md: 1.5,

@@ -3,7 +3,7 @@ import {
   blockChainDataIniSt,
   blockChainDataReducer,
 } from "../reducers/block.data.reducer";
-import { ChildrenType } from "../types";
+import { ChildrenType, MaintainanceError } from "../types";
 
 export interface BlockChainDataIfc {
   BlockChainDataDispatch: React.Dispatch<any>;
@@ -21,6 +21,7 @@ export interface BlocksDataIfc {
 export interface BlockDataReducerIfc {
   blockChainData: BlocksDataIfc[];
   prevBlockHeight: string;
+  underMaintainance: MaintainanceError
 }
 
 export const BlockChainDataContext = createContext<BlockChainDataIfc>({
@@ -28,6 +29,7 @@ export const BlockChainDataContext = createContext<BlockChainDataIfc>({
   blockChainDataState: {
     blockChainData: [],
     prevBlockHeight: "-1",
+    underMaintainance: "success"
   },
 });
 

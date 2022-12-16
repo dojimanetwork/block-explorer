@@ -1,4 +1,5 @@
 import React, { createContext, useReducer } from "react";
+import { BlocksTableData } from "../api/blocks.api";
 import {
   blockChainDataIniSt,
   blockChainDataReducer,
@@ -15,21 +16,35 @@ export interface BlocksDataIfc {
   latestBlockHash: string;
   latestHashTxs: number;
   latestTime: string;
-  validatorAddress: string
+  validatorAddress: string;
 }
 
 export interface BlockDataReducerIfc {
   blockChainData: BlocksDataIfc[];
+  transactionsData: BlocksDataIfc[];
+  blocksDataCards: BlocksDataIfc[];
   prevBlockHeight: string;
-  underMaintainance: MaintainanceError
+  blocksTableData: Array<BlocksTableData>;
+  underMaintainance: MaintainanceError;
 }
 
 export const BlockChainDataContext = createContext<BlockChainDataIfc>({
   BlockChainDataDispatch: () => {},
   blockChainDataState: {
     blockChainData: [],
+    blocksDataCards: [],
+    transactionsData: [],
     prevBlockHeight: "-1",
-    underMaintainance: "success"
+    blocksTableData: [
+      {
+        id: "",
+        height: "",
+        proposer_address: "",
+        transactions_count: "",
+        "time validate:": "",
+      },
+    ],
+    underMaintainance: "success",
   },
 });
 

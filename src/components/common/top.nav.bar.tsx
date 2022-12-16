@@ -34,7 +34,7 @@ function TopNavBar() {
       let details: TxByHashDetailsType = await axios.get(
         `${HermesApiBlockByHashUrl}/${hashValue}`
       );
-      // console.log(details);
+      console.log(details);
       if (details.status === 200) {
         if (hashValue !== "") {
           TxHashDataDispatch({

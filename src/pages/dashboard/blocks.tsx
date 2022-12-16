@@ -49,7 +49,7 @@ function BlocksView() {
           </CustomGrid>
           <CustomGrid className={classes.contentRoot}>
             {txsData.length === 0 ? (
-              <CustomLoader loaderMargin="20vh 0px 0px 0px" loaderTxt="Please wait..." />
+              <CustomLoader loaderMargin="20vh 0px 0px 0px"  loaderTxt="Please wait..." />
             ) : (
               txsData.map((data:any, index: number) => (
                 <CustomGrid

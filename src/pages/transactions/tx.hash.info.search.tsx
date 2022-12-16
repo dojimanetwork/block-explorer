@@ -17,10 +17,11 @@ import { DashboardUrl } from "../../routes/route.constants";
 function TxHashInfoSearch() {
   const classes = useStyles();
   const lang = useLanguage();
-  const { title1, title2, title4, title, title5, title6 } =
+  const { title1, title2, title4, title, title5, title6, title7, title8 } =
     lang.languageText.transaction.tx_hash_info;
   const { txhashDataState } = useTxHashData();
   const txDataTx = txhashDataState.txhashData.tx;
+  console.log("txs data",txDataTx);
   const txDataResponse = txhashDataState.txhashData.tx_response;
   const { navigateToUrl } = useNavi();
 
@@ -94,8 +95,8 @@ function TxHashInfoSearch() {
                     <CustomGrid md={9.5}>
                       <Typography style={{ color: OrangeClr }} className={classes.value}>
                         {txDataTx.body.messages.length > 0
-                          ? txDataTx.body.messages[0].coins.length > 0
-                            ? txDataTx.body.messages[0].coins[0].amount
+                          ? txDataTx.body.messages[0].amount.length > 0
+                            ? txDataTx.body.messages[0].amount[0].amount
                             : "undefined"
                           : "undefined"}
                       </Typography>
@@ -106,7 +107,7 @@ function TxHashInfoSearch() {
                   <HorizontalFlex>
                     <CustomGrid md={2}>
                       <Typography className={classes.valueTitle}>
-                        Gas Used
+                        {title8}
                       </Typography>
                     </CustomGrid>
                     <CustomGrid md={0.5}>
@@ -135,75 +136,12 @@ function TxHashInfoSearch() {
                     <CustomGrid md={9.5}>
                       <Typography className={classes.value}>
                         {txDataTx.body.messages.length > 0
-                          ? txDataTx.body.messages[0].memo
+                          ? txDataTx.body.messages[0].from_address
                           : ""}
                       </Typography>
                     </CustomGrid>
                   </HorizontalFlex>
                 </CustomGrid>
-                {/* <CustomGrid md={12} className={classes.valueRoot}>
-                  <HorizontalFlex>
-                    <CustomGrid md={2}>
-                      <Typography className={classes.valueTitle}>
-                        {title3}
-                      </Typography>
-                    </CustomGrid>
-                    <CustomGrid md={0.5}>
-                      <Typography className={classes.dots}>:</Typography>
-                    </CustomGrid>
-                    <CustomGrid md={9.5}>
-                      <Typography className={classes.value}>
-                        {txDataTx.body.messages.length > 0
-                          ? txDataTx.body.messages[0]["@type"]
-                          : ""}
-                      </Typography>
-                    </CustomGrid>
-                  </HorizontalFlex>
-                </CustomGrid> */}
-                {/* <CustomGrid md={12} className={classes.valueRoot}>
-                  <HorizontalFlex>
-                    <CustomGrid md={2}>
-                      <Typography className={classes.valueTitle}>
-                        {title3}
-                      </Typography>
-                    </CustomGrid>
-                    <CustomGrid md={0.5}>
-                      <Typography className={classes.dots}>:</Typography>
-                    </CustomGrid>
-                    <CustomGrid md={9.5}>
-                      <HorizontalFlex>
-                        <Paper
-                          className={classes.valuePaper}
-                          style={{ backgroundColor: LightBlueClr }}
-                        >
-                          <Typography className={classes.valuePaperTxt}>
-                            setIpaddress
-                          </Typography>
-                        </Paper>
-                      </HorizontalFlex>
-                    </CustomGrid>
-                  </HorizontalFlex>
-                </CustomGrid>
-                <CustomGrid md={12} className={classes.valueRoot}>
-                  <HorizontalFlex>
-                    <CustomGrid md={2}>
-                      <Typography className={classes.valueTitle}>
-                        Signer
-                      </Typography>
-                    </CustomGrid>
-                    <CustomGrid md={0.5}>
-                      <Typography className={classes.dots}>:</Typography>
-                    </CustomGrid>
-                    <CustomGrid md={9.5}>
-                      <Typography
-                        className={classes.value}
-                        style={{ color: OrangeClr }}
-                      >
-                        Doj3Rei02...h073r
-                      </Typography>
-                    </CustomGrid>
-                  </HorizontalFlex>
-                </CustomGrid> */}
                 <CustomGrid md={12} className={classes.valueRoot}>
                   <HorizontalFlex>
                     <CustomGrid md={2}>
@@ -217,6 +155,25 @@ function TxHashInfoSearch() {
                     <CustomGrid md={9.5}>
                       <Typography className={classes.value}>
                         {convertISOtoUTC(txDataResponse.timestamp)}
+                      </Typography>
+                    </CustomGrid>
+                  </HorizontalFlex>
+                </CustomGrid>
+                <CustomGrid md={12} className={classes.valueRoot}>
+                  <HorizontalFlex>
+                    <CustomGrid md={2}>
+                      <Typography className={classes.valueTitle}>
+                        {title7}
+                      </Typography>
+                    </CustomGrid>
+                    <CustomGrid md={0.5}>
+                      <Typography className={classes.dots}>:</Typography>
+                    </CustomGrid>
+                    <CustomGrid md={9.5}>
+                      <Typography className={classes.value}>
+                        {txDataTx.body.messages.length > 0
+                          ? txDataTx.body.messages[0].to_address
+                          : ""}
                       </Typography>
                     </CustomGrid>
                   </HorizontalFlex>

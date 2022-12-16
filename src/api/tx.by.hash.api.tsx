@@ -13,12 +13,12 @@ export type TxByHashDataType = {
     code: number;
     codespace: string;
     data: string;
-    events: Array<object>;
+    events: Array<any>;
     gas_used: string;
     gas_wanted: string;
     height: string;
     info: string;
-    logs: Array<object>;
+    logs: Array<any>;
     raw_log: string;
     timestamp: string;
     tx: object;
@@ -27,26 +27,25 @@ export type TxByHashDataType = {
 };
 
 export type TxByHashTxType = {
-  auth_info: string;
+  auth_info: object;
   body: {
-    extension_options: Array<object>;
+    extension_options: Array<any>;
     memo: string;
     messages: Array<TxByHashMsgsType>;
-    non_critical_extension_options: [];
+    non_critical_extension_options: Array<any>;
     timeout_height: string;
   };
-  signatures: string;
+  signatures: Array<any>;
 };
 
 export type TxByHashMsgsType = {
   '@type': string;
-  coins: Array<TxByHashCoinsType>;
-  memo: string;
-  signer: string;
+  amount: Array<TxByHashAmountType>;
+  from_address: string;
+  to_address: string;
 };
 
-export type TxByHashCoinsType = {
-  asset: string;
+export type TxByHashAmountType = {
   amount: string;
-  decimals: string;
+  denom: string;
 };

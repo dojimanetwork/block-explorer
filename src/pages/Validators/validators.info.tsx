@@ -15,8 +15,7 @@ import BlocksImg from "../../static/side-navbar/block.svg";
 function ValidatorsInfo() {
   const classes = useStyles();
   const { nodeDataState } = useNodeData();
-  const nodeDetails = nodeDataState.nodeData;
-  console.log(nodeDetails.node_address);
+  const nodeDetails = nodeDataState.nodeData[0];
   
   const lang = useLanguage();
   const {

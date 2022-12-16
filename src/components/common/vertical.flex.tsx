@@ -14,6 +14,7 @@ function VerticalFlex({
   md,
   alignContent,
   wrap,
+  direction
 }: GridComponentProps) {
   return (
     <Grid
@@ -21,7 +22,7 @@ function VerticalFlex({
       spacing={spacing}
       className={className}
       container
-      direction="column"
+      direction={direction ?? "column"}
       wrap={wrap}
       item
       alignItems={alignItems}

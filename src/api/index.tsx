@@ -11,12 +11,14 @@ import useBlockChainData from "../hooks/useBlockChainData";
 import useNodeData from "../hooks/useNodeDetails";
 import usePoolsData from "../hooks/usePoolsData";
 import {
+  update_blocks_data_cards,
   update_block_chain_data,
+  // update_transactions_data,
+  // update_block_table_data,
   update_under_maintainance,
 } from "../reducers/block.data.reducer";
 import { update_node_data } from "../reducers/node.data.reducer";
 import { update_pools_data } from "../reducers/pools.data.reducer";
-import { getObjectKeys } from "../utils/helpers";
 import { BlockByHeightType } from "./block.height.api";
 import { BlockStatusType } from "./blocks.api";
 import { NodeDetailsType } from "./node.details.api";
@@ -85,7 +87,8 @@ function HandleDashFunCalls() {
               let validatorAddress =
                 blockByHeightResult.result.block.last_commit.signatures[0]
                   .validator_address;
-              // console.log("entered 1 ");
+
+              // dispatching blocks data     
               BlockChainDataDispatch({
                 type: update_block_chain_data,
                 payload: {
@@ -99,9 +102,39 @@ function HandleDashFunCalls() {
                   prevBlockHeight: blockHeight,
                 },
               });
+
+              // dispatching blocks data for cards in dashboard
+              BlockChainDataDispatch({
+                type: update_blocks_data_cards,
+                payload: {
+                  blocksDataCards: {
+                    blockHeight: latestHeight,
+                    latestBlockHash: latestHash,
+                    latestHashTxs: txs,
+                    latestTime: blockLatestTime,
+                    validatorAddress: validatorAddress,
+                  },
+                  prevBlockHeight: blockHeight,
+                },
+              });
+
+              // dispatching transactions data if any transactions occurs
+              // if (txs !== 0) {
+              //   BlockChainDataDispatch({
+              //     type: update_transactions_data,
+              //     payload: {
+              //       transactionsData: {
+              //         blockHeight: latestHeight,
+              //         latestBlockHash: latestHash,
+              //         latestHashTxs: txs,
+              //         latestTime: blockLatestTime,
+              //         validatorAddress: validatorAddress,
+              //       },
+              //     },
+              //   });
+              // }
             }
           }
-          // }
         }
       }
     } catch (error) {
@@ -123,16 +156,30 @@ function HandleDashFunCalls() {
         });
       }
     }
-
-    return null;
   };
+
+  // const fetchBlocksData = async () => {
+  //   console.log("before");
+  //   let response = await axios.get("http://localhost:8080/api/block/mongo");
+  //   console.log("after", response);
+  //   if (response.status === 200) {
+  //     let result:BlocksDataType = response.data;
+  //     console.log("before", result);
+  //     if (result.length !== 0) {
+  //       BlockChainDataDispatch({
+  //         type: update_block_table_data,
+  //         payload: result
+  //       })
+  //     }
+  //   }
+  // };
 
   const fetchNodeDetails = async () => {
     let response = await axios.get(HermesApiNodesUrl);
     if (response.status === 200) {
       let result: NodeDetailsType = response.data;
       if (result.length !== 0) {
-        console.log("headers", getObjectKeys(result));
+        // console.log("headers", Object.keys(result[0]));
         NodeDataDispatch({
           type: update_node_data,
           payload: [...result],
@@ -140,18 +187,8 @@ function HandleDashFunCalls() {
       }
     }
   };
+
   return null;
 }
-
-// const fetchBlocksData = async () => {
-//   let response = await axios.get("http://localhost:8080/api/block/mongo");
-//   if (response.status === 200) {
-//     let result:BlocksDataTpye = response.data;
-//     if (result.length !== 0) {
-//       console.log("blocks data", result);
-//     }
-//   }
-//   return null;
-// };
 
 export default memo(HandleDashFunCalls);

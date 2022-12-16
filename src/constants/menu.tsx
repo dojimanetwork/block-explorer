@@ -1,5 +1,5 @@
 import {
-  // BlocksTableUrl,
+  BlocksTableUrl,
   DashboardUrl,
   PoolsUrl,
   // TransactionsUrl,

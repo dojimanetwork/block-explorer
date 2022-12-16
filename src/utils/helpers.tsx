@@ -28,3 +28,7 @@ export function trimOldestWithLatitem<T>(
   }
   return modArray;
 }
+
+export const getObjectKeys = (obj: Object): Array<string> => {
+  return Object.keys(obj).sort();
+};

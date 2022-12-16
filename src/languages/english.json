@@ -28,7 +28,9 @@
       "title3": "Type",
       "title4": "Date and Time",
       "title5": "Amount",
-      "title6": "Memo"
+      "title6": "From",
+      "title7": "To",
+      "title8": "Gas Used"
     }
   },
   "vallidators_info_titles": {

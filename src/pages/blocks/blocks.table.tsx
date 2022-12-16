@@ -16,6 +16,7 @@ function BlocksTable() {
   const lang = useLanguage();
   const { blocks } = lang.languageText.titles;
   const { navigateToUrl } = useNavi();
+  
   return (
     <CustomGrid md={12}>
       <VerticalFlex>

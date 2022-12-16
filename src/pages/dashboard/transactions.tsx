@@ -4,17 +4,18 @@ import CustomGrid from "../../components/common/custom.grid";
 import HorizontalFlex from "../../components/common/horizontal.flex";
 import NoDataText from "../../components/common/no.data.text";
 import VerticalFlex from "../../components/common/vertical.flex";
+import { DashboardTxsData } from "../../components/constants/dashboard/dashboard.txs.data";
 import { px10, px3, px5 } from "../../constants/px.rem";
 import { vpx10, vpx14, vpx18, vpx22, vpx30, vpx8 } from "../../constants/px.vh";
 import { wpx20 } from "../../constants/px.vw";
-import useBlockChainData from "../../hooks/useBlockChainData";
+// import useBlockChainData from "../../hooks/useBlockChainData";
 import TransactionImg from "../../static/side-navbar/transaction.svg";
 
 function Transactions() {
   const classes = useStyles();
-  // const txsData = DashboardTxsData;
-  const { blockChainDataState } = useBlockChainData();
-  const txsData = blockChainDataState.transactionsData;
+  const txsData = DashboardTxsData;    
+  // const { blockChainDataState } = useBlockChainData();
+  // const txsData = blockChainDataState.transactionsData;
 
   return (
     <CustomGrid md={11.5}>
@@ -49,7 +50,7 @@ function Transactions() {
               </CustomGrid>
             </HorizontalFlex>
           </CustomGrid>
-          {txsData.length === 0 ? (
+          {txsData.length !== 0 ? (
             <NoDataText margin="24vh 0px 0px 0px" loaderTxt="No Transactions" />
           ) : (
             <CustomGrid className={classes.contentRoot}>
@@ -63,14 +64,14 @@ function Transactions() {
                     <CustomGrid md={6}>
                       <VerticalFlex>
                         <Typography className={classes.hashId}>
-                          {data.validatorAddress}
+                          {data.title}
                         </Typography>
                         <Paper
                           className={classes.valuePaper}
                           style={{ backgroundColor: '#ffc001' }}
                         >
                           <Typography className={classes.valueTxt}>
-                            {data.blockHeight}
+                            {data.valuesTxt}
                           </Typography>
                         </Paper>
                       </VerticalFlex>
@@ -78,7 +79,7 @@ function Transactions() {
                     <CustomGrid md={5.5}>
                       <HorizontalFlex justifyContent="flex-end">
                         <Typography className={classes.time}>
-                          {data.latestTime} min ago
+                          {data.time} min ago
                         </Typography>
                       </HorizontalFlex>
                     </CustomGrid>

@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from "react";
-import { BlocksTableData } from "../api/blocks.api";
+// import { BlocksTableData } from "../api/blocks.api";
 import {
   blockChainDataIniSt,
   blockChainDataReducer,
@@ -21,10 +21,10 @@ export interface BlocksDataIfc {
 
 export interface BlockDataReducerIfc {
   blockChainData: BlocksDataIfc[];
-  transactionsData: BlocksDataIfc[];
+  // transactionsData: BlocksDataIfc[];
   blocksDataCards: BlocksDataIfc[];
   prevBlockHeight: string;
-  blocksTableData: Array<BlocksTableData>;
+  // blocksTableData: Array<BlocksTableData>;
   underMaintainance: MaintainanceError;
 }
 
@@ -33,17 +33,17 @@ export const BlockChainDataContext = createContext<BlockChainDataIfc>({
   blockChainDataState: {
     blockChainData: [],
     blocksDataCards: [],
-    transactionsData: [],
+    // transactionsData: [],
     prevBlockHeight: "-1",
-    blocksTableData: [
-      {
-        id: "",
-        height: "",
-        proposer_address: "",
-        transactions_count: "",
-        "time validate:": "",
-      },
-    ],
+    // blocksTableData: [
+    //   {
+    //     id: "",
+    //     height: "",
+    //     proposer_address: "",
+    //     transactions_count: "",
+    //     "time validate:": "",
+    //   },
+    // ],
     underMaintainance: "success",
   },
 });
